@@ -21,5 +21,22 @@
 *Frameworks and Libraries:* React.js, Vue.js, Angular, Bootstrap, Tailwind CSS
 *Development Tools:* Visual Studio Code, Git, npm, Webpack
 
+### Work Experience
+Project: CV
+Skills: Github, Github Pages, Git, Markdown
+Code [Link](https://github.com/web-programming-foundations)
+
+Project: Restoraunt Website
+Skills: HTML, CSS, JavaScript, React.js
+Code [Link](https://github.com/simonovgleb/restorauntKUrsach)
+
+**Courses and Trainings Completed:**
+* Online React.js Course on Udemy
+* CSS Grid Workshop on CSS Tricks
+
+** English Language Proficiency:**
+*Level:* Upper-Intermediate
+*Practice:* Participation in conversation clubs and reading professional literature in English.
+
 ---
 ###### template by 2024
