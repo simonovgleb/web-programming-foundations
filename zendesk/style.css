@@ -10,6 +10,10 @@
   --messaging-frame-background-color: #FED6A8;
   --messaging-description-header-color: #03363D;
   --messaging-description-main-text-color: #17494D;
+  --customer-support-header-text-color: #03363D;
+  --customer-support-active-button-color: #17494D;
+  --customer-support-inactive-button-color: #68737D;
+  --customer-support-quote-border-color: #C2C8CC;
 }
 
 
@@ -212,6 +216,7 @@
 	height: 5242px;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 
 .page-content-customer-service-frame {
@@ -566,3 +571,268 @@
 	height: 2px;
 	background: var(--messaging-description-main-text-color);
 }
+
+.page-content-customer-support-frame {
+	min-width: 1115px;
+	height: 1224px;
+	margin-top: 32px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    justify-content: space-evenly;
+}
+
+.page-content-customer-support-header-text-frame {
+	width: 641.08px;
+	height: 208px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.page-content-customer-support-header-text {
+	width: 576px;
+	height: 112px;
+	text-align: left;
+	color: var(--customer-support-header-text-color);
+	font-size: 48px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 56px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-support-header-additional-text {
+	width: 545px;
+	height: 56px;
+	text-align: center;
+	color: var(--customer-support-header-text-color);
+	font-size: 20px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 28px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-support-card-content-frame {
+	min-width: 1083px;
+	height: 872px;
+	display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-content-customer-support-card-content-buttons-frame {
+	width: 1083px;
+	height: 47px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.page-content-customer-support-card-content-service-button {
+	width: 86px;
+	color: var(--customer-support-header-text-color);
+	font-size: 16px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 22px;
+	letter-spacing: 2px;
+	word-wrap: break-word;
+	border-bottom: solid 2px var(--customer-support-active-button-color);
+    display: grid;
+    justify-content: center;
+    margin-right: 54px;
+}
+
+.page-content-customer-support-card-content-service-button:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.page-content-customer-support-card-content-sales-button {
+	width: 55px;
+	color: var(--customer-support-inactive-button-color);
+	font-size: 15px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400;
+	text-transform: uppercase;
+	line-height: 22px;
+	letter-spacing: 2px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-support-card-content-sales-button:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.page-content-customer-support-card-content-description-frame {
+	min-width: 1099px;
+	height: 800px;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.page-content-customer-support-card-content-description-text-frame {
+	width: 366.33px;
+	height: 800px;
+	display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 30px;
+    margin-left: 130px;
+    margin-right: 170px;
+}
+
+.page-content-customer-support-card-content-description-text-header-text {
+	width: 358px;
+	color: var(--customer-support-header-text-color);
+	font-size: 32px;
+	font-family: Roboto;
+	font-weight: 700;
+	line-height: 40px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-support-card-content-description-text-additional-text {
+	width: 335px;
+	color: var(--customer-support-active-button-color);
+	font-size: 16px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 24px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-support-card-content-description-text-learn-more-frame {
+	width: 97px;
+	height: 21px;
+	padding-bottom: 3px;
+	border-bottom: solid 2px var(--customer-support-active-button-color);
+}
+
+.page-content-customer-support-card-content-description-text-learn-more-button {
+	width: 97px;
+	color: var(--customer-support-header-text-color);
+	font-size: 18px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 27px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-support-card-content-description-text-learn-more-button:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.page-content-customer-support-card-content-description-text-squarespace-frame {
+	width: 318px;
+	height: 217px;
+	background: white;
+	border-left: solid 2px var(--customer-support-quote-border-color);
+	margin-top: 34px;
+	margin-left: 40px;
+	padding-left: 30px;
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: flex-start;
+}
+
+.page-content-customer-support-card-content-description-text-squarespace-logo {
+	width: 181px;
+	height: 26px;
+}
+
+.page-content-customer-support-card-content-description-text-squarespace-quote-text {
+	width: 279px;
+	color: var(--customer-support-active-button-color);
+	font-size: 16px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 24px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-support-card-content-description-text-squarespace-quote-author-frame {
+	width: 284.33px;
+	height: 60px;
+	margin-left: 4px;
+	display: flex;
+	flex-direction: column;
+}
+
+.page-content-customer-support-card-content-description-text-squarespace-quote-author-name-text {
+	width: 109px;
+	color: var(--customer-support-active-button-color);
+	font-size: 15px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 24px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-support-card-content-description-text-squarespace-quote-author-title-text {
+	width: 258px;
+	color: var(--customer-support-header-text-color);
+	font-size: 14px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 18px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-support-card-content-description-images-frame {
+	width: 625.08px;
+	height: 775.03px;
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: auto;
+}
+
+.page-content-customer-support-card-content-description-images-support-chat-image {
+	width: 409px;
+	height: 420px;
+	grid-column-start: 1;
+	grid-column-end: 1;
+	grid-row-start: 1;
+	grid-row-end: 1;
+	display: flex;
+	z-index: 2;
+	margin-top: 375px;
+    margin-left: -105px;
+}
+
+.page-content-customer-support-card-content-description-images-support-person-image {
+	width: 533px;
+	height: 673px;
+	grid-column-start: 1;
+	grid-column-end: 1;
+	grid-row-start: 1;
+	grid-row-end: 1;
+	display: flex;
+	z-index: 1;
+}
+
