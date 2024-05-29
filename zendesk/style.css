@@ -14,6 +14,9 @@
   --customer-support-active-button-color: #17494D;
   --customer-support-inactive-button-color: #68737D;
   --customer-support-quote-border-color: #C2C8CC;
+  --customer-experience-box-shadow-color: rgba(104, 115, 125, 0.15);
+  --customer-experience-header-text-color: #03363D;
+  --customer-experience-additional-text-color: #17494D;
 }
 
 
@@ -836,3 +839,104 @@
 	z-index: 1;
 }
 
+.page-content-customer-experience-frame {
+	width: 1440px;
+	height: 640px;
+	background-image: url("assets/customer-experience-background.svg");
+	margin-top: 94px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.page-content-customer-experience-card-content-frame {
+	width: 625px;
+	height: 416px;
+	background: white;
+	box-shadow: 0px 24px 36px var(--customer-experience-box-shadow-color);
+	margin-left: 460px;
+	display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 22px;
+}
+
+.page-content-customer-experience-card-content-header-text {
+	width: 455px;
+	color: var(--customer-experience-header-text-color);
+	font-size: 48px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 56px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-experience-card-content-additional-text {
+	width: 496px;
+	color: var(--customer-experience-additional-text-color);
+	font-size: 15px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-experience-card-content-buttons-frame {
+	width: 513.08px;
+	height: 40px;
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: 36px;
+}
+
+.page-content-customer-experience-card-content-buttons-learn-more-frame {
+	width: 83px;
+	height: 18px;
+	border-bottom: solid 2px var(--customer-experience-additional-text-color);
+	padding-bottom: 6px;
+}
+
+.page-content-customer-experience-card-content-buttons-learn-more-button {
+	width: 83px;
+	color: var(--customer-experience-header-text-color);
+	font-size: 16px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-experience-card-content-buttons-learn-more-button:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.page-content-customer-experience-card-content-buttons-watch-video-frame {
+	width: 93px;
+	height: 18px;
+	border-bottom: solid 2px var(--customer-experience-additional-text-color);
+	padding-bottom: 6px;
+}
+
+.page-content-customer-experience-card-content-buttons-watch-video-button {
+	width: 93px;
+	color: var(--customer-experience-header-text-color);
+	font-size: 16px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-experience-card-content-buttons-watch-video-button:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
