@@ -23,6 +23,9 @@
   --customer-experience-trends-new-experience-border-color: #7D3D54;
   --customer-experience-trends-experience-champions-border-color: #3D8DAE;
   --customer-experience-trends-new-product-border-color: #C38F00;
+  --digital-customer-service-background-color: #D6EEF2;
+  --digital-customer-service-box-shadow-color: rgba(104, 115, 125, 0.15);
+  --digital-customer-service-text-color: #03363D;
 }
 
 
@@ -1104,4 +1107,48 @@
 
 .page-content-customer-experience-trends-new-product-learn-more-button {
 	width: 83px;
+}
+
+.page-content-digital-customer-service-frame {
+	width: 1099px;
+	height: 196px;
+	background: var(--digital-customer-service-background-color);
+	box-shadow: 0px 8px 24px var(--digital-customer-service-box-shadow-color);
+	margin-top: 64px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.page-content-digital-customer-service-card-content-frame {
+	width: 1003px;
+	height: 116.39px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.page-content-digital-customer-service-card-content-text {
+	width: 625px;
+	color: var(--digital-customer-service-text-color);
+	font-size: 32px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 40px;
+	word-wrap: break-word;
+}
+
+.page-content-digital-customer-service-card-content-logo-frame {
+	width: 160px;
+	height: 36px;
+}
+
+.page-content-digital-customer-service-card-content-logo {
+	width: 160.01px;
+	height: 35.99px;
 }
