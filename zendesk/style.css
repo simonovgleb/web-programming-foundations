@@ -29,6 +29,9 @@
   --customer-stories-background-color: #F8F9F9;
   --customer-stories-text-color: #03363D;
   --customer-stories-button-underline-color: #17494D;
+  --customer-experience-links-border-color: #C2C8CC;
+  --customer-experience-links-text-color: #03363D;
+  --customer-experience-links-button-underline-color: #17494D;
 }
 
 
@@ -1360,4 +1363,139 @@
 	margin-top: auto;
 	margin-right: 5px;
 	margin-bottom: 55px;
+}
+
+.page-content-customer-experience-links-frame {
+	width: 1083px;
+	height: 346px;
+	border-top: solid 2px var(--customer-experience-links-border-color);
+	display: flex;
+	align-content: flex-end;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.page-content-customer-experience-links-card-content-frame {
+	width: 1131px;
+	height: 287.50px;
+	display: flex;
+	flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.page-content-customer-experience-links-card-content-header-text {
+	width: 282px;
+	color: var(--customer-experience-links-text-color);
+	font-size: 32px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 40px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-frame {
+	width: 706px;
+	height: 239.50px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	row-gap: 14px;
+    align-content: space-between;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-link-frame {
+	padding-bottom: 6px;
+	border-bottom: solid 2px var(--customer-experience-links-button-underline-color);
+	display: flex;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-complete-guide-frame {
+	width: 316px;
+	height: 48px;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-link-button {
+	color: var(--customer-experience-links-text-color);
+	font-size: 18px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 27px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-link-button:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-complete-guide-button {
+	width: 316px;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-zendesk-update-frame {
+	width: 282px;
+	height: 48px;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-zendesk-update-button {
+	width: 282px;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-customer-service-metrics-frame {
+	width: 332px;
+	height: 21px;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-customer-service-metrics-button {
+	width: 332px;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-customer-service-objectives-frame {
+	width: 281px;
+	height: 48px;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-customer-service-objectives-button {
+	width: 281px;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-machine-learning-frame {
+	width: 342px;
+	height: 48px;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-machine-learning-button {
+	width: 342px;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-remote-workforce-frame {
+	width: 301px;
+	height: 21px;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-remote-workforce-button {
+	width: 301px;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-covid-impact-frame {
+	width: 261px;
+	height: 21px;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-covid-impact-button {
+	width: 261px;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-knowledge-management-frame {
+	width: 322px;
+	height: 48px;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-knowledge-management-button {
+	width: 322px;
 }
