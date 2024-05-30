@@ -41,6 +41,8 @@
   --footer-additional-text-color: #17494D;
   --footer-placeholder-text-color: rgba(104, 115, 125, 0.53);
   --footer-content-separator-color: #C2C8CC;
+  --copyright-text-color: #68737D;
+  --copyright-background-color: #F8F9F9;
 }
 
 
@@ -2114,5 +2116,42 @@
 	font-style: normal;
 	font-weight: 400;
 	line-height: 24px;
+	word-wrap: break-word;
+}
+
+.copyright-frame {
+	width: 1440px;
+	height: 172px;
+	background: var(--copyright-background-color);
+	display: grid;
+	justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.copyright-content-frame {
+	width: 1115px;
+	height: 108px;
+}
+
+.copyright-content-company-info-text {
+	width: 738px;
+	color: var(--copyright-text-color);
+	font-size: 13px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 18px;
+	word-wrap: break-word;
+}
+
+.copyright-content-description-text {
+	width: 1074px;
+	color: var(--copyright-text-color);
+	font-size: 14px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 18px;
 	word-wrap: break-word;
 }
