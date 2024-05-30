@@ -1028,6 +1028,7 @@
 	border-bottom: solid 2px var(--customer-experience-trends-card-description-color);
 	margin-top: auto;
 	margin-bottom: 42px;
+    padding-bottom: 6px;
 }
 
 .page-content-customer-experience-trends-new-customer-experience-read-report-frame {
