@@ -26,6 +26,9 @@
   --digital-customer-service-background-color: #D6EEF2;
   --digital-customer-service-box-shadow-color: rgba(104, 115, 125, 0.15);
   --digital-customer-service-text-color: #03363D;
+  --customer-stories-background-color: #F8F9F9;
+  --customer-stories-text-color: #03363D;
+  --customer-stories-button-underline-color: #17494D;
 }
 
 
@@ -1151,4 +1154,210 @@
 .page-content-digital-customer-service-card-content-logo {
 	width: 160.01px;
 	height: 35.99px;
+}
+
+.page-content-customer-stories-frame {
+	width: 1440px;
+	height: 781px;
+	margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-content-customer-stories-background-frame {
+	width: 1440px;
+	height: 687px;
+	background: var(--customer-stories-background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-content-customer-stories-card-content-frame {
+	width: 1099px;
+	height: 558.70px;
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: space-around;
+}
+
+.page-content-customer-stories-card-content-companies-frame {
+	width: 457.91px;
+	height: 558.70px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.page-content-customer-stories-card-content-companies-header-text {
+	width: 398px;
+	color: var(--customer-stories-text-color);
+	font-size: 47px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 56px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-stories-card-content-companies-additional-text {
+	width: 335px;
+	color: var(--customer-stories-text-color);
+	font-size: 20px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 28px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-stories-card-content-companies-logo-grid-frame {
+	width: 489.91px;
+	height: 156.59px;
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-template-columns: auto auto auto;
+	justify-content: start;
+    align-items: center;
+    justify-items: start;
+    column-gap: 45px;
+}
+
+.page-content-customer-stories-card-content-companies-logo-grid-mailchimp {
+	width: 115px;
+	height: 33px;
+	display: flex;
+	grid-row-start: 1;
+	grid-row-end: 1;
+	grid-column-start: 1;
+	grid-column-end: 1;
+}
+
+.page-content-customer-stories-card-content-companies-logo-grid-tesco {
+	width: 91px;
+	height: 25px;
+	display: flex;
+	grid-row-start: 2;
+	grid-row-end: 2;
+	grid-column-start: 1;
+	grid-column-end: 1;
+}
+
+.page-content-customer-stories-card-content-companies-logo-grid-siemens {
+	width: 106px;
+	height: 17px;
+	display: flex;
+	grid-row-start: 1;
+	grid-row-end: 1;
+	grid-column-start: 2;
+	grid-column-end: 2;
+}
+
+.page-content-customer-stories-card-content-companies-logo-grid-khan-academy {
+	width: 115px;
+	height: 19px;
+	display: flex;
+	grid-row-start: 2;
+	grid-row-end: 2;
+	grid-column-start: 2;
+	grid-column-end: 2;
+}
+
+.page-content-customer-stories-card-content-companies-logo-grid-snanleyblack-decker {
+	width: 115px;
+	height: 18px;
+	display: flex;
+	grid-row-start: 1;
+	grid-row-end: 1;
+	grid-column-start: 3;
+	grid-column-end: 3;
+}
+
+.page-content-customer-stories-card-content-companies-logo-grid-uber {
+	width: 80px;
+	height: 28px;
+	display: flex;
+	grid-row-start: 2;
+	grid-row-end: 2;
+	grid-column-start: 3;
+	grid-column-end: 3;
+}
+
+.page-content-customer-stories-card-content-companies-action-button-frame {
+	width: 202px;
+	height: 21px;
+	border-bottom: solid 2px var(--customer-stories-button-underline-color);
+	padding-bottom: 6px;
+}
+
+.page-content-customer-stories-card-content-companies-action-button {
+	width: 202px;
+	color: var(--customer-stories-text-color);
+	font-size: 18px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 27px;
+	word-wrap: break-word;
+}
+
+.page-content-customer-stories-card-content-companies-action-button:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.page-content-customer-stories-card-content-images-frame {
+	width: 533.50px;
+	height: 638.70px;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+}
+
+.page-content-customer-stories-card-content-images-customer-image-top-right {
+	width: 159px;
+	height: 206px;
+	z-index: 3;
+	display: flex;
+	grid-row-start: 1;
+	grid-row-end: 1;
+	grid-column-start: 1;
+	grid-column-end: 1;
+	margin-left: auto;
+	margin-right: 57px;
+	margin-top: 23px;
+}
+
+.page-content-customer-stories-card-content-images-customer-image-middle-left {
+	width: 317px;
+	height: 411px;
+	z-index: 2;
+	display: flex;
+	grid-row-start: 1;
+	grid-row-end: 1;
+	grid-column-start: 1;
+	grid-column-end: 1;
+	margin-left: 35px;
+	margin-top: 83px;
+}
+
+.page-content-customer-stories-card-content-images-customer-image-bottom-right {
+	width: 263px;
+	height: 342px;
+	z-index: 1;
+	display: flex;
+	grid-row-start: 1;
+	grid-row-end: 1;
+	grid-column-start: 1;
+	grid-column-end: 1;
+	margin-left: auto;
+	margin-top: auto;
+	margin-right: 5px;
+	margin-bottom: 55px;
 }
