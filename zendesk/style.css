@@ -1851,3 +1851,151 @@ body {
 		padding-block: 0;
 	}
 }
+
+@media (min-width: 320px) and (max-width: 767px) {
+	html {
+		font-size: 5px;
+	}
+
+	.desktop-body {
+		height: 360rem;
+	}
+
+	.desktop-body * > img {
+		transform: scale(0.5);
+	}
+
+	.page-content-frame {
+		height: 300rem;
+	}
+
+	.page-content-customer-experience-frame {
+		background-image: url("assets/customer-experience-background-mobile.svg");
+		height: 28rem;
+		margin-top: 0;
+	}
+
+	.page-content-customer-experience-card-content-header-text {
+		width: 20rem;
+	}
+
+	.page-content-customer-experience-card-content-additional-text {
+		width: 25rem;
+	}
+
+	.header-frame {
+		grid-template-columns: 1px calc(100% - 2px) 1px;
+	}
+
+	.header-logo-group > img {
+		transform: scale(0.25);
+	}
+
+	.header-menu-frame {
+		column-gap: 0.5rem;
+		align-content: center;
+	}
+
+	.header-menu-simple-button {
+		margin-right: 2rem;
+	}
+
+	.header-toplinks-frame {
+		margin-right: 3rem;
+	}
+
+	.page-content-customer-service-frame {
+		grid-template-columns: 1px calc(100% - 2px) 1px;
+	}
+
+	.page-content-customer-service-inner-frame {
+		column-gap: 7rem;
+	}
+
+	.page-content-messaging-description-frame {
+		column-gap: 0;
+	}
+
+	.page-content-customer-support-frame {
+		height: 62.5rem;
+	}
+
+	.page-content-customer-support-wrapper {
+		height: 100%;
+	}
+
+	.page-content-customer-support-card-content-description-text-frame {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.page-content-customer-support-card-content-description-images-support-chat-image {
+		margin-top: 10rem;
+	}
+
+	.page-content-customer-support-card-content-description-images-support-person-image {
+		margin-bottom: auto;
+        margin-top: -8rem;
+	}
+
+	.page-content-customer-experience-trends-frame {
+		grid-template-columns: 1px calc(100% - 2px) 1px;
+	}
+
+	.page-content-customer-stories-card-content-images-customer-image-middle-left {
+		margin-left: -10.5rem;
+	}
+
+	.page-content-customer-experience-links-frame {
+		grid-template-columns: 3px calc(100% - 3px) 0;
+		height: 30rem;
+	}
+
+	.page-content-customer-experience-links-card-content-links-grid-frame {
+		column-gap: 0.5rem;
+	}
+
+	.page-content-customer-experience-links-card-content-links-grid-link-frame {
+    	width: 20rem;
+	}
+
+	.footer-frame {
+		grid-template-columns: 1px calc(100% - 2px) 1px;
+	}
+
+	.page-content-free-trials-frame {
+		grid-template-columns: 5px calc(100% - 10px) 5px;
+	}
+
+	.footer-content-subscribe-content-email-box-input {
+		padding-inline: 0;
+		padding-block: 0;
+	}
+
+	.footer-content-navigation-links-logo-frame {
+    	height: 3.5rem;
+	}
+
+	.footer-content-navigation-links-logo {
+    	height: 3.5rem;
+        padding-left: 4rem;
+	}
+
+	.footer-content-navigation-links-columns-frame {
+		justify-content: center;
+    	column-gap: 1rem;
+	}
+
+	.footer-content-navigation-links-columns-header-text {
+		margin-right: 0;
+	}
+
+	.copyright-frame {
+		grid-template-columns: 1px calc(100% - 2px) 1px;
+	}
+
+	.copyright-content-description-text {
+		width: 60rem;
+	}
+
+}
