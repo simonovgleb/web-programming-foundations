@@ -1528,6 +1528,7 @@ body {
 }
 
 .footer-content-navigation-links-columns-header-text {
+	width: 7.9375rem;
 	color: var(--footer-header-text-color);
 	font-size: 1.4375rem;
 	font-family: Roboto;
@@ -1800,4 +1801,53 @@ body {
 	font-weight: 400;
 	line-height: 1.125rem;
 	word-wrap: break-word;
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+	html {
+		font-size: 10px;
+	}
+
+	.desktop-body * > img {
+		transform: scale(0.7);
+	}
+
+	.header-frame {
+		grid-template-columns: 5% 90% 5%;
+	}
+
+	.header-menu-frame {
+		column-gap: 6rem;
+		align-content: center;
+	}
+
+	.page-content-customer-service-frame {
+		grid-template-columns: 5% 90% 5%;
+	}
+
+	.page-content-customer-experience-trends-frame {
+		grid-template-columns: 5% 90% 5%;
+	}
+
+	.page-content-customer-experience-frame {
+		background-image: url("assets/customer-experience-background-tablet.svg");
+		height: 34rem;
+	}
+
+	.page-content-customer-stories-card-content-images-customer-image-middle-left {
+		margin-left: -10.5rem;
+	}
+
+	.page-content-customer-experience-links-frame {
+		grid-template-columns: 5% 90% 5%;
+	}
+
+	.page-content-free-trials-frame {
+		grid-template-columns: 15% 70% 15%;
+	}
+
+	.footer-content-subscribe-content-email-box-input {
+		padding-inline: 0;
+		padding-block: 0;
+	}
 }
