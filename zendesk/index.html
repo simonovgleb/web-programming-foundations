@@ -8,12 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
   </head>
-  <body>
-    <div class="desktop-body">
+  <body id="body">
+    <div id="desktop-body" class="desktop-body">
       <div class="header-frame">
         <div class="header-wrapper">
-          <div class="header-toplinks-frame">
+          <div id="header-toplinks-frame" class="header-toplinks-frame">
             <div class="header-toplinks-buttons">
               <div class="header-toplinks-simple-button header-toplinks-sign-in">Sign in</div>
               <div class="header-toplinks-simple-button header-toplinks-product-support">Product Support</div>
@@ -22,26 +24,82 @@
             </div>
             <div class="header-toplinks-simple-button header-toplinks-language">English</div>
           </div>
-          <div class="header-menu-frame">
-            <div class="header-logo-group">
+          <div id="header-menu-frame" class="header-menu-frame">
+            <div id="header-logo-group" class="header-logo-group">
               <img alt="logo" src="./assets/zendesk-logo.svg">
             </div>
-            <div class="header-menu-buttons-frame">
-              <div class="header-menu-simple-button header-menu-products">Products</div>
-              <div class="header-menu-simple-button header-menu-pricing">Pricing</div>
-              <div class="header-menu-simple-button header-menu-solutions">Solutions</div>
-              <div class="header-menu-simple-button header-menu-demo">Demo</div>
-              <div class="header-menu-simple-button header-menu-services">Services</div>
-              <div class="header-menu-simple-button header-menu-resources">Resources</div>
-              <div class="header-menu-get-started-frame">
+            <div id="header-menu-buttons-frame" class="header-menu-buttons-frame">
+              <div class="header-menu-wrapper">
+                <div id="header-menu-products" class="header-menu-simple-button header-menu-products">Products</div>
+                <div id="header-menu-products-menu-items-frame" class="header-menu-items-frame">
+                  <div id="header-menu-products-messaging" class="header-menu-item">Messaging and Live Chat</div>
+                  <div id="header-menu-products-privacy" class="header-menu-item">Data Privacy and Protection</div>
+                  <div id="header-menu-products-help" class="header-menu-item">Help Center</div>
+                </div>
+              </div>
+              <div class="header-menu-wrapper">
+                <div id="header-menu-pricing" class="header-menu-simple-button header-menu-pricing">Pricing</div>
+                <div id="header-menu-pricing-menu-items-frame" class="header-menu-items-frame">
+                  <div id="header-menu-pricing-service" class="header-menu-item">For Service</div>
+                  <div id="header-menu-pricing-sales" class="header-menu-item">For Sales</div>
+                </div>
+              </div>
+              <div class="header-menu-wrapper">
+                <div id="header-menu-solutions" class="header-menu-simple-button header-menu-solutions">Solutions</div>
+                <div id="header-menu-solutions-menu-items-frame" class="header-menu-items-frame">
+                  <div id="header-menu-solutions-enterprise" class="header-menu-item">Enterprise</div>
+                  <div id="header-menu-solutions-industries" class="header-menu-item">Industries</div>
+                </div>
+              </div>
+              <div class="header-menu-wrapper">
+                <div id="header-menu-demo" class="header-menu-simple-button header-menu-demo">Demo</div>
+                <div id="header-menu-demo-menu-items-frame" class="header-menu-items-frame">
+                  <div id="header-menu-demo-demo" class="header-menu-item">Watch Demo</div>
+                  <div id="header-menu-demo-trial" class="header-menu-item">Start Trial</div>
+                </div>
+              </div>
+              <div class="header-menu-wrapper">
+                <div id="header-menu-services" class="header-menu-simple-button header-menu-services">Services</div>
+                <div id="header-menu-services-menu-items-frame" class="header-menu-items-frame">
+                  <div id="header-menu-services-ticketing" class="header-menu-item">Ticketing System</div>
+                  <div id="header-menu-services-forum" class="header-menu-item">Forum Software</div>
+                </div>
+              </div>
+              <div class="header-menu-wrapper">
+                <div id="header-menu-resources" class="header-menu-simple-button header-menu-resources">Resources</div>
+                <div id="header-menu-resources-menu-items-frame" class="header-menu-items-frame">
+                  <div id="header-menu-resources-blog" class="header-menu-item">Blog</div>
+                  <div id="header-menu-cx-trends" class="header-menu-item">Customer Experience Trends</div>
+                </div>
+              </div>
+              <div id="header-menu-get-started" class="header-menu-get-started-frame">
                 <div class="header-menu-get-started-button">Get started</div>
               </div>
+            </div>
+            <div id="header-menu-burger-frame" class="header-menu-burger-frame burger">
+              <img class="burger" src="./assets/burger-menu.svg" alt="burger menu">
             </div>
           </div>
         </div>
       </div>
-      <div class="page-content-frame">
-        <div class="page-content-customer-service-frame">
+      <aside id="burger-menu-frame" class="burger-menu-frame burger">
+        <div class="burger-menu-wrapper burger">
+          <div id="burger-menu-products" class="header-menu-simple-button header-menu-products burger">Products</div>
+          <div id="burger-menu-pricing" class="header-menu-simple-button header-menu-pricing burger">Pricing</div>
+          <div id="burger-menu-solutions" class="header-menu-simple-button header-menu-solutions burger">Solutions</div>
+          <div id="burger-menu-demo" class="header-menu-simple-button header-menu-demo burger">Demo</div>
+          <div id="burger-menu-services" class="header-menu-simple-button header-menu-services burger">Services</div>
+          <div id="burger-menu-resources" class="header-menu-simple-button header-menu-resources burger">Resources</div>
+        </div>
+      </aside>
+      <div id="page-content-frame" class="page-content-frame">
+        <div class="page-content-background-sound-frame">
+          <audio id="page-content-background-sound-audio">
+            <source src="./assets/audio/ambient.mp3" type="audio/mpeg">
+          </audio>
+          <div id="page-content-background-sound-control-button" class="page-content-background-sound-control-button">Play/Pause</div>
+        </div>
+        <div class="page-content-customer-service-frame js-scroll">
           <div class="page-content-customer-service-inner-frame">
             <div class="page-content-customer-service-text-frame">
               <div class="page-content-customer-service-text-champions">Champions</div>
@@ -69,7 +127,7 @@
           </div>
           <img class="page-content-customer-service-super-new" alt="super new" src="./assets/super-new.svg">
         </div>
-        <div class="page-content-messaging-frame">
+        <div class="page-content-messaging-frame js-scroll">
           <div class="page-content-messaging-wrapper">
             <img class="page-content-messaging-image" alt="messaging image" src="./assets/messaging-image.svg">
             <div class="page-content-messaging-description-frame">
@@ -89,7 +147,7 @@
             </div>
           </div>
         </div>
-        <div class="page-content-customer-support-frame">
+        <div id="page-content-customer-support-frame" class="page-content-customer-support-frame js-scroll">
           <div class="page-content-customer-support-wrapper">
             <div class="page-content-customer-support-header-text-frame">
               <div class="page-content-customer-support-header-text">Where good conversations become great experiences</div>
@@ -124,7 +182,7 @@
             </div>
           </div>
         </div>
-        <div class="page-content-customer-experience-frame">
+        <div id="page-content-customer-experience-frame" class="page-content-customer-experience-frame js-scroll">
           <div class="page-content-customer-experience-card-content-frame">
             <div class="page-content-customer-experience-card-content-header-text">Customize your customer experience</div>
             <div class="page-content-customer-experience-card-content-additional-text">Glowing just under the surface of Zendesk is a powerful force that lets you connect and understand all of your customer data. Plus, it’s flexible and customizable, so you can adapt to anything thrown your way. Zendesk Sunshine isn’t faster than a speeding bullet, but it’s close.</div>
@@ -138,9 +196,18 @@
             </div>
           </div>
         </div>
-        <div class="page-content-customer-experience-trends-frame">
+        <div id="page-content-customer-experience-trends-frame" class="page-content-customer-experience-trends-frame js-scroll">
+          <audio id="page-content-customer-experience-trends-audio-1">
+            <source src="./assets/audio/button-1.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="page-content-customer-experience-trends-audio-2">
+            <source src="./assets/audio/button-2.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="page-content-customer-experience-trends-audio-3">
+            <source src="./assets/audio/button-3.mp3" type="audio/mpeg">
+          </audio>
           <div class="page-content-customer-experience-trends-wrapper">
-            <div class="page-content-customer-experience-trends-new-customer-experience-frame page-content-customer-experience-trends-card-frame">
+            <div id="page-content-customer-experience-trends-new-customer-experience-frame" class="page-content-customer-experience-trends-new-customer-experience-frame page-content-customer-experience-trends-card-frame">
               <div class="page-content-customer-experience-trends-new-customer-experience-card-name page-content-customer-experience-trends-card-name">CX Trends 2021</div>
               <div class="page-content-customer-experience-trends-new-customer-experience-card-header page-content-customer-experience-trends-card-header">New world, new CX</div>
               <div class="page-content-customer-experience-trends-new-customer-experience-card-description page-content-customer-experience-trends-card-description">Last year, customer needs changed in a blink. Learn how your team can keep up.</div>
@@ -148,7 +215,7 @@
                 <div class="page-content-customer-experience-trends-new-customer-experience-read-report-button page-content-customer-experience-trends-action-button">Read report</div>
               </div>
             </div>
-            <div class="page-content-customer-experience-trends-card-frame page-content-customer-experience-trends-customer-experience-champions-frame">
+            <div id="page-content-customer-experience-trends-customer-experience-champions-frame" class="page-content-customer-experience-trends-card-frame page-content-customer-experience-trends-customer-experience-champions-frame">
               <div class="page-content-customer-experience-trends-customer-experience-champions-card-name page-content-customer-experience-trends-card-name">CX Champions</div>
               <div class="page-content-customer-experience-trends-customer-experience-champions-card-header page-content-customer-experience-trends-card-header">Speed + quality = agility</div>
               <div class="page-content-customer-experience-trends-customer-experience-champions-card-description page-content-customer-experience-trends-card-description">How leading CX orgs support customer-centric processes and drive business agility.</div>
@@ -156,7 +223,7 @@
                 <div class="page-content-customer-experience-trends-customer-experience-champions-read-more-button page-content-customer-experience-trends-action-button">Read more</div>
               </div>
             </div>
-            <div class="page-content-customer-experience-trends-card-frame page-content-customer-experience-trends-new-product-frame">
+            <div id="page-content-customer-experience-trends-new-product-frame" class="page-content-customer-experience-trends-card-frame page-content-customer-experience-trends-new-product-frame">
               <div class="page-content-customer-experience-trends-card-name page-content-customer-experience-trends-new-product-card-name">New product offering</div>
               <div class="page-content-customer-experience-trends-card-header page-content-customer-experience-trends-new-product-card-header">Introducing the Zendesk Suite</div>
               <div class="page-content-customer-experience-trends-new-product-card-description page-content-customer-experience-trends-card-description">Our new all-in-one customer service solution is easy to use, convenient for customers, and scales with your business.</div>
@@ -166,7 +233,7 @@
             </div>
           </div>
         </div>
-        <div class="page-content-digital-customer-service-frame">
+        <div id="page-content-digital-customer-service-frame" class="page-content-digital-customer-service-frame js-scroll">
           <div class="page-content-digital-customer-service-card-content-frame">
             <div class="page-content-digital-customer-service-card-content-text">#1 in Digital Customer Service use case by</div>
             <div class="page-content-digital-customer-service-card-content-logo-frame">
@@ -174,7 +241,7 @@
             </div>
           </div>
         </div>
-        <div class="page-content-customer-stories-frame">
+        <div id="page-content-customer-stories-frame" class="page-content-customer-stories-frame js-scroll">
           <div class="page-content-customer-stories-background-frame">
             <div class="page-content-customer-stories-card-content-frame">
               <div class="page-content-customer-stories-card-content-companies-frame">
@@ -212,7 +279,7 @@
             </div>
           </div>
         </div>
-        <div class="page-content-customer-experience-links-frame">
+        <div id="page-content-customer-experience-links-frame" class="page-content-customer-experience-links-frame js-scroll">
           <div class="page-content-customer-experience-links-wrapper">
             <div class="page-content-customer-experience-links-card-content-frame">
               <div class="page-content-customer-experience-links-card-content-header-text">There’s more where that came from</div>
@@ -245,7 +312,7 @@
             </div>
           </div>
         </div>
-        <div class="page-content-free-trials-frame">
+        <div id="page-content-free-trials-frame" class="page-content-free-trials-frame js-scroll">
           <div class="page-content-free-trials-card-content-frame">
             <div class="page-content-free-trials-card-content-header-text">Champions of awesome free trials</div>
             <div class="page-content-free-trials-card-content-buttons-frame">
@@ -258,8 +325,39 @@
             </div>
           </div>
         </div>
+        <div class="slider-frame js-scroll">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img alt="zendesk slide 1" src="./assets/zendesk-slide-1.jpg">
+              </div>
+              <div class="swiper-slide">
+                <img alt="zendesk slide 2" src="./assets/zendesk-slide-2.jpg">
+              </div>
+              <div class="swiper-slide">
+                <img alt="zendesk slide 3" src="./assets/zendesk-slide-3.jpg">
+              </div>
+              <div class="swiper-slide">
+                <img alt="zendesk slide 4" src="./assets/zendesk-slide-4.jpg">
+              </div>
+              <div class="swiper-slide">
+                <img alt="zendesk slide 5" src="./assets/zendesk-slide-5.jpg">
+              </div>
+              <div class="swiper-slide">
+                <img alt="zendesk slide 6" src="./assets/zendesk-slide-6.jpg">
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div class="page-content-map-frame js-scroll">
+          <div class="page-content-map-header">Find Us On The Map</div>
+          <div id="page-content-map" class="page-content-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4565.15080674015!2d19.929182137569207!3d50.04687845900588!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b1dc8efe8d5%3A0xc9ca2132fbec0dba!2sZendesk!5e0!3m2!1sen!2sby!4v1717702350385!5m2!1sen!2sby" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
       </div>
-      <div class="footer-frame">
+      <div id="footer-frame" class="footer-frame">
         <div class="footer-content-frame">
           <div class="footer-content-navigation-links-frame">
             <div class="footer-content-navigation-links-logo-frame">
@@ -357,7 +455,7 @@
               </div>
             </div>
           </div>
-          <div class="footer-content-policies-navigation-frame">
+          <div id="footer-content-policies-navigation-frame" class="footer-content-policies-navigation-frame">
             <div class="footer-content-policies-navigation-button footer-content-policies-navigation-terms-button">Terms of Use</div>
             <div class="footer-content-policies-navigation-button footer-content-policies-navigation-privacy-button">Privacy Policy</div>
             <div class="footer-content-policies-navigation-button footer-content-policies-navigation-cookie-button">Cookie Policy</div>
@@ -365,13 +463,20 @@
           </div>
         </div>
       </div>
-      <div class="copyright-frame">
+      <div id="copyright-frame" class="copyright-frame">
         <div class="copyright-content-frame">
           <div class="copyright-content-company-info-text">Gartner, Critical Capabilities for the CRM Customer Engagement Center, 8 June 2020, Nadine LeBlanc, Brian Manusama</div>
           <div class="copyright-content-description-text">Gartner does not endorse any vendor, product or service depicted in its research publications and does not advise technology users to select only those vendors with the highest ratings or other designations. Gartner research publications consist of the opinions of Gartner's Research & Advisory organization and should not be construed as statements of fact. Gartner disclaims all warranties, expressed or implied, with respect to this research, including any warranties of merchantability or fitness for particular purpose. GARTNER is a registered trademark and service mark of Gartner, Inc. and/or its affiliates in the U.S. and internationally and is used herein with permissions. All rights reserved.</div>
         </div>
       </div>
     </div>
+
+    <script type="text/javascript" src="./js/burger-menu.js"></script>
+    <script type="text/javascript" src="./js/header-menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="./js/slider.js"></script>
+    <script type="text/javascript" src="./js/audio.js"></script>
+    <script type="text/javascript" src="./js/scroll.js"></script>
   </body>
 </html>
 
