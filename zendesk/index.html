@@ -92,6 +92,12 @@
         </div>
       </aside>
       <div id="page-content-frame" class="page-content-frame">
+        <div class="page-content-background-sound-frame">
+          <audio id="page-content-background-sound-audio">
+            <source src="./assets/audio/ambient.mp3" type="audio/mpeg">
+          </audio>
+          <div id="page-content-background-sound-control-button" class="page-content-background-sound-control-button">Play/Pause</div>
+        </div>
         <div class="page-content-customer-service-frame">
           <div class="page-content-customer-service-inner-frame">
             <div class="page-content-customer-service-text-frame">
@@ -190,8 +196,17 @@
           </div>
         </div>
         <div id="page-content-customer-experience-trends-frame" class="page-content-customer-experience-trends-frame">
+          <audio id="page-content-customer-experience-trends-audio-1">
+            <source src="./assets/audio/button-1.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="page-content-customer-experience-trends-audio-2">
+            <source src="./assets/audio/button-2.mp3" type="audio/mpeg">
+          </audio>
+          <audio id="page-content-customer-experience-trends-audio-3">
+            <source src="./assets/audio/button-3.mp3" type="audio/mpeg">
+          </audio>
           <div class="page-content-customer-experience-trends-wrapper">
-            <div class="page-content-customer-experience-trends-new-customer-experience-frame page-content-customer-experience-trends-card-frame">
+            <div id="page-content-customer-experience-trends-new-customer-experience-frame" class="page-content-customer-experience-trends-new-customer-experience-frame page-content-customer-experience-trends-card-frame">
               <div class="page-content-customer-experience-trends-new-customer-experience-card-name page-content-customer-experience-trends-card-name">CX Trends 2021</div>
               <div class="page-content-customer-experience-trends-new-customer-experience-card-header page-content-customer-experience-trends-card-header">New world, new CX</div>
               <div class="page-content-customer-experience-trends-new-customer-experience-card-description page-content-customer-experience-trends-card-description">Last year, customer needs changed in a blink. Learn how your team can keep up.</div>
@@ -199,7 +214,7 @@
                 <div class="page-content-customer-experience-trends-new-customer-experience-read-report-button page-content-customer-experience-trends-action-button">Read report</div>
               </div>
             </div>
-            <div class="page-content-customer-experience-trends-card-frame page-content-customer-experience-trends-customer-experience-champions-frame">
+            <div id="page-content-customer-experience-trends-customer-experience-champions-frame" class="page-content-customer-experience-trends-card-frame page-content-customer-experience-trends-customer-experience-champions-frame">
               <div class="page-content-customer-experience-trends-customer-experience-champions-card-name page-content-customer-experience-trends-card-name">CX Champions</div>
               <div class="page-content-customer-experience-trends-customer-experience-champions-card-header page-content-customer-experience-trends-card-header">Speed + quality = agility</div>
               <div class="page-content-customer-experience-trends-customer-experience-champions-card-description page-content-customer-experience-trends-card-description">How leading CX orgs support customer-centric processes and drive business agility.</div>
@@ -207,7 +222,7 @@
                 <div class="page-content-customer-experience-trends-customer-experience-champions-read-more-button page-content-customer-experience-trends-action-button">Read more</div>
               </div>
             </div>
-            <div class="page-content-customer-experience-trends-card-frame page-content-customer-experience-trends-new-product-frame">
+            <div id="page-content-customer-experience-trends-new-product-frame" class="page-content-customer-experience-trends-card-frame page-content-customer-experience-trends-new-product-frame">
               <div class="page-content-customer-experience-trends-card-name page-content-customer-experience-trends-new-product-card-name">New product offering</div>
               <div class="page-content-customer-experience-trends-card-header page-content-customer-experience-trends-new-product-card-header">Introducing the Zendesk Suite</div>
               <div class="page-content-customer-experience-trends-new-product-card-description page-content-customer-experience-trends-card-description">Our new all-in-one customer service solution is easy to use, convenient for customers, and scales with your business.</div>
@@ -459,6 +474,7 @@
     <script type="text/javascript" src="./js/header-menu.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="./js/slider.js"></script>
+    <script type="text/javascript" src="./js/audio.js"></script>
   </body>
 </html>
 

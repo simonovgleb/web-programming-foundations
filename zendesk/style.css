@@ -328,7 +328,7 @@ body {
 
 .page-content-frame {
 	width: 100%;
-	height: 375rem;
+	height: 390rem;
 	grid-row: 2 / 2;
 	grid-column: 1 / 1;
 	display: flex;
@@ -389,6 +389,31 @@ body {
 
 .burger-menu-wrapper > .header-menu-simple-button {
 	margin-right: 0;
+}
+
+.page-content-background-sound-frame {
+	width: 100%;
+	height: 7rem;
+	background: var(--page-content-background-color);
+	display: flex;
+	justify-content: flex-end;
+}
+
+.page-content-background-sound-control-button {
+	padding-top: 4rem;
+	padding-right: 2rem;
+	color: var(--customer-service-text-champions-color);
+	font-size: 2rem;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 2.5rem;
+	word-wrap: break-word;
+}
+
+.page-content-background-sound-control-button:hover {
+	cursor: pointer;
+	text-decoration: underline;
 }
 
 .page-content-customer-service-frame {
@@ -1171,6 +1196,10 @@ body {
     animation: cx-trends-card-frame-border 5s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
+}
+
+.page-content-customer-experience-trends-card-frame:hover {
+	cursor: pointer;
 }
 
 @keyframes cx-trends-card-frame-border {
@@ -2188,7 +2217,7 @@ body {
 	}
 
 	.page-content-frame {
-		height: 430rem;
+		height: 450rem;
 	}
 
 	.page-content-customer-experience-frame {
