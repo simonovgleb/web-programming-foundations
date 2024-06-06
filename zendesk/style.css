@@ -175,6 +175,47 @@ body {
 	font-size: 0.9375rem;
 }
 
+.header-menu-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.header-menu-items-frame {
+	display: none;
+}
+
+.header-menu-items-frame-open {
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0px 8px 16px 0px var(--header-shadow-color);
+	background: white;
+	position: absolute;
+	margin-top: 1.5rem;
+	padding: 0.5rem;
+	flex-wrap: wrap;
+    align-content: flex-start;
+	justify-content: space-evenly;
+    align-items: flex-start;
+    row-gap: 0.5rem;
+}
+
+.header-menu-item {
+	text-align: center;
+	color: var(--header-menu-button-color);
+	font-size: 0.75rem;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1rem;
+	word-wrap: break-word;
+	position: relative;
+}
+
+.header-menu-item:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
 .header-menu-get-started-frame {
 	height: 2.875rem;
 	background: var(--header-toplinks-button-color);
@@ -1614,7 +1655,7 @@ body {
 }
 
 .page-content-free-trials-card-content-frame {
-	height: 10.75rem;
+	height: 11.75rem;
 	grid-column: 2 / 2;
 	display: flex;
 	flex-direction: column;

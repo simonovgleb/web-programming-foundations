@@ -27,13 +27,50 @@
               <img alt="logo" src="./assets/zendesk-logo.svg">
             </div>
             <div id="header-menu-buttons-frame" class="header-menu-buttons-frame">
-              <div class="header-menu-simple-button header-menu-products">Products</div>
-              <div class="header-menu-simple-button header-menu-pricing">Pricing</div>
-              <div class="header-menu-simple-button header-menu-solutions">Solutions</div>
-              <div class="header-menu-simple-button header-menu-demo">Demo</div>
-              <div class="header-menu-simple-button header-menu-services">Services</div>
-              <div class="header-menu-simple-button header-menu-resources">Resources</div>
-              <div class="header-menu-get-started-frame">
+              <div class="header-menu-wrapper">
+                <div id="header-menu-products" class="header-menu-simple-button header-menu-products">Products</div>
+                <div id="header-menu-products-menu-items-frame" class="header-menu-items-frame">
+                  <div id="header-menu-products-messaging" class="header-menu-item">Messaging and Live Chat</div>
+                  <div id="header-menu-products-privacy" class="header-menu-item">Data Privacy and Protection</div>
+                  <div id="header-menu-products-help" class="header-menu-item">Help Center</div>
+                </div>
+              </div>
+              <div class="header-menu-wrapper">
+                <div id="header-menu-pricing" class="header-menu-simple-button header-menu-pricing">Pricing</div>
+                <div id="header-menu-pricing-menu-items-frame" class="header-menu-items-frame">
+                  <div id="header-menu-pricing-service" class="header-menu-item">For Service</div>
+                  <div id="header-menu-pricing-sales" class="header-menu-item">For Sales</div>
+                </div>
+              </div>
+              <div class="header-menu-wrapper">
+                <div id="header-menu-solutions" class="header-menu-simple-button header-menu-solutions">Solutions</div>
+                <div id="header-menu-solutions-menu-items-frame" class="header-menu-items-frame">
+                  <div id="header-menu-solutions-enterprise" class="header-menu-item">Enterprise</div>
+                  <div id="header-menu-solutions-industries" class="header-menu-item">Industries</div>
+                </div>
+              </div>
+              <div class="header-menu-wrapper">
+                <div id="header-menu-demo" class="header-menu-simple-button header-menu-demo">Demo</div>
+                <div id="header-menu-demo-menu-items-frame" class="header-menu-items-frame">
+                  <div id="header-menu-demo-demo" class="header-menu-item">Watch Demo</div>
+                  <div id="header-menu-demo-trial" class="header-menu-item">Start Trial</div>
+                </div>
+              </div>
+              <div class="header-menu-wrapper">
+                <div id="header-menu-services" class="header-menu-simple-button header-menu-services">Services</div>
+                <div id="header-menu-services-menu-items-frame" class="header-menu-items-frame">
+                  <div id="header-menu-services-ticketing" class="header-menu-item">Ticketing System</div>
+                  <div id="header-menu-services-forum" class="header-menu-item">Forum Software</div>
+                </div>
+              </div>
+              <div class="header-menu-wrapper">
+                <div id="header-menu-resources" class="header-menu-simple-button header-menu-resources">Resources</div>
+                <div id="header-menu-resources-menu-items-frame" class="header-menu-items-frame">
+                  <div id="header-menu-resources-blog" class="header-menu-item">Blog</div>
+                  <div id="header-menu-cx-trends" class="header-menu-item">Customer Experience Trends</div>
+                </div>
+              </div>
+              <div id="header-menu-get-started" class="header-menu-get-started-frame">
                 <div class="header-menu-get-started-button">Get started</div>
               </div>
             </div>
@@ -137,7 +174,7 @@
             </div>
           </div>
         </div>
-        <div class="page-content-customer-experience-frame">
+        <div id="page-content-customer-experience-frame" class="page-content-customer-experience-frame">
           <div class="page-content-customer-experience-card-content-frame">
             <div class="page-content-customer-experience-card-content-header-text">Customize your customer experience</div>
             <div class="page-content-customer-experience-card-content-additional-text">Glowing just under the surface of Zendesk is a powerful force that lets you connect and understand all of your customer data. Plus, it’s flexible and customizable, so you can adapt to anything thrown your way. Zendesk Sunshine isn’t faster than a speeding bullet, but it’s close.</div>
@@ -179,7 +216,7 @@
             </div>
           </div>
         </div>
-        <div class="page-content-digital-customer-service-frame">
+        <div id="page-content-digital-customer-service-frame" class="page-content-digital-customer-service-frame">
           <div class="page-content-digital-customer-service-card-content-frame">
             <div class="page-content-digital-customer-service-card-content-text">#1 in Digital Customer Service use case by</div>
             <div class="page-content-digital-customer-service-card-content-logo-frame">
@@ -370,7 +407,7 @@
               </div>
             </div>
           </div>
-          <div class="footer-content-policies-navigation-frame">
+          <div id="footer-content-policies-navigation-frame" class="footer-content-policies-navigation-frame">
             <div class="footer-content-policies-navigation-button footer-content-policies-navigation-terms-button">Terms of Use</div>
             <div class="footer-content-policies-navigation-button footer-content-policies-navigation-privacy-button">Privacy Policy</div>
             <div class="footer-content-policies-navigation-button footer-content-policies-navigation-cookie-button">Cookie Policy</div>
@@ -387,6 +424,7 @@
     </div>
 
     <script type="text/javascript" src="./js/burger-menu.js"></script>
+    <script type="text/javascript" src="./js/header-menu.js"></script>
   </body>
 </html>
 
