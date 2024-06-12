@@ -13,11 +13,80 @@
   </head>
   <body id="body">
     <div id="desktop-body" class="desktop-body">
+      <div id="sign-up-form-frame" class="sign-up-form-frame">
+         <div class="sign-up-form-content-frame">
+           <span id="sign-up-form-close-button" class="sign-up-form-close-button">&times;</span>
+           <form action="javascript:handleSignUpForm()" id="sign-up-form-inputs-frame" class="sign-up-form-inputs-frame" novalidate>
+             <div class="sign-up-form-inputs-header-text">Sign Up</div>
+             <div class="sign-up-form-inputs-frame">
+                <label for="sign-up-form-inputs-phone-number-input" class="sign-up-form-inputs-label">Phone Number *</label>
+                <div id="sign-up-form-inputs-phone-number-box" class="sign-up-form-inputs-phone-number-box">
+                  <input id="sign-up-form-inputs-phone-number-country-code" name="sign-up-form-inputs-phone-number-country-code" class="sign-up-form-input" type="text" disabled value="+375" size="1">
+                  <select id="sign-up-form-inputs-phone-operator-code-input" name="sign-up-form-inputs-phone-operator-code-input" class="sign-up-form-input" required>
+                    <option value="29">29</option>
+                    <option value="33">33</option>
+                    <option value="44">44</option>
+                    <option value="25">25</option>
+                  </select>
+                  <input type="tel" id="sign-up-form-inputs-phone-number-input" name="sign-up-form-inputs-phone-number-input" class="sign-up-form-input" pattern="\d+" minlength="7" maxlength="7" size="10" required>
+                </div>
+                <div id="sign-up-form-inputs-phone-number-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <div class="sign-up-form-inputs-frame">
+                <label for="sign-up-form-inputs-email" class="sign-up-form-inputs-label">Email *</label>
+                <input type="email" id="sign-up-form-inputs-email" name="sign-up-form-inputs-email" class="sign-up-form-input" pattern="^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$" size="50" required>
+                <div id="sign-up-form-inputs-email-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <div class="sign-up-form-inputs-frame">
+                <label for="sign-up-form-inputs-dob" class="sign-up-form-inputs-label">Date of Birth *</label>
+                <input type="date" id="sign-up-form-inputs-dob" name="sign-up-form-inputs-dob" class="sign-up-form-input" required>
+                <div id="sign-up-form-inputs-dob-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <div class="sign-up-form-inputs-frame">
+                <label for="sign-up-form-inputs-password" class="sign-up-form-inputs-label">Password *</label>
+                <div id="sign-up-form-inputs-password-suggest-password-button" class="sign-up-form-inputs-utility-button">Suggest Password</div>
+                <div id="sign-up-form-inputs-password-show-password-button" class="sign-up-form-inputs-utility-button">Show</div>
+                <input type="password" id="sign-up-form-inputs-password" name="sign-up-form-inputs-password" class="sign-up-form-input" minlength="8" maxlength="20" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]*$" size="50" required>
+                <input type="password" id="sign-up-form-inputs-password-confirmation" name="sign-up-form-inputs-password-confirmation" minlength="8" maxlength="20" class="sign-up-form-input" size="50" required>
+                <div id="sign-up-form-inputs-password-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <div class="sign-up-form-inputs-frame">
+                <label for="sign-up-form-inputs-first-name" class="sign-up-form-inputs-label">First Name *</label>
+                <input type="text" id="sign-up-form-inputs-first-name" name="sign-up-form-inputs-first-name" minlength="3" class="sign-up-form-input" pattern="\p{Lu}\p{L}+" size="50" required>
+                <div id="sign-up-form-inputs-first-name-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <div class="sign-up-form-inputs-frame">
+                <label for="sign-up-form-inputs-last-name" class="sign-up-form-inputs-label">Last Name *</label>
+                <input type="text" id="sign-up-form-inputs-last-name" name="sign-up-form-inputs-last-name" minlength="3" class="sign-up-form-input" pattern="\p{Lu}\p{L}+" size="50" required>
+                <div id="sign-up-form-inputs-last-name-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <div class="sign-up-form-inputs-frame">
+                <label for="sign-up-form-inputs-patronymic" class="sign-up-form-inputs-label">Patronymic</label>
+                <input type="text" id="sign-up-form-inputs-patronymic" name="sign-up-form-inputs-patronymic" minlength="3" size="50" pattern="\p{Lu}\p{L}+" class="sign-up-form-input">
+                <div id="sign-up-form-inputs-patronymic-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <div class="sign-up-form-inputs-frame">
+                <label for="sign-up-form-inputs-nickname" class="sign-up-form-inputs-label">Nickname *</label>
+                <div id="sign-up-form-inputs-nickname-new-nickname-button" class="sign-up-form-inputs-utility-button">New Nickname</div>
+                <input type="text" id="sign-up-form-inputs-nickname" name="sign-up-form-inputs-nickname" class="sign-up-form-input" size="50" minlength="3" required disabled>
+                <div id="sign-up-form-inputs-nickname-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <div class="sign-up-form-inputs-frame">
+                <div class="sign-up-form-inputs-tos">
+                  <input type="checkbox" name="sign-up-form-inputs-tos-checkbox" id="sign-up-form-inputs-tos-checkbox" class="sign-up-form-input" required>
+                  <label for="sign-up-form-inputs-tos-checkbox" class="sign-up-form-inputs-label">Agree with <a href="#" target="_blank">Terms of Service</a></label>
+                </div>
+                <div id="sign-up-form-inputs-tos-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <button type="submit" name="sign-up-form-inputs-submit-button" class="sign-up-form-inputs-submit-button">Sign Up</button>
+           </form>
+         </div>
+      </div>
       <div class="header-frame">
         <div class="header-wrapper">
           <div id="header-toplinks-frame" class="header-toplinks-frame">
             <div class="header-toplinks-buttons">
-              <div class="header-toplinks-simple-button header-toplinks-sign-in">Sign in</div>
+              <div id="header-toplinks-sign-in-button" class="header-toplinks-simple-button header-toplinks-sign-in">Sign in</div>
               <div class="header-toplinks-simple-button header-toplinks-product-support">Product Support</div>
               <div class="header-toplinks-simple-button header-toplinks-company">Company</div>
               <div class="header-toplinks-simple-button header-toplinks-contact-us">Contact us</div>
@@ -477,6 +546,7 @@
     <script type="text/javascript" src="./js/slider.js"></script>
     <script type="text/javascript" src="./js/audio.js"></script>
     <script type="text/javascript" src="./js/scroll.js"></script>
+    <script defer type="text/javascript" src="./js/forms.js"></script>
   </body>
 </html>
 

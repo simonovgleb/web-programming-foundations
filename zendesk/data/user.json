@@ -1,0 +1,64 @@
+{
+	"users": [
+		{
+			"phoneNumber": "375291221447",
+			"email": "lillie.palmer@example.com",
+			"birthDate": "1993-06-23",
+			"password": "07vN[_'&-",
+			"firstName": "Lillie",
+			"lastName": "Palmer",
+			"patronymic": "",
+			"username": "tinyduck533"
+		},
+		{
+			"phoneNumber": "375295306281",
+			"email": "carole.fuller@example.com",
+			"birthDate": "1976-09-20",
+			"password": "lJAZybHE_`",
+			"firstName": "Carole",
+			"lastName": "Fuller",
+			"patronymic": "",
+			"username": "bigcat342"
+		},
+		{
+			"phoneNumber": "375294500278",
+			"email": "soncevida.yanevskiy@example.com",
+			"birthDate": "2000-05-21",
+			"password": "[@Am/06ri",
+			"firstName": "Soncevida",
+			"lastName": "Yanevskiy",
+			"patronymic": "",
+			"username": "angrymouse811"
+		},
+		{
+			"phoneNumber": "375296344300",
+			"email": "iker.delgado@example.com",
+			"birthDate": "1983-01-07",
+			"password": "6t8%-7I?{DG*?",
+			"firstName": "Iker",
+			"lastName": "Delgado",
+			"patronymic": "",
+			"username": "silvergorilla367"
+		},
+		{
+			"phoneNumber": "375290853140",
+			"email": "nixon.davies@example.com",
+			"birthDate": "1957-07-07",
+			"password": "zAFCdDu]qE`Srk)6Lg",
+			"firstName": "Nixon",
+			"lastName": "Davies",
+			"patronymic": "",
+			"username": "whitefish908"
+		},
+		{
+			"phoneNumber": "375291252974",
+			"email": "ieva.nosenko@example.com",
+			"birthDate": "1975-08-07",
+			"password": "56%9jp!;",
+			"firstName": "Ieva",
+			"lastName": "Nosenko",
+			"patronymic": "",
+			"username": "blackelephant117"
+		}
+	]
+}
