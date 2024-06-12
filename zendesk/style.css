@@ -82,6 +82,25 @@ body {
   opacity: 1;
 }
 
+.sign-in-form-content-frame {
+	background-color: white;
+	box-shadow: 0 0.5rem 1.5rem var(--header-shadow-color);
+	margin: 7rem auto;
+	padding: 2rem;
+	width: 50%;
+	height: 25%;
+	overflow: auto;
+}
+
+#sign-in-form-password-input-label {
+	margin-top: 1rem;
+}
+
+#sign-in-form-submit-button {
+	margin-left: 0;
+	margin-top: 1rem;
+}
+
 .sign-up-form-frame {
 	display: none;
 	background-color: var(--header-shadow-color);

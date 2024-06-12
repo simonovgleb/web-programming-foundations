@@ -27,11 +27,15 @@ const NICKNAME_SEPARATOR = ".";
 const SIGN_UP_FORM_VISIBLE_CLASS = "sign-up-form-frame-visible";
 const NO_SCROLL_CLASS = "no-scroll";
 
+let authUser;
+
 let users = [];
 let compromisedPasswords = [];
 let bodyElement = document.getElementById("body");
 let signUpFormContainer = document.getElementById("sign-up-form-frame");
+let signInFormContainer = document.getElementById("sign-in-form-frame");
 let signUpForm = document.getElementById("sign-up-form-inputs-frame");
+let signInForm = document.getElementById("sign-in-form-inputs-frame");
 let phoneInput = document.getElementById("sign-up-form-inputs-phone-number-input");
 let phoneError = document.getElementById("sign-up-form-inputs-phone-number-validation");
 let phoneCountry = document.getElementById("sign-up-form-inputs-phone-number-country-code");
@@ -58,6 +62,13 @@ let closeSignUpFormButton = document.getElementById("sign-up-form-close-button")
 let signInButton = document.getElementById("header-toplinks-sign-in-button");
 let tosCheckbox = document.getElementById("sign-up-form-inputs-tos-checkbox");
 let tosError = document.getElementById("sign-up-form-inputs-tos-validation");
+let signInLoginInput = document.getElementById("sign-in-form-email-nickname-input");
+let signInLoginError = document.getElementById("sign-in-form-login-validation");
+let signInPasswordInput = document.getElementById("sign-in-form-password-input");
+let signInPasswordError = document.getElementById("sign-in-form-password-validation");
+let signInFormError = document.getElementById("sign-in-form-validation");
+let closeSignInButton = document.getElementById("sign-in-form-close-button");
+let signUpRedirectButton = document.getElementById("sign-in-form-sign-up-button");
 
 let suggestedNicknames = 0;
 let date = new Date();
@@ -115,6 +126,18 @@ function handleSignUpForm() {
 	console.log(users);
 }
 
+function handleSignInForm() {
+	let login = signInLoginInput.value;
+	let password = signInPasswordInput.value;
+	let user = users.find(usr => (usr.email === login || usr.username === login) && usr.password === password);
+	if (user) {
+		authUser = user;
+		closeSignInForm();
+	} else {
+		signInFormError.textContent = "Invalid username or password";
+	}
+}
+
 function addInputEventListener(input, error, errorFun) {
 	input.addEventListener("input", () => {
 		if (input.validity.valid) {
@@ -132,6 +155,12 @@ addInputEventListener(firstNameInput, firstNameError, firstNameErrorFun);
 addInputEventListener(lastNameInput, lastNameError, lastNameErrorFun);
 addInputEventListener(patronymicInput, patronymicError, patronymicErrorFun);
 addInputEventListener(tosCheckbox, tosError, tosErrorFun);
+addInputEventListener(signInLoginInput, signInLoginError, signInLoginErrorFun);
+addInputEventListener(signInPasswordInput, signInPasswordError, signInPasswordErrorFun);
+
+signInForm.addEventListener("input", () => {
+	signInFormError.textContent = "";
+});
 
 passwordInput.addEventListener("input", () => {
 	passwordInput.setCustomValidity("");
@@ -214,14 +243,35 @@ closeSignUpFormButton.addEventListener("click", () => {
 });
 
 signInButton.addEventListener("click", () => {
-	signUpFormContainer.classList.add(SIGN_UP_FORM_VISIBLE_CLASS);
+	signInFormContainer.classList.add(SIGN_UP_FORM_VISIBLE_CLASS);
 	bodyElement.classList.add(NO_SCROLL_CLASS);
+});
+
+closeSignInButton.addEventListener("click", () => {
+	closeSignInForm();
+});
+
+signUpRedirectButton.addEventListener("click", () => {
+	redirectToSignUp();
 });
 
 function closeSignUpForm() {
 	signUpForm.reset();
 	signUpFormContainer.classList.remove(SIGN_UP_FORM_VISIBLE_CLASS);
 	bodyElement.classList.remove(NO_SCROLL_CLASS);
+}
+
+function closeSignInForm() {
+	signInForm.reset();
+	signInFormError.textContent = "";
+	signInFormContainer.classList.remove(SIGN_UP_FORM_VISIBLE_CLASS);
+	bodyElement.classList.remove(NO_SCROLL_CLASS);
+}
+
+function redirectToSignUp() {
+	closeSignInForm();
+	signUpFormContainer.classList.add(SIGN_UP_FORM_VISIBLE_CLASS);
+	bodyElement.classList.add(NO_SCROLL_CLASS);
 }
 
 function checkNickname(nickname) {
@@ -359,5 +409,17 @@ function nicknameErrorFun() {
 function tosErrorFun() {
 	if (tosCheckbox.validity.valueMissing) {
 		tosError.textContent = "You must agree with the Terms of Service to proceed";
+	}
+}
+
+function signInLoginErrorFun() {
+	if (signInLoginInput.validity.valueMissing) {
+		signInLoginError.textContent = "Email or Nickname is required";
+	}
+}
+
+function signInPasswordErrorFun() {
+	if (signInPasswordInput.validity.valueMissing) {
+		signInPasswordError.textContent = "Password is required";
 	}
 }

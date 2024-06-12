@@ -13,6 +13,23 @@
   </head>
   <body id="body">
     <div id="desktop-body" class="desktop-body">
+      <div id="sign-in-form-frame" class="sign-up-form-frame">
+        <div class="sign-in-form-content-frame">
+          <span id="sign-in-form-close-button" class="sign-up-form-close-button">&times;</span>
+          <form action="javascript:handleSignInForm()" id="sign-in-form-inputs-frame" class="sign-up-form-inputs-frame" novalidate>
+            <div class="sign-up-form-inputs-header-text">Sign In</div>
+            <label for="sign-in-form-email-nickname-input" class="sign-up-form-inputs-label">Email or Nickname</label>
+            <input type="text" name="sign-in-form-email-nickname-input" id="sign-in-form-email-nickname-input" class="sign-up-form-input" size="50" required>
+            <div id="sign-in-form-login-validation" class="sign-up-form-inputs-validation"></div>
+            <label for="sign-in-form-password-input" class="sign-up-form-inputs-label" id="sign-in-form-password-input-label">Password</label>
+            <input type="password" name="sign-in-form-password-input" id="sign-in-form-password-input" class="sign-up-form-input" size="50" required>
+            <div id="sign-in-form-password-validation" class="sign-up-form-inputs-validation"></div>
+            <button type="submit" id="sign-in-form-submit-button" class="sign-up-form-inputs-submit-button">Sign In</button>
+            <div id="sign-in-form-validation" class="sign-up-form-inputs-validation"></div>
+          </form>
+          <div id="sign-in-form-sign-up-button" class="sign-up-form-inputs-utility-button">Sign Up</div>
+        </div>
+      </div>
       <div id="sign-up-form-frame" class="sign-up-form-frame">
          <div class="sign-up-form-content-frame">
            <span id="sign-up-form-close-button" class="sign-up-form-close-button">&times;</span>
