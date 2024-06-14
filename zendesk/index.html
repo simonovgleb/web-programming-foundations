@@ -99,6 +99,78 @@
            </form>
          </div>
       </div>
+      <div id="request-demo-form-frame" class="sign-up-form-frame">
+        <div class="request-demo-form-content-frame">
+          <span id="request-demo-form-close-button" class="sign-up-form-close-button">&times;</span>
+          <form action="javascript:handleRequestDemoForm()" id="request-demo-form-inputs-frame" class="sign-up-form-inputs-frame" novalidate>
+            <div class="sign-up-form-inputs-header-text">Request Demo</div>
+            <div class="request-demo-form-products-list-frame">
+              <div class="request-demo-form-products-list-header-frame">
+                <input type="text" name="request-demo-form-products-list-options-hidden" id="request-demo-form-products-list-options-hidden" hidden>
+                <div class="request-demo-form-products-list-header-text">Zendesk Products *</div>
+                <div class="request-demo-form-products-list-search-frame">
+                  <label for="request-demo-form-products-list-search-input">Search:</label>
+                  <input type="text" name="request-demo-form-products-list-search-input" id="request-demo-form-products-list-search-input" size="20">                
+                </div>
+                <div id="request-demo-form-products-list-filter-frame" class="request-demo-form-products-list-filter-frame">
+                  <div>Filter:</div>
+                  <div id="request-demo-form-products-list-filter-reset-button">Reset Filter</div>
+                </div>
+              </div>
+              <div id="request-demo-form-products-list-options-frame" class="request-demo-form-products-list-options-frame">
+                <div id="request-demo-form-products-list-options-validation" class="sign-up-form-inputs-validation"></div>
+              </div>
+            </div>
+            <div class="request-demo-form-contact-info-frame">
+              <label for="request-demo-form-contact-info-name-input">Your Name *</label>
+              <input type="text" id="request-demo-form-contact-info-name-input" name="request-demo-form-contact-info-name-input" class="sign-up-form-input" minlength="3" pattern="\p{Lu}\p{L}+" size="50" required>
+              <div id="request-demo-form-contact-info-name-validation" class="sign-up-form-inputs-validation"></div>  
+              <label for="request-demo-form-contact-info-email-input">Contact Email *</label>
+              <input type="email" name="request-demo-form-contact-info-email-input" id="request-demo-form-contact-info-email-input" class="sign-up-form-input" pattern="^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$" size="50" required>
+              <div id="request-demo-form-contact-info-email-validation" class="sign-up-form-inputs-validation"></div>
+            </div>
+            <div class="request-demo-form-timestamp-frame">
+              <label for="request-demo-form-timestamp-date-input">Suitable Date *</label>
+              <input type="date" id="request-demo-form-timestamp-date-input" name="request-demo-form-timestamp-date-input" class="sign-up-form-input" required>
+              <div id="request-demo-form-timestamp-date-validation" class="sign-up-form-inputs-validation"></div>
+              <label for="request-demo-form-timestamp-time-input">Suitable Time *</label>
+              <input type="time" name="request-demo-form-timestamp-time-input" id="request-demo-form-timestamp-time-input" class="sign-up-form-input" min="09:00" max="22:00" required>
+              <div id="request-demo-form-timestamp-time-validation" class="sign-up-form-inputs-validation"></div>
+            </div>
+            <button type="submit" name="request-demo-form-save-button" class="sign-up-form-inputs-submit-button">Save</button>
+          </form>
+        </div>
+      </div>
+      <div id="request-demo-summary-frame" class="sign-up-form-frame">
+        <div class="request-demo-form-content-frame">
+          <div id="request-demo-summary-inputs-frame" class="sign-up-form-inputs-frame">
+            <div class="sign-up-form-inputs-header-text">Request Demo Summary</div>
+            <div class="request-demo-form-products-list-frame">
+              <div class="request-demo-summary-section-frame">
+                <div class="request-demo-summary-section-header">Selected Zendesk Products</div>
+                <div id="request-demo-summary-products-list" class="request-demo-summary-products-list"></div>
+              </div>
+            </div>
+            <div class="request-demo-summary-section-frame">
+              <div class="request-demo-summary-section-header">Contact Info</div>
+              <div class="request-demo-summary-subsection-header">Name</div>
+              <div id="request-demo-summary-contact-info-name" class="request-demo-summary-subsection-value"></div>
+              <div class="request-demo-summary-subsection-header">Email</div>
+              <div id="request-demo-summary-contact-info-email" class="request-demo-summary-subsection-value"></div>
+            </div>
+            <div class="request-demo-summary-section-frame request-demo-summary-timestamp-frame">
+              <div class="request-demo-summary-section-header">Selected Timestamp</div>
+              <div id="request-demo-summary-timestamp-date" class="request-demo-summary-subsection-value"></div>
+              <div class="request-demo-summary-subsection-value">at</div>
+              <div id="request-demo-summary-timestamp-time" class="request-demo-summary-subsection-value"></div>
+            </div>
+            <div class="request-demo-summary-buttons-frame">
+              <button id="request-demo-summary-confirm-button" type="button" name="request-demo-summary-confirm-button" class="sign-up-form-inputs-submit-button">Confirm</button>
+              <button id="request-demo-summary-cancel-button" type="button" name="request-demo-summary-cancel-button" class="sign-up-form-inputs-submit-button">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="header-frame">
         <div class="header-wrapper">
           <div id="header-toplinks-frame" class="header-toplinks-frame">
@@ -205,7 +277,7 @@
                 <div class="page-content-customer-service-trial-free-trial-frame">
                   <div class="page-content-customer-service-trial-free-trial-button">Free trial</div>
                 </div>
-                <div class="page-content-customer-service-trial-demo-frame">
+                <div id="page-content-customer-service-trial-demo-frame" class="page-content-customer-service-trial-demo-frame">
                   <div class="page-content-customer-service-trial-demo-button">View demo</div>
                 </div>
               </div>
@@ -405,7 +477,7 @@
               <div class="page-content-free-trials-card-content-buttons-action-button-frame page-content-free-trials-card-content-buttons-start-trial-frame">
                 <div class="page-content-free-trials-card-content-buttons-action-button page-content-free-trials-card-content-buttons-start-trial-button">Start a free trial</div>
               </div>
-              <div class="page-content-free-trials-card-content-buttons-action-button-frame page-content-free-trials-card-content-buttons-view-demo-frame">
+              <div id="page-content-free-trials-card-content-buttons-view-demo-frame" class="page-content-free-trials-card-content-buttons-action-button-frame page-content-free-trials-card-content-buttons-view-demo-frame">
                 <div class="page-content-free-trials-card-content-buttons-action-button page-content-free-trials-card-content-buttons-view-demo-button">View demo</div>
               </div>
             </div>
@@ -486,7 +558,7 @@
                 <div class="footer-content-navigation-links-columns-category-column-name footer-content-navigation-links-columns-resources-column-name">Resources</div>
                 <div class="footer-content-navigation-links-columns-category-column-content-frame footer-content-navigation-links-columns-resources-column-content-frame">
                   <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-product-support">Product support</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-request-demo">Request a demo</div>
+                  <div id="footer-content-navigation-links-columns-resources-column-content-request-demo" class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-request-demo">Request a demo</div>
                   <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-library">The Library</div>
                   <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-training">Training</div>
                   <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-partners">Partners</div>
@@ -564,6 +636,7 @@
     <script type="text/javascript" src="./js/audio.js"></script>
     <script type="text/javascript" src="./js/scroll.js"></script>
     <script defer type="text/javascript" src="./js/forms.js"></script>
+    <script defer type="text/javascript" src="./js/demo.js"></script>
   </body>
 </html>
 

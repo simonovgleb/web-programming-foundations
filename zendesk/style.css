@@ -241,6 +241,189 @@ body {
 	outline: 0.0625px solid red;
 }
 
+.request-demo-form-content-frame {
+	background-color: white;
+	box-shadow: 0 0.5rem 1.5rem var(--header-shadow-color);
+	margin: 7rem auto;
+	padding: 2rem;
+	width: fit-content;
+	height: fit-content;
+	overflow: auto;
+	color: var(--header-menu-button-color);
+}
+
+.request-demo-form-products-list-frame {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	font-size: 0.75rem;
+}
+
+.request-demo-form-products-list-header-frame {
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-template-columns: auto auto;
+	column-gap: 0.5rem;
+	row-gap: 0.5rem;
+	padding-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.request-demo-form-products-list-header-text {
+	grid-column: 1 / 3;
+	grid-row: 1 / 1;
+	font-size: 1rem;
+}
+
+.request-demo-form-products-list-search-frame {
+	grid-column: 1 / 1;
+	grid-row: 2 / 2;
+}
+
+.request-demo-form-products-list-search-frame > input {
+	border: 0.0625px solid var(--header-toplinks-button-color);
+}
+
+.request-demo-form-products-list-filter-frame {
+	grid-column: 3 / 3;
+	grid-row: 2 / 2;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.request-demo-form-products-list-filter-frame > input {
+	accent-color: var(--header-toplinks-button-color);
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.request-demo-form-products-list-filter-frame > input:hover {
+	cursor: pointer;
+}
+
+.request-demo-form-products-list-filter-frame > label {
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-right: 0.25rem;
+}
+
+#request-demo-form-products-list-filter-reset-button {
+	margin-left: 0.5rem;
+}
+
+#request-demo-form-products-list-filter-reset-button:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.request-demo-form-products-list-options-frame {
+	display: grid;
+	grid-template-columns: auto auto;
+	row-gap: 0.5rem;
+}
+
+.request-demo-form-products-list-options-frame > input {
+	grid-column: 1 / 1;
+	accent-color: var(--header-toplinks-button-color);
+	border-color: var(--header-toplinks-button-color);
+}
+
+.request-demo-form-products-list-options-frame > input:hover {
+	cursor: pointer;
+}
+
+.request-demo-form-products-list-options-frame > label {
+	grid-column: 2 / 2;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.request-demo-form-products-list-options-frame > div {
+	grid-column: 2 / 2;
+}
+
+.request-demo-form-contact-info-frame {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	row-gap: 0.5rem;
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+	font-size: 1rem;
+}
+
+.request-demo-form-timestamp-frame {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	row-gap: 0.5rem;
+	font-size: 1rem;
+	margin-bottom: 1rem;
+}
+
+.request-demo-summary-products-list > ul {
+	padding-left: 1rem;
+	display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    margin-block-end: 0;
+}
+
+.request-demo-summary-section-frame {
+	display: flex;
+	flex-direction: column;
+	border-bottom: 0.0625px solid var(--header-toplinks-button-color);
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.request-demo-summary-section-header {
+	font-size: 1rem;
+}
+
+.request-demo-summary-subsection-header {
+	font-size: 0.75rem;
+	font-weight: 600;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.request-demo-summary-subsection-value {
+	font-size: 0.75rem;
+	font-style: italic;
+}
+
+.request-demo-summary-timestamp-frame {
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-template-columns: auto auto auto;
+	justify-content: start;
+	row-gap: 1rem;
+	column-gap: 0.5rem;
+}
+
+.request-demo-summary-timestamp-frame > .request-demo-summary-section-header {
+	grid-row: 1 / 1;
+	grid-column: 1 / 3;
+}
+
+.request-demo-summary-timestamp-frame > .request-demo-summary-subsection-value {
+	grid-row: 2 / 2;
+}
+
+.request-demo-summary-buttons-frame {
+	display: flex;
+	flex-direction: row;
+	margin-top: 1rem;
+}
+
+.request-demo-summary-buttons-frame > button {
+	margin-left: 1rem;
+}
+
 .header-frame {
 	width: 100%;
 	height: 7.6875rem;

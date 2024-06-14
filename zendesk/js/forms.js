@@ -9,6 +9,19 @@ class User {
 		this.patronymic = patronymic;
 		this.username = username;
 	}
+
+	static from(raw) {
+		return new User(
+			raw.phoneNumber,
+			raw.email,
+			raw.birthDate,
+			raw.password,
+			raw.firstName,
+			raw.lastName,
+			raw.patronymic,
+			raw.username
+		);
+	}
 }
 
 const MIN_USER_AGE = 16;
@@ -77,17 +90,7 @@ async function loadUsers() {
 	fetch("./data/user.json")
 		.then(response => response.json())
 		.then(json => {
-			users = json.users
-				.map(raw => new User(
-					raw.phoneNumber,
-					raw.email,
-					raw.birthDate,
-					raw.password,
-					raw.firstName,
-					raw.lastName,
-					raw.patronymic,
-					raw.username
-				));
+			users = json.users.map(raw => User.from(raw));
 		})
 		.catch(error => {
 			console.error("Unable to load users", error);
@@ -111,30 +114,33 @@ addEventListener("load", () => {
 });
 
 function handleSignUpForm() {
-	let phone = phoneCountry.value.substr(1) + phoneOperator.value + phoneInput.value;
-	users.push(new User(
-		phone,
-		emailInput.value,
-		dobInput.value,
-		passwordInput.value,
-		firstNameInput.value,
-		lastNameInput.value,
-		patronymicInput.value || "",
-		nicknameInput.value
-	));
-	closeSignUpForm();
-	console.log(users);
+	if (signUpForm.checkValidity()) {
+		let phone = phoneCountry.value.substr(1) + phoneOperator.value + phoneInput.value;
+		users.push(new User(
+			phone,
+			emailInput.value,
+			dobInput.value,
+			passwordInput.value,
+			firstNameInput.value,
+			lastNameInput.value,
+			patronymicInput.value || "",
+			nicknameInput.value
+		));
+		closeSignUpForm();
+	}
 }
 
 function handleSignInForm() {
-	let login = signInLoginInput.value;
-	let password = signInPasswordInput.value;
-	let user = users.find(usr => (usr.email === login || usr.username === login) && usr.password === password);
-	if (user) {
-		authUser = user;
-		closeSignInForm();
-	} else {
-		signInFormError.textContent = "Invalid username or password";
+	if (signInForm.checkValidity()) {
+		let login = signInLoginInput.value;
+		let password = signInPasswordInput.value;
+		let user = users.find(usr => (usr.email === login || usr.username === login) && usr.password === password);
+		if (user) {
+			authUser = user;
+			closeSignInForm();
+		} else {
+			signInFormError.textContent = "Invalid username or password";
+		}
 	}
 }
 
@@ -244,7 +250,7 @@ closeSignUpFormButton.addEventListener("click", () => {
 
 signInButton.addEventListener("click", () => {
 	signInFormContainer.classList.add(SIGN_UP_FORM_VISIBLE_CLASS);
-	bodyElement.classList.add(NO_SCROLL_CLASS);
+	applyNoScroll();
 });
 
 closeSignInButton.addEventListener("click", () => {
@@ -258,20 +264,28 @@ signUpRedirectButton.addEventListener("click", () => {
 function closeSignUpForm() {
 	signUpForm.reset();
 	signUpFormContainer.classList.remove(SIGN_UP_FORM_VISIBLE_CLASS);
-	bodyElement.classList.remove(NO_SCROLL_CLASS);
+	removeNoScroll();
 }
 
 function closeSignInForm() {
 	signInForm.reset();
 	signInFormError.textContent = "";
 	signInFormContainer.classList.remove(SIGN_UP_FORM_VISIBLE_CLASS);
-	bodyElement.classList.remove(NO_SCROLL_CLASS);
+	removeNoScroll();
 }
 
 function redirectToSignUp() {
 	closeSignInForm();
 	signUpFormContainer.classList.add(SIGN_UP_FORM_VISIBLE_CLASS);
+	applyNoScroll();
+}
+
+function applyNoScroll() {
 	bodyElement.classList.add(NO_SCROLL_CLASS);
+}
+
+function removeNoScroll() {
+	bodyElement.classList.remove(NO_SCROLL_CLASS);
 }
 
 function checkNickname(nickname) {
