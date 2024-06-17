@@ -1,0 +1,46 @@
+{
+	"requests": [
+		{
+			"products": [
+				"Ticketing system",
+				"Ticketing system software"
+			],
+			"contact": {
+				"email": "carole.fuller@example.com",
+				"name": "Carole"
+			},
+			"timestamp": {
+				"date": "2024-08-01",
+				"time": "12:30"
+			}
+		},
+		{
+			"products": [
+				"Answer Bot",
+				"Help desk software",
+				"Voice"
+			],
+			"contact": {
+				"email": "ieva.nosenko@example.com",
+				"name": "Ieva"
+			},
+			"timestamp": {
+				"date": "2024-07-15",
+				"time": "5:30"
+			}
+		},
+		{
+			"products": [
+				"Community forums"
+			],
+			"contact": {
+				"email": "iker.delgado@example.com",
+				"name": "Iker"
+			},
+			"timestamp": {
+				"date": "2024-09-01",
+				"time": "10:45"
+			}
+		}
+	]
+}

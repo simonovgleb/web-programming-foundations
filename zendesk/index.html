@@ -13,11 +13,200 @@
   </head>
   <body id="body">
     <div id="desktop-body" class="desktop-body">
+      <div id="sign-in-form-frame" class="sign-up-form-frame">
+        <div class="sign-in-form-content-frame">
+          <span id="sign-in-form-close-button" class="sign-up-form-close-button">&times;</span>
+          <form action="javascript:handleSignInForm()" id="sign-in-form-inputs-frame" class="sign-up-form-inputs-frame" novalidate>
+            <div class="sign-up-form-inputs-header-text">Sign In</div>
+            <label for="sign-in-form-email-nickname-input" class="sign-up-form-inputs-label">Email or Nickname</label>
+            <input type="text" name="sign-in-form-email-nickname-input" id="sign-in-form-email-nickname-input" class="sign-up-form-input" size="50" required>
+            <div id="sign-in-form-login-validation" class="sign-up-form-inputs-validation"></div>
+            <label for="sign-in-form-password-input" class="sign-up-form-inputs-label" id="sign-in-form-password-input-label">Password</label>
+            <input type="password" name="sign-in-form-password-input" id="sign-in-form-password-input" class="sign-up-form-input" size="50" required>
+            <div id="sign-in-form-password-validation" class="sign-up-form-inputs-validation"></div>
+            <button type="submit" id="sign-in-form-submit-button" class="sign-up-form-inputs-submit-button">Sign In</button>
+            <div id="sign-in-form-validation" class="sign-up-form-inputs-validation"></div>
+          </form>
+          <div id="sign-in-form-sign-up-button" class="sign-up-form-inputs-utility-button">Sign Up</div>
+        </div>
+      </div>
+      <div id="sign-up-form-frame" class="sign-up-form-frame">
+         <div class="sign-up-form-content-frame">
+           <span id="sign-up-form-close-button" class="sign-up-form-close-button">&times;</span>
+           <form action="javascript:handleSignUpForm()" id="sign-up-form-inputs-frame" class="sign-up-form-inputs-frame" novalidate>
+             <div class="sign-up-form-inputs-header-text">Sign Up</div>
+             <div class="sign-up-form-inputs-frame">
+                <label for="sign-up-form-inputs-phone-number-input" class="sign-up-form-inputs-label">Phone Number *</label>
+                <div id="sign-up-form-inputs-phone-number-box" class="sign-up-form-inputs-phone-number-box">
+                  <input id="sign-up-form-inputs-phone-number-country-code" name="sign-up-form-inputs-phone-number-country-code" class="sign-up-form-input" type="text" disabled value="+375" size="1">
+                  <select id="sign-up-form-inputs-phone-operator-code-input" name="sign-up-form-inputs-phone-operator-code-input" class="sign-up-form-input" required>
+                    <option value="29">29</option>
+                    <option value="33">33</option>
+                    <option value="44">44</option>
+                    <option value="25">25</option>
+                  </select>
+                  <input type="tel" id="sign-up-form-inputs-phone-number-input" name="sign-up-form-inputs-phone-number-input" class="sign-up-form-input" pattern="\d+" minlength="7" maxlength="7" size="10" required>
+                </div>
+                <div id="sign-up-form-inputs-phone-number-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <div class="sign-up-form-inputs-frame">
+                <label for="sign-up-form-inputs-email" class="sign-up-form-inputs-label">Email *</label>
+                <input type="email" id="sign-up-form-inputs-email" name="sign-up-form-inputs-email" class="sign-up-form-input" pattern="^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$" size="50" required>
+                <div id="sign-up-form-inputs-email-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <div class="sign-up-form-inputs-frame">
+                <label for="sign-up-form-inputs-dob" class="sign-up-form-inputs-label">Date of Birth *</label>
+                <input type="date" id="sign-up-form-inputs-dob" name="sign-up-form-inputs-dob" class="sign-up-form-input" required>
+                <div id="sign-up-form-inputs-dob-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <div class="sign-up-form-inputs-frame">
+                <label for="sign-up-form-inputs-password" class="sign-up-form-inputs-label">Password *</label>
+                <div id="sign-up-form-inputs-password-suggest-password-button" class="sign-up-form-inputs-utility-button">Suggest Password</div>
+                <div id="sign-up-form-inputs-password-show-password-button" class="sign-up-form-inputs-utility-button">Show</div>
+                <input type="password" id="sign-up-form-inputs-password" name="sign-up-form-inputs-password" class="sign-up-form-input" minlength="8" maxlength="20" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]*$" size="50" required>
+                <input type="password" id="sign-up-form-inputs-password-confirmation" name="sign-up-form-inputs-password-confirmation" minlength="8" maxlength="20" class="sign-up-form-input" size="50" required>
+                <div id="sign-up-form-inputs-password-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <div class="sign-up-form-inputs-frame">
+                <label for="sign-up-form-inputs-first-name" class="sign-up-form-inputs-label">First Name *</label>
+                <input type="text" id="sign-up-form-inputs-first-name" name="sign-up-form-inputs-first-name" minlength="3" class="sign-up-form-input" pattern="\p{Lu}\p{L}+" size="50" required>
+                <div id="sign-up-form-inputs-first-name-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <div class="sign-up-form-inputs-frame">
+                <label for="sign-up-form-inputs-last-name" class="sign-up-form-inputs-label">Last Name *</label>
+                <input type="text" id="sign-up-form-inputs-last-name" name="sign-up-form-inputs-last-name" minlength="3" class="sign-up-form-input" pattern="\p{Lu}\p{L}+" size="50" required>
+                <div id="sign-up-form-inputs-last-name-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <div class="sign-up-form-inputs-frame">
+                <label for="sign-up-form-inputs-patronymic" class="sign-up-form-inputs-label">Patronymic</label>
+                <input type="text" id="sign-up-form-inputs-patronymic" name="sign-up-form-inputs-patronymic" minlength="3" size="50" pattern="\p{Lu}\p{L}+" class="sign-up-form-input">
+                <div id="sign-up-form-inputs-patronymic-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <div class="sign-up-form-inputs-frame">
+                <label for="sign-up-form-inputs-nickname" class="sign-up-form-inputs-label">Nickname *</label>
+                <div id="sign-up-form-inputs-nickname-new-nickname-button" class="sign-up-form-inputs-utility-button">New Nickname</div>
+                <input type="text" id="sign-up-form-inputs-nickname" name="sign-up-form-inputs-nickname" class="sign-up-form-input" size="50" minlength="3" required disabled>
+                <div id="sign-up-form-inputs-nickname-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <div class="sign-up-form-inputs-frame">
+                <div class="sign-up-form-inputs-tos">
+                  <input type="checkbox" name="sign-up-form-inputs-tos-checkbox" id="sign-up-form-inputs-tos-checkbox" class="sign-up-form-input" required>
+                  <label for="sign-up-form-inputs-tos-checkbox" class="sign-up-form-inputs-label">Agree with <a href="#" target="_blank">Terms of Service</a></label>
+                </div>
+                <div id="sign-up-form-inputs-tos-validation" class="sign-up-form-inputs-validation"></div>
+             </div>
+             <button type="submit" name="sign-up-form-inputs-submit-button" class="sign-up-form-inputs-submit-button">Sign Up</button>
+           </form>
+         </div>
+      </div>
+      <div id="request-demo-form-frame" class="sign-up-form-frame">
+        <div class="request-demo-form-content-frame">
+          <span id="request-demo-form-close-button" class="sign-up-form-close-button">&times;</span>
+          <form action="javascript:handleRequestDemoForm()" id="request-demo-form-inputs-frame" class="sign-up-form-inputs-frame" novalidate>
+            <div class="sign-up-form-inputs-header-text">Request Demo</div>
+            <div class="request-demo-form-products-list-frame">
+              <div class="request-demo-form-products-list-header-frame">
+                <input type="text" name="request-demo-form-products-list-options-hidden" id="request-demo-form-products-list-options-hidden" hidden>
+                <div class="request-demo-form-products-list-header-text">Zendesk Products *</div>
+                <div class="request-demo-form-products-list-search-frame">
+                  <label for="request-demo-form-products-list-search-input">Search:</label>
+                  <input type="text" name="request-demo-form-products-list-search-input" id="request-demo-form-products-list-search-input" size="20">                
+                </div>
+                <div id="request-demo-form-products-list-filter-frame" class="request-demo-form-products-list-filter-frame">
+                  <div>Filter:</div>
+                  <div id="request-demo-form-products-list-filter-reset-button">Reset Filter</div>
+                </div>
+              </div>
+              <div id="request-demo-form-products-list-options-frame" class="request-demo-form-products-list-options-frame">
+                <div id="request-demo-form-products-list-options-validation" class="sign-up-form-inputs-validation"></div>
+              </div>
+            </div>
+            <div class="request-demo-form-contact-info-frame">
+              <label for="request-demo-form-contact-info-name-input">Your Name *</label>
+              <input type="text" id="request-demo-form-contact-info-name-input" name="request-demo-form-contact-info-name-input" class="sign-up-form-input" minlength="3" pattern="\p{Lu}\p{L}+" size="50" required>
+              <div id="request-demo-form-contact-info-name-validation" class="sign-up-form-inputs-validation"></div>  
+              <label for="request-demo-form-contact-info-email-input">Contact Email *</label>
+              <input type="email" name="request-demo-form-contact-info-email-input" id="request-demo-form-contact-info-email-input" class="sign-up-form-input" pattern="^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$" size="50" required>
+              <div id="request-demo-form-contact-info-email-validation" class="sign-up-form-inputs-validation"></div>
+            </div>
+            <div class="request-demo-form-timestamp-frame">
+              <label for="request-demo-form-timestamp-date-input">Suitable Date *</label>
+              <input type="date" id="request-demo-form-timestamp-date-input" name="request-demo-form-timestamp-date-input" class="sign-up-form-input" required>
+              <div id="request-demo-form-timestamp-date-validation" class="sign-up-form-inputs-validation"></div>
+              <label for="request-demo-form-timestamp-time-input">Suitable Time *</label>
+              <input type="time" name="request-demo-form-timestamp-time-input" id="request-demo-form-timestamp-time-input" class="sign-up-form-input" min="09:00" max="22:00" required>
+              <div id="request-demo-form-timestamp-time-validation" class="sign-up-form-inputs-validation"></div>
+            </div>
+            <button type="submit" name="request-demo-form-save-button" class="sign-up-form-inputs-submit-button">Save</button>
+          </form>
+        </div>
+      </div>
+      <div id="request-demo-summary-frame" class="sign-up-form-frame">
+        <div class="request-demo-form-content-frame">
+          <div id="request-demo-summary-inputs-frame" class="sign-up-form-inputs-frame">
+            <div class="sign-up-form-inputs-header-text">Request Demo Summary</div>
+            <div class="request-demo-form-products-list-frame">
+              <div class="request-demo-summary-section-frame">
+                <div class="request-demo-summary-section-header">Selected Zendesk Products</div>
+                <div id="request-demo-summary-products-list" class="request-demo-summary-products-list"></div>
+              </div>
+            </div>
+            <div class="request-demo-summary-section-frame">
+              <div class="request-demo-summary-section-header">Contact Info</div>
+              <div class="request-demo-summary-subsection-header">Name</div>
+              <div id="request-demo-summary-contact-info-name" class="request-demo-summary-subsection-value"></div>
+              <div class="request-demo-summary-subsection-header">Email</div>
+              <div id="request-demo-summary-contact-info-email" class="request-demo-summary-subsection-value"></div>
+            </div>
+            <div class="request-demo-summary-section-frame request-demo-summary-timestamp-frame">
+              <div class="request-demo-summary-section-header">Selected Timestamp</div>
+              <div id="request-demo-summary-timestamp-date" class="request-demo-summary-subsection-value"></div>
+              <div class="request-demo-summary-subsection-value">at</div>
+              <div id="request-demo-summary-timestamp-time" class="request-demo-summary-subsection-value"></div>
+            </div>
+            <div class="request-demo-summary-buttons-frame">
+              <button id="request-demo-summary-confirm-button" type="button" name="request-demo-summary-confirm-button" class="sign-up-form-inputs-submit-button">Confirm</button>
+              <button id="request-demo-summary-cancel-button" type="button" name="request-demo-summary-cancel-button" class="sign-up-form-inputs-submit-button">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="admin-panel-frame" class="admin-panel-frame">
+        <div class="admin-panel-content-frame">
+          <span id="admin-panel-close-button" class="admin-panel-close-button">&times;</span>
+          <div class="admin-panel-content-header">Admin Panel</div>
+          <div class="admin-panel-content-user-table-frame">
+            <div class="admin-panel-content-user-table-header">Users</div>
+            <table class="admin-panel-content-user-table">
+              <thead>
+                <tr id="admin-panel-content-user-table-head-row">
+                  <th scope="col" abbr="rowNumber">#</th>
+                  <th scope="col" abbr="phoneNumber">Phone Number</th>
+                  <th scope="col" abbr="email">Email</th>
+                  <th scope="col" abbr="birthDate">Date of Birth</th>
+                  <th scope="col" abbr="firstName">First Name</th>
+                  <th scope="col" abbr="lastName">Last Name</th>
+                  <th scope="col" abbr="patronymic">Patronymic</th>
+                  <th scope="col" abbr="username">Nickname</th>
+                </tr>
+              </thead>
+              <tbody id="admin-panel-content-user-table-body">
+              </tbody>
+            </table>
+          </div>
+          <div class="admin-panel-content-demo-request-cards-frame">
+            <div class="admin-panel-content-demo-request-cards-header">Demo Requests</div>
+            <div id="admin-panel-content-demo-request-cards-wrapper" class="admin-panel-content-demo-request-cards-wrapper">
+            </div>
+          </div>
+        </div>        
+      </div>
       <div class="header-frame">
         <div class="header-wrapper">
           <div id="header-toplinks-frame" class="header-toplinks-frame">
             <div class="header-toplinks-buttons">
-              <div class="header-toplinks-simple-button header-toplinks-sign-in">Sign in</div>
+              <div id="header-toplinks-admin-panel-button" class="header-toplinks-simple-button header-toplinks-admin-panel">Admin Panel</div>
+              <div id="header-toplinks-sign-in-button" class="header-toplinks-simple-button header-toplinks-sign-in">Sign in</div>
               <div class="header-toplinks-simple-button header-toplinks-product-support">Product Support</div>
               <div class="header-toplinks-simple-button header-toplinks-company">Company</div>
               <div class="header-toplinks-simple-button header-toplinks-contact-us">Contact us</div>
@@ -119,7 +308,7 @@
                 <div class="page-content-customer-service-trial-free-trial-frame">
                   <div class="page-content-customer-service-trial-free-trial-button">Free trial</div>
                 </div>
-                <div class="page-content-customer-service-trial-demo-frame">
+                <div id="page-content-customer-service-trial-demo-frame" class="page-content-customer-service-trial-demo-frame">
                   <div class="page-content-customer-service-trial-demo-button">View demo</div>
                 </div>
               </div>
@@ -319,7 +508,7 @@
               <div class="page-content-free-trials-card-content-buttons-action-button-frame page-content-free-trials-card-content-buttons-start-trial-frame">
                 <div class="page-content-free-trials-card-content-buttons-action-button page-content-free-trials-card-content-buttons-start-trial-button">Start a free trial</div>
               </div>
-              <div class="page-content-free-trials-card-content-buttons-action-button-frame page-content-free-trials-card-content-buttons-view-demo-frame">
+              <div id="page-content-free-trials-card-content-buttons-view-demo-frame" class="page-content-free-trials-card-content-buttons-action-button-frame page-content-free-trials-card-content-buttons-view-demo-frame">
                 <div class="page-content-free-trials-card-content-buttons-action-button page-content-free-trials-card-content-buttons-view-demo-button">View demo</div>
               </div>
             </div>
@@ -400,7 +589,7 @@
                 <div class="footer-content-navigation-links-columns-category-column-name footer-content-navigation-links-columns-resources-column-name">Resources</div>
                 <div class="footer-content-navigation-links-columns-category-column-content-frame footer-content-navigation-links-columns-resources-column-content-frame">
                   <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-product-support">Product support</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-request-demo">Request a demo</div>
+                  <div id="footer-content-navigation-links-columns-resources-column-content-request-demo" class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-request-demo">Request a demo</div>
                   <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-library">The Library</div>
                   <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-training">Training</div>
                   <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-partners">Partners</div>
@@ -477,6 +666,9 @@
     <script type="text/javascript" src="./js/slider.js"></script>
     <script type="text/javascript" src="./js/audio.js"></script>
     <script type="text/javascript" src="./js/scroll.js"></script>
+    <script defer type="text/javascript" src="./js/forms.js"></script>
+    <script defer type="text/javascript" src="./js/demo.js"></script>
+    <script defer type="text/javascript" src="./js/admin.js"></script>
   </body>
 </html>
 
