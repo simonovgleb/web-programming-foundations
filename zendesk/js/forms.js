@@ -1,5 +1,5 @@
 class User {
-	constructor(phoneNumber, email, birthDate, password, firstName, lastName, patronymic, username) {
+	constructor(phoneNumber, email, birthDate, password, firstName, lastName, patronymic, username, roles) {
 		this.phoneNumber = phoneNumber;
 		this.email = email;
 		this.birthDate = birthDate;
@@ -8,6 +8,7 @@ class User {
 		this.lastName = lastName;
 		this.patronymic = patronymic;
 		this.username = username;
+		this.roles = roles || [ROLE_USER];
 	}
 
 	static from(raw) {
@@ -19,7 +20,8 @@ class User {
 			raw.firstName,
 			raw.lastName,
 			raw.patronymic,
-			raw.username
+			raw.username,
+			raw.roles
 		);
 	}
 }
@@ -39,6 +41,9 @@ const NICKNAME_SEPARATOR = ".";
 
 const SIGN_UP_FORM_VISIBLE_CLASS = "sign-up-form-frame-visible";
 const NO_SCROLL_CLASS = "no-scroll";
+
+const ROLE_ADMIN = "ADMIN";
+const ROLE_USER = "USER";
 
 let authUser;
 
@@ -138,6 +143,11 @@ function handleSignInForm() {
 		if (user) {
 			authUser = user;
 			closeSignInForm();
+			if (user.roles.includes(ROLE_ADMIN)) {
+				showAdminLinks();
+			} else {
+				hideAdminLinks();
+			}
 		} else {
 			signInFormError.textContent = "Invalid username or password";
 		}

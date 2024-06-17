@@ -177,7 +177,7 @@ body {
 
 .sign-up-form-input {
 	padding: 0.5rem;
-	border: 0.0625px solid var(--header-toplinks-button-color);
+	border: 0.0625rem solid var(--header-toplinks-button-color);
 	font-size: 1rem;
 }
 
@@ -204,7 +204,7 @@ body {
 	color: var(--header-toplinks-button-color);
 	margin-left: 10rem;
 	background: white;
-	border: 0.0625px solid var(--header-toplinks-button-color);
+	border: 0.0625rem solid var(--header-toplinks-button-color);
 }
 
 .sign-up-form-inputs-submit-button:hover {
@@ -238,7 +238,7 @@ body {
 }
 
 #sign-up-form-inputs-tos-checkbox:invalid {
-	outline: 0.0625px solid red;
+	outline: 0.0625rem solid red;
 }
 
 .request-demo-form-content-frame {
@@ -282,7 +282,7 @@ body {
 }
 
 .request-demo-form-products-list-search-frame > input {
-	border: 0.0625px solid var(--header-toplinks-button-color);
+	border: 0.0625rem solid var(--header-toplinks-button-color);
 }
 
 .request-demo-form-products-list-filter-frame {
@@ -375,7 +375,7 @@ body {
 .request-demo-summary-section-frame {
 	display: flex;
 	flex-direction: column;
-	border-bottom: 0.0625px solid var(--header-toplinks-button-color);
+	border-bottom: 0.0625rem solid var(--header-toplinks-button-color);
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 }
@@ -422,6 +422,113 @@ body {
 
 .request-demo-summary-buttons-frame > button {
 	margin-left: 1rem;
+}
+
+.admin-panel-frame {
+	display: none;
+	background-color: var(--header-shadow-color);
+	box-shadow: 0 0.5rem 1.5rem var(--header-shadow-color);
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400;
+	overflow: auto;
+	color: var(--header-toplinks-button-color);
+}
+
+.admin-panel-frame-visible {
+	display: flex;
+	position: fixed;
+	z-index: 200;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.admin-panel-close-button {
+	color: var(--header-shadow-color);
+	float: right;
+ 	font-size: 2rem;
+}
+
+.admin-panel-close-button:hover {
+	color: var(--header-toplinks-button-color);
+	cursor: pointer;
+}
+
+.admin-panel-content-frame {
+	background-color: white;
+	box-shadow: 0 0.5rem 1.5rem var(--header-shadow-color);
+	margin: 1rem auto;
+	padding: 2rem;
+	width: 90%;
+	height: 90%;
+	overflow: auto;
+}
+
+.admin-panel-content-header {
+	font-size: 1.5rem;
+}
+
+.admin-panel-content-user-table-frame {
+	margin-top: 1.5rem;
+	font-size: 0.75rem;
+	border-bottom: 0.0625rem solid var(--header-toplinks-button-color);
+	padding: 0.75rem;
+}
+
+.admin-panel-content-user-table-header {
+	font-size: 1rem;
+	margin-bottom: 0.5rem;
+}
+
+.admin-panel-content-user-table {
+	border-collapse: collapse;
+	border: 0.125rem solid var(--header-toplinks-button-color);
+}
+
+.admin-panel-content-user-table thead {
+	background-color: var(--header-shadow-color);
+}
+
+.admin-panel-content-user-table th, td {
+	border: 0.0625rem solid var(--header-toplinks-button-color);
+  	padding: 0.5rem 0.75rem;
+}
+
+.admin-panel-content-user-table tbody > tr:nth-of-type(even) {
+  	background-color: var(--messaging-frame-background-color);
+}
+
+.admin-panel-content-demo-request-cards-frame {
+	font-size: 0.75rem;
+	padding: 0.75rem;
+}
+
+.admin-panel-content-demo-request-cards-header {
+	font-size: 1rem;
+}
+
+.admin-panel-content-demo-request-cards-wrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	column-gap: 2rem;
+	row-gap: 2rem;
+	margin-top: 0.5rem;
+}
+
+.admin-panel-content-demo-request-cards-wrapper > div {
+	padding: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background: white;
+	box-shadow: 0 1.5rem 2.25rem var(--customer-experience-box-shadow-color);
+	border: 0.125rem solid var(--customer-service-text-service-color);
+	width: 20rem;
+	min-height: 5rem;
 }
 
 .header-frame {
@@ -538,7 +645,7 @@ body {
 .header-menu-items-frame-open {
 	display: flex;
 	flex-direction: column;
-	box-shadow: 0px 8px 16px 0px var(--header-shadow-color);
+	box-shadow: 0 0.5rem 1rem 0 var(--header-shadow-color);
 	background: white;
 	position: absolute;
 	margin-top: 1.5rem;
@@ -675,6 +782,14 @@ body {
 .header-toplinks-language {
 	text-align: center;
 	margin-right: 0;
+}
+
+.header-toplinks-admin-panel {
+	display: none;
+}
+
+.header-toplinks-admin-panel-visible {
+	display: flex;
 }
 
 .page-content-frame {

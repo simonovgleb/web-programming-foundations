@@ -171,10 +171,41 @@
           </div>
         </div>
       </div>
+      <div id="admin-panel-frame" class="admin-panel-frame">
+        <div class="admin-panel-content-frame">
+          <span id="admin-panel-close-button" class="admin-panel-close-button">&times;</span>
+          <div class="admin-panel-content-header">Admin Panel</div>
+          <div class="admin-panel-content-user-table-frame">
+            <div class="admin-panel-content-user-table-header">Users</div>
+            <table class="admin-panel-content-user-table">
+              <thead>
+                <tr id="admin-panel-content-user-table-head-row">
+                  <th scope="col" abbr="rowNumber">#</th>
+                  <th scope="col" abbr="phoneNumber">Phone Number</th>
+                  <th scope="col" abbr="email">Email</th>
+                  <th scope="col" abbr="birthDate">Date of Birth</th>
+                  <th scope="col" abbr="firstName">First Name</th>
+                  <th scope="col" abbr="lastName">Last Name</th>
+                  <th scope="col" abbr="patronymic">Patronymic</th>
+                  <th scope="col" abbr="username">Nickname</th>
+                </tr>
+              </thead>
+              <tbody id="admin-panel-content-user-table-body">
+              </tbody>
+            </table>
+          </div>
+          <div class="admin-panel-content-demo-request-cards-frame">
+            <div class="admin-panel-content-demo-request-cards-header">Demo Requests</div>
+            <div id="admin-panel-content-demo-request-cards-wrapper" class="admin-panel-content-demo-request-cards-wrapper">
+            </div>
+          </div>
+        </div>        
+      </div>
       <div class="header-frame">
         <div class="header-wrapper">
           <div id="header-toplinks-frame" class="header-toplinks-frame">
             <div class="header-toplinks-buttons">
+              <div id="header-toplinks-admin-panel-button" class="header-toplinks-simple-button header-toplinks-admin-panel">Admin Panel</div>
               <div id="header-toplinks-sign-in-button" class="header-toplinks-simple-button header-toplinks-sign-in">Sign in</div>
               <div class="header-toplinks-simple-button header-toplinks-product-support">Product Support</div>
               <div class="header-toplinks-simple-button header-toplinks-company">Company</div>
@@ -637,6 +668,7 @@
     <script type="text/javascript" src="./js/scroll.js"></script>
     <script defer type="text/javascript" src="./js/forms.js"></script>
     <script defer type="text/javascript" src="./js/demo.js"></script>
+    <script defer type="text/javascript" src="./js/admin.js"></script>
   </body>
 </html>
 

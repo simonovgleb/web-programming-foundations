@@ -8,7 +8,10 @@
 			"firstName": "Lillie",
 			"lastName": "Palmer",
 			"patronymic": "",
-			"username": "tinyduck533"
+			"username": "tinyduck533",
+			"roles": [
+				"USER"
+			]
 		},
 		{
 			"phoneNumber": "375295306281",
@@ -18,7 +21,10 @@
 			"firstName": "Carole",
 			"lastName": "Fuller",
 			"patronymic": "",
-			"username": "bigcat342"
+			"username": "bigcat342",
+			"roles": [
+				"USER"
+			]
 		},
 		{
 			"phoneNumber": "375294500278",
@@ -28,7 +34,10 @@
 			"firstName": "Soncevida",
 			"lastName": "Yanevskiy",
 			"patronymic": "",
-			"username": "angrymouse811"
+			"username": "angrymouse811",
+			"roles": [
+				"USER"
+			]
 		},
 		{
 			"phoneNumber": "375296344300",
@@ -38,7 +47,10 @@
 			"firstName": "Iker",
 			"lastName": "Delgado",
 			"patronymic": "",
-			"username": "silvergorilla367"
+			"username": "silvergorilla367",
+			"roles": [
+				"USER"
+			]
 		},
 		{
 			"phoneNumber": "375290853140",
@@ -48,7 +60,10 @@
 			"firstName": "Nixon",
 			"lastName": "Davies",
 			"patronymic": "",
-			"username": "whitefish908"
+			"username": "whitefish908",
+			"roles": [
+				"USER"
+			]
 		},
 		{
 			"phoneNumber": "375291252974",
@@ -58,7 +73,24 @@
 			"firstName": "Ieva",
 			"lastName": "Nosenko",
 			"patronymic": "",
-			"username": "blackelephant117"
+			"username": "blackelephant117",
+			"roles": [
+				"USER"
+			]
+		},
+		{
+			"phoneNumber": "375294681923",
+			"email": "jim.admin@example.com",
+			"birthDate": "1988-04-27",
+			"password": "Admin777%",
+			"firstName": "Jim",
+			"lastName": "Admin",
+			"patronymic": "",
+			"username": "admin.jim",
+			"roles": [
+				"USER",
+				"ADMIN"
+			]
 		}
 	]
 }
