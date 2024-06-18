@@ -43,6 +43,7 @@
   --footer-content-separator-color: #C2C8CC;
   --copyright-text-color: #68737D;
   --copyright-background-color: #F8F9F9;
+  --dark-theme-text-color: #9BD9DE;
 }
 
 html {
@@ -82,6 +83,16 @@ body {
   opacity: 1;
 }
 
+.dark-theme {
+	background-color: black !important;
+	color: var(--dark-theme-text-color) !important;
+	color-scheme: dark;
+}
+
+.dark-theme-brightness {
+	filter: brightness(0.5);
+}
+
 .sign-in-form-content-frame {
 	background-color: white;
 	box-shadow: 0 0.5rem 1.5rem var(--header-shadow-color);
@@ -91,6 +102,10 @@ body {
 	height: fit-content;
 	overflow: auto;
 	color: var(--header-menu-button-color);
+}
+
+.sign-in-form-content-frame.dark-theme {
+	border: 0.125rem solid white;
 }
 
 #sign-in-form-password-input-label {
@@ -130,6 +145,10 @@ body {
 	width: fit-content;
 	height: fit-content;
 	overflow: auto;
+}
+
+.sign-up-form-content-frame.dark-theme {
+	border: 0.125rem solid white;
 }
 
 .sign-up-form-close-button {
@@ -185,6 +204,10 @@ body {
 	border-color: red;
 }
 
+.sign-up-form-input:disabled.dark-theme {
+	filter: brightness(0.5);
+}
+
 .sign-up-form-inputs-utility-button {
 	font-size: 0.7rem;
 	margin-left: auto;
@@ -215,6 +238,10 @@ body {
 	opacity: 0.3;
   	pointer-events: none;
   	background: var(--header-shadow-color);
+}
+
+.sign-up-form-inputs-frame:invalid.dark-theme button {
+  	background: white;
 }
 
 .sign-up-form-inputs-validation {
@@ -250,6 +277,10 @@ body {
 	height: fit-content;
 	overflow: auto;
 	color: var(--header-menu-button-color);
+}
+
+.request-demo-form-content-frame.dark-theme {
+	border: 0.125rem solid white;
 }
 
 .request-demo-form-products-list-frame {
@@ -466,6 +497,10 @@ body {
 	overflow: auto;
 }
 
+.admin-panel-content-frame.dark-theme {
+	border: 0.125rem solid white;
+}
+
 .admin-panel-content-header {
 	font-size: 1.5rem;
 }
@@ -491,6 +526,10 @@ body {
 	background-color: var(--header-shadow-color);
 }
 
+.admin-panel-content-user-table.dark-theme thead {
+    background-color: darkslategrey;
+}
+
 .admin-panel-content-user-table th, td {
 	border: 0.0625rem solid var(--header-toplinks-button-color);
   	padding: 0.5rem 0.75rem;
@@ -498,6 +537,10 @@ body {
 
 .admin-panel-content-user-table tbody > tr:nth-of-type(even) {
   	background-color: var(--messaging-frame-background-color);
+}
+
+.admin-panel-content-user-table.dark-theme tbody > tr:nth-of-type(even) {
+  	background-color: var(--copyright-text-color);
 }
 
 .admin-panel-content-demo-request-cards-frame {
@@ -529,6 +572,10 @@ body {
 	border: 0.125rem solid var(--customer-service-text-service-color);
 	width: 20rem;
 	min-height: 5rem;
+}
+
+.admin-panel-content-demo-request-cards-wrapper.dark-theme > div {
+	background: darkslategrey;
 }
 
 .header-frame {
@@ -655,6 +702,11 @@ body {
 	justify-content: space-evenly;
     align-items: flex-start;
     row-gap: 0.5rem;
+    z-index: 2;
+}
+
+.header-menu-items-frame-open.dark-theme {
+	box-shadow: 0 0.5rem 1rem 0 darkslategrey;
 }
 
 .header-menu-item {
@@ -747,7 +799,8 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: right;
-    align-content: flex-end;
+    align-content: center;
+    align-items: center;
     flex-wrap: wrap;
 	margin: auto 2% 0 auto;
 }
@@ -792,6 +845,32 @@ body {
 	display: flex;
 }
 
+.header-toplinks-theme-switcher {
+	width: 3rem;
+	height: 1.3rem;
+	margin: auto auto auto 0.5rem;
+	align-items: center;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.header-toplinks-theme-switcher:hover {
+	cursor: pointer;
+}
+
+.header-toplinks-theme-light {
+	background-image: url(assets/light-mode.svg);
+	transition: background 2s;
+}
+
+.header-toplinks-theme-dark {
+	background-image: url(assets/dark-mode.svg);
+	transition: background 2s;
+}
+
 .page-content-frame {
 	width: 100%;
 	height: 390rem;
@@ -810,6 +889,10 @@ body {
 	grid-row: 1 / 1;
 	grid-column: 2 / 2;
 	display: none;
+}
+
+.burger-menu-frame.dark-theme {
+	box-shadow: 0 0.5rem 1.5rem darkslategrey;
 }
 
 .burger-menu-open {
@@ -1261,6 +1344,7 @@ body {
 	display: grid;
 	grid-template-columns: 5% 90% 5%;
 	grid-template-rows: auto;
+	color: var(--customer-support-header-text-color);
 }
 
 .page-content-customer-support-wrapper {
@@ -1284,7 +1368,6 @@ body {
 	width: 36rem;
 	height: 7rem;
 	text-align: left;
-	color: var(--customer-support-header-text-color);
 	font-size: 3rem;
 	font-family: Roboto;
 	font-style: normal;
@@ -1305,7 +1388,6 @@ body {
 	width: 35.625rem;
 	height: 3.5rem;
 	text-align: center;
-	color: var(--customer-support-header-text-color);
 	font-size: 1.25rem;
 	font-family: Roboto;
 	font-style: normal;
@@ -1333,7 +1415,6 @@ body {
 }
 
 .page-content-customer-support-card-content-service-button {
-	color: var(--customer-support-header-text-color);
 	font-size: 1rem;
 	font-family: Roboto;
 	font-style: normal;
@@ -1392,7 +1473,6 @@ body {
 
 .page-content-customer-support-card-content-description-text-header-text {
 	width: 22.375rem;
-	color: var(--customer-support-header-text-color);
 	font-size: 2rem;
 	font-family: Roboto;
 	font-weight: 700;
@@ -1418,7 +1498,6 @@ body {
 }
 
 .page-content-customer-support-card-content-description-text-learn-more-button {
-	color: var(--customer-support-header-text-color);
 	font-size: 1.125rem;
 	font-family: Roboto;
 	font-style: normal;
@@ -1482,7 +1561,6 @@ body {
 
 .page-content-customer-support-card-content-description-text-squarespace-quote-author-title-text {
 	width: 16.125rem;
-	color: var(--customer-support-header-text-color);
 	font-size: 0.875rem;
 	font-family: Roboto;
 	font-style: normal;
@@ -1666,6 +1744,10 @@ body {
 
 .page-content-customer-experience-trends-card-frame:hover {
 	cursor: pointer;
+}
+
+.page-content-customer-experience-trends-card-frame.dark-theme {
+	box-shadow: 0 0.5rem 1.5rem darkslategrey;
 }
 
 @keyframes cx-trends-card-frame-border {
@@ -1853,6 +1935,7 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     align-content: space-around;
+	color: var(--customer-stories-text-color);
 }
 
 .page-content-customer-stories-card-content-companies-frame {
@@ -1866,7 +1949,6 @@ body {
 
 .page-content-customer-stories-card-content-companies-header-text {
 	width: 24.875rem;
-	color: var(--customer-stories-text-color);
 	font-size: 2.9375rem;
 	font-family: Roboto;
 	font-style: normal;
@@ -1877,7 +1959,6 @@ body {
 
 .page-content-customer-stories-card-content-companies-additional-text {
 	width: 20.9375rem;
-	color: var(--customer-stories-text-color);
 	font-size: 1.25rem;
 	font-family: Roboto;
 	font-style: normal;
@@ -1946,7 +2027,6 @@ body {
 }
 
 .page-content-customer-stories-card-content-companies-action-button {
-	color: var(--customer-stories-text-color);
 	font-size: 1.125rem;
 	font-family: Roboto;
 	font-style: normal;
@@ -2029,11 +2109,11 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     column-gap: 5.5rem;
+	color: var(--customer-experience-links-text-color);
 }
 
 .page-content-customer-experience-links-card-content-header-text {
 	width: 17.625rem;
-	color: var(--customer-experience-links-text-color);
 	font-size: 2rem;
 	font-family: Roboto;
 	font-style: normal;
@@ -2063,7 +2143,6 @@ body {
 }
 
 .page-content-customer-experience-links-card-content-links-grid-link-button {
-	color: var(--customer-experience-links-text-color);
 	font-size: 1.125rem;
 	font-family: Roboto;
 	font-style: normal;
@@ -2319,11 +2398,11 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     align-content: flex-start;
+    color: var(--footer-header-text-color);
 }
 
 .footer-content-navigation-links-columns-header-text {
 	width: 7.9375rem;
-	color: var(--footer-header-text-color);
 	font-size: 1.4375rem;
 	font-family: Roboto;
 	font-style: normal;
@@ -2347,7 +2426,6 @@ body {
 }
 
 .footer-content-navigation-links-columns-category-column-name {
-	color: var(--footer-header-text-color);
 	font-size: 0.875rem;
 	font-family: Roboto;
 	font-style: normal;
@@ -2450,7 +2528,6 @@ body {
 }
 
 .footer-content-subscribe-content-text-header-text {
-	color: var(--footer-header-text-color);
 	font-size: 1.4375rem;
 	font-family: Roboto;
 	font-style: normal;
@@ -2646,6 +2723,14 @@ body {
 		grid-template-columns: 5% 90% 5%;
 	}
 
+	.page-content-customer-support-frame {
+		grid-template-columns: 1% 98% 1%;
+	}
+
+	.page-content-customer-support-card-content-description-text-frame.dark-theme {
+		margin-right: 5rem;
+	}
+
 	.page-content-customer-experience-frame {
 		background-image: url("assets/customer-experience-background-tablet.svg");
 		height: 34rem;
@@ -2723,6 +2808,8 @@ body {
 	.header-menu-burger-frame {
 		display: flex;
 		grid-column: 3 / 3;
+		width: 5rem;
+		height: 5rem;
 	}
 
 	.header-menu-simple-button {
@@ -2747,6 +2834,7 @@ body {
 
 	.page-content-customer-support-frame {
 		height: 62.5rem;
+		grid-template-columns: 1% 98% 1%;
 	}
 
 	.page-content-customer-support-wrapper {
@@ -2762,9 +2850,19 @@ body {
 		margin-top: 10rem;
 	}
 
+	.page-content-customer-support-card-content-description-images-support-chat-image.dark-theme {
+		margin-top: -35rem;
+		margin-left: 23rem;
+	}
+
 	.page-content-customer-support-card-content-description-images-support-person-image {
 		margin-bottom: auto;
         margin-top: -8rem;
+	}
+
+	.page-content-customer-support-card-content-description-images-support-person-image.dark-theme {
+		margin-top: -55rem;
+		margin-left: 20rem;
 	}
 
 	.page-content-customer-experience-trends-frame {
@@ -2827,6 +2925,9 @@ body {
 		width: 60rem;
 	}
 
+	.page-content-customer-experience-trends-wrapper {
+		flex-wrap: nowrap;
+	}
 }
 
 @media (min-width: 1440px) {
