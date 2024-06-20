@@ -17,26 +17,26 @@
         <div class="sign-in-form-content-frame">
           <span id="sign-in-form-close-button" class="sign-up-form-close-button">&times;</span>
           <form action="javascript:handleSignInForm()" id="sign-in-form-inputs-frame" class="sign-up-form-inputs-frame" novalidate>
-            <div class="sign-up-form-inputs-header-text">Sign In</div>
-            <label for="sign-in-form-email-nickname-input" class="sign-up-form-inputs-label">Email or Nickname</label>
+            <div class="sign-up-form-inputs-header-text" data-i18n="sign-in-form-header">Sign In</div>
+            <label for="sign-in-form-email-nickname-input" class="sign-up-form-inputs-label" data-i18n="sign-in-form-email-nickname-label">Email or Nickname</label>
             <input type="text" name="sign-in-form-email-nickname-input" id="sign-in-form-email-nickname-input" class="sign-up-form-input" size="50" required>
             <div id="sign-in-form-login-validation" class="sign-up-form-inputs-validation"></div>
-            <label for="sign-in-form-password-input" class="sign-up-form-inputs-label" id="sign-in-form-password-input-label">Password</label>
+            <label for="sign-in-form-password-input" class="sign-up-form-inputs-label" id="sign-in-form-password-input-label" data-i18n="sign-in-form-password-label">Password</label>
             <input type="password" name="sign-in-form-password-input" id="sign-in-form-password-input" class="sign-up-form-input" size="50" required>
             <div id="sign-in-form-password-validation" class="sign-up-form-inputs-validation"></div>
-            <button type="submit" id="sign-in-form-submit-button" class="sign-up-form-inputs-submit-button">Sign In</button>
+            <button type="submit" id="sign-in-form-submit-button" class="sign-up-form-inputs-submit-button" data-i18n="sign-in-form-header">Sign In</button>
             <div id="sign-in-form-validation" class="sign-up-form-inputs-validation"></div>
           </form>
-          <div id="sign-in-form-sign-up-button" class="sign-up-form-inputs-utility-button">Sign Up</div>
+          <div id="sign-in-form-sign-up-button" class="sign-up-form-inputs-utility-button" data-i18n="sign-up-form-header">Sign Up</div>
         </div>
       </div>
       <div id="sign-up-form-frame" class="sign-up-form-frame">
          <div class="sign-up-form-content-frame">
            <span id="sign-up-form-close-button" class="sign-up-form-close-button">&times;</span>
            <form action="javascript:handleSignUpForm()" id="sign-up-form-inputs-frame" class="sign-up-form-inputs-frame" novalidate>
-             <div class="sign-up-form-inputs-header-text">Sign Up</div>
+             <div class="sign-up-form-inputs-header-text" data-i18n="sign-up-form-header">Sign Up</div>
              <div class="sign-up-form-inputs-frame">
-                <label for="sign-up-form-inputs-phone-number-input" class="sign-up-form-inputs-label">Phone Number *</label>
+                <label for="sign-up-form-inputs-phone-number-input" class="sign-up-form-inputs-label" data-i18n="sign-up-form-phone-number-label">Phone Number *</label>
                 <div id="sign-up-form-inputs-phone-number-box" class="sign-up-form-inputs-phone-number-box">
                   <input id="sign-up-form-inputs-phone-number-country-code" name="sign-up-form-inputs-phone-number-country-code" class="sign-up-form-input" type="text" disabled value="+375" size="1">
                   <select id="sign-up-form-inputs-phone-operator-code-input" name="sign-up-form-inputs-phone-operator-code-input" class="sign-up-form-input" required>
@@ -50,52 +50,52 @@
                 <div id="sign-up-form-inputs-phone-number-validation" class="sign-up-form-inputs-validation"></div>
              </div>
              <div class="sign-up-form-inputs-frame">
-                <label for="sign-up-form-inputs-email" class="sign-up-form-inputs-label">Email *</label>
+                <label for="sign-up-form-inputs-email" class="sign-up-form-inputs-label" data-i18n="sign-up-form-email-label">Email *</label>
                 <input type="email" id="sign-up-form-inputs-email" name="sign-up-form-inputs-email" class="sign-up-form-input" pattern="^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$" size="50" required>
                 <div id="sign-up-form-inputs-email-validation" class="sign-up-form-inputs-validation"></div>
              </div>
              <div class="sign-up-form-inputs-frame">
-                <label for="sign-up-form-inputs-dob" class="sign-up-form-inputs-label">Date of Birth *</label>
+                <label for="sign-up-form-inputs-dob" class="sign-up-form-inputs-label" data-i18n="sign-up-form-dob-label">Date of Birth *</label>
                 <input type="date" id="sign-up-form-inputs-dob" name="sign-up-form-inputs-dob" class="sign-up-form-input" required>
                 <div id="sign-up-form-inputs-dob-validation" class="sign-up-form-inputs-validation"></div>
              </div>
              <div class="sign-up-form-inputs-frame">
-                <label for="sign-up-form-inputs-password" class="sign-up-form-inputs-label">Password *</label>
-                <div id="sign-up-form-inputs-password-suggest-password-button" class="sign-up-form-inputs-utility-button">Suggest Password</div>
-                <div id="sign-up-form-inputs-password-show-password-button" class="sign-up-form-inputs-utility-button">Show</div>
+                <label for="sign-up-form-inputs-password" class="sign-up-form-inputs-label" data-i18n="sign-up-form-password-label">Password *</label>
+                <div id="sign-up-form-inputs-password-suggest-password-button" class="sign-up-form-inputs-utility-button" data-i18n="sign-up-form-suggest-password-label">Suggest Password</div>
+                <div id="sign-up-form-inputs-password-show-password-button" class="sign-up-form-inputs-utility-button" data-i18n="sign-up-form-show-password-label">Show</div>
                 <input type="password" id="sign-up-form-inputs-password" name="sign-up-form-inputs-password" class="sign-up-form-input" minlength="8" maxlength="20" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]*$" size="50" required>
                 <input type="password" id="sign-up-form-inputs-password-confirmation" name="sign-up-form-inputs-password-confirmation" minlength="8" maxlength="20" class="sign-up-form-input" size="50" required>
                 <div id="sign-up-form-inputs-password-validation" class="sign-up-form-inputs-validation"></div>
              </div>
              <div class="sign-up-form-inputs-frame">
-                <label for="sign-up-form-inputs-first-name" class="sign-up-form-inputs-label">First Name *</label>
+                <label for="sign-up-form-inputs-first-name" class="sign-up-form-inputs-label" data-i18n="sign-up-form-first-name-label">First Name *</label>
                 <input type="text" id="sign-up-form-inputs-first-name" name="sign-up-form-inputs-first-name" minlength="3" class="sign-up-form-input" pattern="\p{Lu}\p{L}+" size="50" required>
                 <div id="sign-up-form-inputs-first-name-validation" class="sign-up-form-inputs-validation"></div>
              </div>
              <div class="sign-up-form-inputs-frame">
-                <label for="sign-up-form-inputs-last-name" class="sign-up-form-inputs-label">Last Name *</label>
+                <label for="sign-up-form-inputs-last-name" class="sign-up-form-inputs-label" data-i18n="sign-up-form-last-name-label">Last Name *</label>
                 <input type="text" id="sign-up-form-inputs-last-name" name="sign-up-form-inputs-last-name" minlength="3" class="sign-up-form-input" pattern="\p{Lu}\p{L}+" size="50" required>
                 <div id="sign-up-form-inputs-last-name-validation" class="sign-up-form-inputs-validation"></div>
              </div>
              <div class="sign-up-form-inputs-frame">
-                <label for="sign-up-form-inputs-patronymic" class="sign-up-form-inputs-label">Patronymic</label>
+                <label for="sign-up-form-inputs-patronymic" class="sign-up-form-inputs-label" data-i18n="sign-up-form-patronymic-label">Patronymic</label>
                 <input type="text" id="sign-up-form-inputs-patronymic" name="sign-up-form-inputs-patronymic" minlength="3" size="50" pattern="\p{Lu}\p{L}+" class="sign-up-form-input">
                 <div id="sign-up-form-inputs-patronymic-validation" class="sign-up-form-inputs-validation"></div>
              </div>
              <div class="sign-up-form-inputs-frame">
-                <label for="sign-up-form-inputs-nickname" class="sign-up-form-inputs-label">Nickname *</label>
-                <div id="sign-up-form-inputs-nickname-new-nickname-button" class="sign-up-form-inputs-utility-button">New Nickname</div>
+                <label for="sign-up-form-inputs-nickname" class="sign-up-form-inputs-label" data-i18n="sign-up-form-nickname-label">Nickname *</label>
+                <div id="sign-up-form-inputs-nickname-new-nickname-button" class="sign-up-form-inputs-utility-button" data-i18n="sign-up-form-new-nickname-label">New Nickname</div>
                 <input type="text" id="sign-up-form-inputs-nickname" name="sign-up-form-inputs-nickname" class="sign-up-form-input" size="50" minlength="3" required disabled>
                 <div id="sign-up-form-inputs-nickname-validation" class="sign-up-form-inputs-validation"></div>
              </div>
              <div class="sign-up-form-inputs-frame">
                 <div class="sign-up-form-inputs-tos">
                   <input type="checkbox" name="sign-up-form-inputs-tos-checkbox" id="sign-up-form-inputs-tos-checkbox" class="sign-up-form-input" required>
-                  <label for="sign-up-form-inputs-tos-checkbox" class="sign-up-form-inputs-label">Agree with <a href="#" target="_blank">Terms of Service</a></label>
+                  <label id="sign-up-form-inputs-tos-label" for="sign-up-form-inputs-tos-checkbox" class="sign-up-form-inputs-label">Agree with <a href="#" target="_blank">Terms of Service</a></label>
                 </div>
                 <div id="sign-up-form-inputs-tos-validation" class="sign-up-form-inputs-validation"></div>
              </div>
-             <button type="submit" name="sign-up-form-inputs-submit-button" class="sign-up-form-inputs-submit-button">Sign Up</button>
+             <button type="submit" name="sign-up-form-inputs-submit-button" class="sign-up-form-inputs-submit-button" data-i18n="sign-up-form-header">Sign Up</button>
            </form>
          </div>
       </div>
@@ -103,70 +103,70 @@
         <div class="request-demo-form-content-frame">
           <span id="request-demo-form-close-button" class="sign-up-form-close-button">&times;</span>
           <form action="javascript:handleRequestDemoForm()" id="request-demo-form-inputs-frame" class="sign-up-form-inputs-frame" novalidate>
-            <div class="sign-up-form-inputs-header-text">Request Demo</div>
+            <div class="sign-up-form-inputs-header-text" data-i18n="request-demo-form-header">Request Demo</div>
             <div class="request-demo-form-products-list-frame">
               <div class="request-demo-form-products-list-header-frame">
                 <input type="text" name="request-demo-form-products-list-options-hidden" id="request-demo-form-products-list-options-hidden" hidden>
-                <div class="request-demo-form-products-list-header-text">Zendesk Products *</div>
+                <div class="request-demo-form-products-list-header-text" data-i18n="request-demo-form-products-label">Zendesk Products *</div>
                 <div class="request-demo-form-products-list-search-frame">
-                  <label for="request-demo-form-products-list-search-input">Search:</label>
+                  <label for="request-demo-form-products-list-search-input" data-i18n="request-demo-form-search-label">Search:</label>
                   <input type="text" name="request-demo-form-products-list-search-input" id="request-demo-form-products-list-search-input" size="20">                
                 </div>
                 <div id="request-demo-form-products-list-filter-frame" class="request-demo-form-products-list-filter-frame">
-                  <div>Filter:</div>
-                  <div id="request-demo-form-products-list-filter-reset-button">Reset Filter</div>
+                  <div data-i18n="request-demo-form-filter-label">Filter:</div>
+                  <div id="request-demo-form-products-list-filter-reset-button" data-i18n="request-demo-form-reset-filter-label">Reset Filter</div>
                 </div>
               </div>
               <div id="request-demo-form-products-list-options-frame" class="request-demo-form-products-list-options-frame">
-                <div id="request-demo-form-products-list-options-validation" class="sign-up-form-inputs-validation"></div>
+                <div id="request-demo-form-products-list-options-validation" class="sign-up-form-inputs-validation" data-i18n="request-demo-select-product-error"></div>
               </div>
             </div>
             <div class="request-demo-form-contact-info-frame">
-              <label for="request-demo-form-contact-info-name-input">Your Name *</label>
+              <label for="request-demo-form-contact-info-name-input" data-i18n="request-demo-form-name-label">Your Name *</label>
               <input type="text" id="request-demo-form-contact-info-name-input" name="request-demo-form-contact-info-name-input" class="sign-up-form-input" minlength="3" pattern="\p{Lu}\p{L}+" size="50" required>
               <div id="request-demo-form-contact-info-name-validation" class="sign-up-form-inputs-validation"></div>  
-              <label for="request-demo-form-contact-info-email-input">Contact Email *</label>
+              <label for="request-demo-form-contact-info-email-input" data-i18n="request-demo-form-email-label">Contact Email *</label>
               <input type="email" name="request-demo-form-contact-info-email-input" id="request-demo-form-contact-info-email-input" class="sign-up-form-input" pattern="^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$" size="50" required>
               <div id="request-demo-form-contact-info-email-validation" class="sign-up-form-inputs-validation"></div>
             </div>
             <div class="request-demo-form-timestamp-frame">
-              <label for="request-demo-form-timestamp-date-input">Suitable Date *</label>
+              <label for="request-demo-form-timestamp-date-input" data-i18n="request-demo-form-date-label">Suitable Date *</label>
               <input type="date" id="request-demo-form-timestamp-date-input" name="request-demo-form-timestamp-date-input" class="sign-up-form-input" required>
               <div id="request-demo-form-timestamp-date-validation" class="sign-up-form-inputs-validation"></div>
-              <label for="request-demo-form-timestamp-time-input">Suitable Time *</label>
+              <label for="request-demo-form-timestamp-time-input" data-i18n="request-demo-form-time-label">Suitable Time *</label>
               <input type="time" name="request-demo-form-timestamp-time-input" id="request-demo-form-timestamp-time-input" class="sign-up-form-input" min="09:00" max="22:00" required>
               <div id="request-demo-form-timestamp-time-validation" class="sign-up-form-inputs-validation"></div>
             </div>
-            <button type="submit" name="request-demo-form-save-button" class="sign-up-form-inputs-submit-button">Save</button>
+            <button type="submit" name="request-demo-form-save-button" class="sign-up-form-inputs-submit-button" data-i18n="request-demo-form-save-label">Save</button>
           </form>
         </div>
       </div>
       <div id="request-demo-summary-frame" class="sign-up-form-frame">
         <div class="request-demo-form-content-frame">
           <div id="request-demo-summary-inputs-frame" class="sign-up-form-inputs-frame">
-            <div class="sign-up-form-inputs-header-text">Request Demo Summary</div>
+            <div class="sign-up-form-inputs-header-text" data-i18n="request-demo-summary-header">Request Demo Summary</div>
             <div class="request-demo-form-products-list-frame">
               <div class="request-demo-summary-section-frame">
-                <div class="request-demo-summary-section-header">Selected Zendesk Products</div>
+                <div class="request-demo-summary-section-header"data-i18n="request-demo-summary-products-label">Selected Zendesk Products</div>
                 <div id="request-demo-summary-products-list" class="request-demo-summary-products-list"></div>
               </div>
             </div>
             <div class="request-demo-summary-section-frame">
-              <div class="request-demo-summary-section-header">Contact Info</div>
-              <div class="request-demo-summary-subsection-header">Name</div>
+              <div class="request-demo-summary-section-header" data-i18n="request-demo-summary-contact-header">Contact Info</div>
+              <div class="request-demo-summary-subsection-header" data-i18n="request-demo-summary-name-label">Name</div>
               <div id="request-demo-summary-contact-info-name" class="request-demo-summary-subsection-value"></div>
-              <div class="request-demo-summary-subsection-header">Email</div>
+              <div class="request-demo-summary-subsection-header" data-i18n="request-demo-summary-email-label">Email</div>
               <div id="request-demo-summary-contact-info-email" class="request-demo-summary-subsection-value"></div>
             </div>
             <div class="request-demo-summary-section-frame request-demo-summary-timestamp-frame">
-              <div class="request-demo-summary-section-header">Selected Timestamp</div>
+              <div class="request-demo-summary-section-header" data-i18n="request-demo-summary-timestamp-header">Selected Timestamp</div>
               <div id="request-demo-summary-timestamp-date" class="request-demo-summary-subsection-value"></div>
-              <div class="request-demo-summary-subsection-value">at</div>
+              <div class="request-demo-summary-subsection-value" data-i18n="request-demo-summary-timestamp-preposition">at</div>
               <div id="request-demo-summary-timestamp-time" class="request-demo-summary-subsection-value"></div>
             </div>
             <div class="request-demo-summary-buttons-frame">
-              <button id="request-demo-summary-confirm-button" type="button" name="request-demo-summary-confirm-button" class="sign-up-form-inputs-submit-button">Confirm</button>
-              <button id="request-demo-summary-cancel-button" type="button" name="request-demo-summary-cancel-button" class="sign-up-form-inputs-submit-button">Cancel</button>
+              <button id="request-demo-summary-confirm-button" type="button" name="request-demo-summary-confirm-button" class="sign-up-form-inputs-submit-button" data-i18n="request-demo-summary-confirm-label">Confirm</button>
+              <button id="request-demo-summary-cancel-button" type="button" name="request-demo-summary-cancel-button" class="sign-up-form-inputs-submit-button" data-i18n="request-demo-summary-cancel-label">Cancel</button>
             </div>
           </div>
         </div>
@@ -174,20 +174,20 @@
       <div id="admin-panel-frame" class="admin-panel-frame">
         <div class="admin-panel-content-frame">
           <span id="admin-panel-close-button" class="admin-panel-close-button">&times;</span>
-          <div class="admin-panel-content-header">Admin Panel</div>
+          <div class="admin-panel-content-header" data-i18n="admin-panel-header">Admin Panel</div>
           <div class="admin-panel-content-user-table-frame">
-            <div class="admin-panel-content-user-table-header">Users</div>
+            <div class="admin-panel-content-user-table-header" data-i18n="admin-panel-users-header">Users</div>
             <table class="admin-panel-content-user-table">
               <thead>
                 <tr id="admin-panel-content-user-table-head-row">
-                  <th scope="col" abbr="rowNumber">#</th>
-                  <th scope="col" abbr="phoneNumber">Phone Number</th>
-                  <th scope="col" abbr="email">Email</th>
-                  <th scope="col" abbr="birthDate">Date of Birth</th>
-                  <th scope="col" abbr="firstName">First Name</th>
-                  <th scope="col" abbr="lastName">Last Name</th>
-                  <th scope="col" abbr="patronymic">Patronymic</th>
-                  <th scope="col" abbr="username">Nickname</th>
+                  <th scope="col" abbr="rowNumber" data-i18n="admin-panel-row-number-label">#</th>
+                  <th scope="col" abbr="phoneNumber" data-i18n="admin-panel-phone-number-label">Phone Number</th>
+                  <th scope="col" abbr="email" data-i18n="admin-panel-email-label">Email</th>
+                  <th scope="col" abbr="birthDate" data-i18n="admin-panel-dob-label">Date of Birth</th>
+                  <th scope="col" abbr="firstName" data-i18n="admin-panel-first-name-label">First Name</th>
+                  <th scope="col" abbr="lastName" data-i18n="admin-panel-last-name-label">Last Name</th>
+                  <th scope="col" abbr="patronymic" data-i18n="admin-panel-patronymic-label">Patronymic</th>
+                  <th scope="col" abbr="username" data-i18n="admin-panel-nickname-label">Nickname</th>
                 </tr>
               </thead>
               <tbody id="admin-panel-content-user-table-body">
@@ -195,23 +195,68 @@
             </table>
           </div>
           <div class="admin-panel-content-demo-request-cards-frame">
-            <div class="admin-panel-content-demo-request-cards-header">Demo Requests</div>
+            <div class="admin-panel-content-demo-request-cards-header" data-i18n="admin-panel-demo-requests-label">Demo Requests</div>
             <div id="admin-panel-content-demo-request-cards-wrapper" class="admin-panel-content-demo-request-cards-wrapper">
             </div>
           </div>
         </div>        
       </div>
-      <div class="header-frame">
+      <div id="header-frame" class="header-frame">
         <div class="header-wrapper">
           <div id="header-toplinks-frame" class="header-toplinks-frame">
             <div class="header-toplinks-buttons">
-              <div id="header-toplinks-admin-panel-button" class="header-toplinks-simple-button header-toplinks-admin-panel">Admin Panel</div>
-              <div id="header-toplinks-sign-in-button" class="header-toplinks-simple-button header-toplinks-sign-in">Sign in</div>
-              <div class="header-toplinks-simple-button header-toplinks-product-support">Product Support</div>
-              <div class="header-toplinks-simple-button header-toplinks-company">Company</div>
-              <div class="header-toplinks-simple-button header-toplinks-contact-us">Contact us</div>
+              <div id="header-toplinks-admin-panel-button" class="header-toplinks-simple-button header-toplinks-admin-panel" data-i18n="admin-panel-header">Admin Panel</div>
+              <div id="header-toplinks-sign-in-button" class="header-toplinks-simple-button header-toplinks-auth header-toplinks-auth-visible" data-i18n="sign-in-form-header">Sign In</div>
+              <div id="header-toplinks-user-icon-frame" class="header-toplinks-simple-button header-toplinks-auth">
+                <img id="header-toplinks-user-icon" src="./assets/user-icon.svg" alt="user icon">
+                <div id="header-toplinks-user-data-frame" class="header-toplinks-user-data-frame">
+                  <div class="sign-up-form-inputs-frame">
+                     <label for="user-data-phone-number-input" class="sign-up-form-inputs-label" data-i18n="admin-panel-phone-number-label">Phone Number</label>
+                     <input type="tel" name="user-data-phone-number-input" class="sign-up-form-input" id="user-data-phone-number-input" user-data-key="phoneNumber" disabled></input>
+                  </div>
+                  <div class="sign-up-form-inputs-frame">
+                     <label for="user-data-email-input" class="sign-up-form-inputs-label" data-i18n="admin-panel-email-label">Email</label>
+                     <input type="text" name="user-data-email-input" id="user-data-email-input" class="sign-up-form-input" user-data-key="email" disabled></input>
+                  </div>
+                  <div class="sign-up-form-inputs-frame">
+                     <label for="user-data-dob-input" class="sign-up-form-inputs-label" data-i18n="admin-panel-dob-label">Date of Birth</label>
+                     <input type="date" name="user-data-dob-input" id="user-data-dob-input"class="sign-up-form-input" user-data-key="birthDate" disabled></input>
+                  </div>
+                  <div class="sign-up-form-inputs-frame">
+                     <label for="user-data-password-input" class="sign-up-form-inputs-label" data-i18n="sign-in-form-password-label">Password</label>
+                     <div id="header-toplinks-user-data-show-password-button" class="sign-up-form-inputs-utility-button" data-i18n="sign-up-form-show-password-label">Show</div>
+                     <input type="password" name="user-data-password-input" id="user-data-password-input" class="sign-up-form-input" user-data-key="password" disabled></input>
+                  </div>
+                  <div class="sign-up-form-inputs-frame">
+                     <label for="user-data-first-name-input" class="sign-up-form-inputs-label" data-i18n="admin-panel-first-name-label">First Name</label>
+                     <input type="text" name="user-data-first-name-input" id="user-data-first-name-input" class="sign-up-form-input" user-data-key="firstName" disabled></input>
+                  </div>
+                  <div class="sign-up-form-inputs-frame">
+                     <label for="user-data-last-name-input" class="sign-up-form-inputs-label" data-i18n="admin-panel-last-name-label">Last Name</label>
+                     <input type="text" name="user-data-last-name-input" id="user-data-last-name-input" class="sign-up-form-input" user-data-key="lastName" disabled></input>
+                  </div>
+                  <div class="sign-up-form-inputs-frame">
+                     <label for="user-data-patronymic-input" class="sign-up-form-inputs-label" data-i18n="admin-panel-patronymic-label">Patronymic</label>
+                     <input type="text" name="user-data-patronymic-input" id="user-data-patronymic-input" class="sign-up-form-input" user-data-key="patronymic" disabled></input>
+                  </div>
+                  <div class="sign-up-form-inputs-frame">
+                     <label for="user-data-nickname-input" class="sign-up-form-inputs-label" data-i18n="admin-panel-nickname-label">Nickname</label>
+                     <input type="text" name="user-data-nickname-input" id="user-data-nickname-input" class="sign-up-form-input" user-data-key="username" disabled></input>
+                  </div>
+                  <div id="header-toplinks-user-data-reset-button" class="sign-up-form-inputs-utility-button" data-i18n="user-data-reset-label">Reset Settings</div>
+                </div>
+              </div>
+              <div id="header-toplinks-sign-out-button" class="header-toplinks-simple-button header-toplinks-auth" data-i18n="sign-out-form-header">Sign Out</div>
+              <div class="header-toplinks-simple-button header-toplinks-product-support" data-i18n="header-product-support-label">Product Support</div>
+              <div class="header-toplinks-simple-button header-toplinks-company" data-i18n="header-company-label">Company</div>
+              <div class="header-toplinks-simple-button header-toplinks-contact-us" data-i18n="header-contact-us-label">Contact us</div>
             </div>
-            <div class="header-toplinks-simple-button header-toplinks-language">English</div>
+            <div>
+              <div id="header-toplinks-active-language" class="header-toplinks-simple-button header-toplinks-language" data-i18n="header-language-label">English</div>
+              <div id="header-toplinks-available-languages-frame" class="header-toplinks-available-languages-frame"></div>
+            </div>
+            <div id="header-toplinks-theme-switcher" class="header-toplinks-theme-switcher header-toplinks-theme-light">
+            </div>
           </div>
           <div id="header-menu-frame" class="header-menu-frame">
             <div id="header-logo-group" class="header-logo-group">
@@ -219,50 +264,50 @@
             </div>
             <div id="header-menu-buttons-frame" class="header-menu-buttons-frame">
               <div class="header-menu-wrapper">
-                <div id="header-menu-products" class="header-menu-simple-button header-menu-products">Products</div>
+                <div id="header-menu-products" class="header-menu-simple-button header-menu-products" data-i18n="header-products-label">Products</div>
                 <div id="header-menu-products-menu-items-frame" class="header-menu-items-frame">
-                  <div id="header-menu-products-messaging" class="header-menu-item">Messaging and Live Chat</div>
-                  <div id="header-menu-products-privacy" class="header-menu-item">Data Privacy and Protection</div>
-                  <div id="header-menu-products-help" class="header-menu-item">Help Center</div>
+                  <div id="header-menu-products-messaging" class="header-menu-item" data-i18n="header-messaging-live-chat-label">Messaging and Live Chat</div>
+                  <div id="header-menu-products-privacy" class="header-menu-item" data-i18n="header-privacy-protection-label">Data Privacy and Protection</div>
+                  <div id="header-menu-products-help" class="header-menu-item" data-i18n="header-help-center-label">Help Center</div>
                 </div>
               </div>
               <div class="header-menu-wrapper">
-                <div id="header-menu-pricing" class="header-menu-simple-button header-menu-pricing">Pricing</div>
+                <div id="header-menu-pricing" class="header-menu-simple-button header-menu-pricing" data-i18n="header-pricing-label">Pricing</div>
                 <div id="header-menu-pricing-menu-items-frame" class="header-menu-items-frame">
-                  <div id="header-menu-pricing-service" class="header-menu-item">For Service</div>
-                  <div id="header-menu-pricing-sales" class="header-menu-item">For Sales</div>
+                  <div id="header-menu-pricing-service" class="header-menu-item" data-i18n="header-for-service-label">For Service</div>
+                  <div id="header-menu-pricing-sales" class="header-menu-item" data-i18n="header-for-sales-label">For Sales</div>
                 </div>
               </div>
               <div class="header-menu-wrapper">
-                <div id="header-menu-solutions" class="header-menu-simple-button header-menu-solutions">Solutions</div>
+                <div id="header-menu-solutions" class="header-menu-simple-button header-menu-solutions" data-i18n="header-solutions-label">Solutions</div>
                 <div id="header-menu-solutions-menu-items-frame" class="header-menu-items-frame">
-                  <div id="header-menu-solutions-enterprise" class="header-menu-item">Enterprise</div>
-                  <div id="header-menu-solutions-industries" class="header-menu-item">Industries</div>
+                  <div id="header-menu-solutions-enterprise" class="header-menu-item" data-i18n="header-enterprise-label">Enterprise</div>
+                  <div id="header-menu-solutions-industries" class="header-menu-item" data-i18n="header-industries-label">Industries</div>
                 </div>
               </div>
               <div class="header-menu-wrapper">
-                <div id="header-menu-demo" class="header-menu-simple-button header-menu-demo">Demo</div>
+                <div id="header-menu-demo" class="header-menu-simple-button header-menu-demo" data-i18n="header-demo-label">Demo</div>
                 <div id="header-menu-demo-menu-items-frame" class="header-menu-items-frame">
-                  <div id="header-menu-demo-demo" class="header-menu-item">Watch Demo</div>
-                  <div id="header-menu-demo-trial" class="header-menu-item">Start Trial</div>
+                  <div id="header-menu-demo-demo" class="header-menu-item" data-i18n="header-watch-demo-label">Watch Demo</div>
+                  <div id="header-menu-demo-trial" class="header-menu-item" data-i18n="header-start-trial-label">Start Trial</div>
                 </div>
               </div>
               <div class="header-menu-wrapper">
-                <div id="header-menu-services" class="header-menu-simple-button header-menu-services">Services</div>
+                <div id="header-menu-services" class="header-menu-simple-button header-menu-services" data-i18n="header-services-label">Services</div>
                 <div id="header-menu-services-menu-items-frame" class="header-menu-items-frame">
-                  <div id="header-menu-services-ticketing" class="header-menu-item">Ticketing System</div>
-                  <div id="header-menu-services-forum" class="header-menu-item">Forum Software</div>
+                  <div id="header-menu-services-ticketing" class="header-menu-item" data-i18n="header-ticketing-system-label">Ticketing System</div>
+                  <div id="header-menu-services-forum" class="header-menu-item" data-i18n="header-forum-software-label">Forum Software</div>
                 </div>
               </div>
               <div class="header-menu-wrapper">
-                <div id="header-menu-resources" class="header-menu-simple-button header-menu-resources">Resources</div>
+                <div id="header-menu-resources" class="header-menu-simple-button header-menu-resources" data-i18n="header-resources-label">Resources</div>
                 <div id="header-menu-resources-menu-items-frame" class="header-menu-items-frame">
-                  <div id="header-menu-resources-blog" class="header-menu-item">Blog</div>
-                  <div id="header-menu-cx-trends" class="header-menu-item">Customer Experience Trends</div>
+                  <div id="header-menu-resources-blog" class="header-menu-item" data-i18n="header-blog-label">Blog</div>
+                  <div id="header-menu-cx-trends" class="header-menu-item" data-i18n="header-cx-trends-label">Customer Experience Trends</div>
                 </div>
               </div>
               <div id="header-menu-get-started" class="header-menu-get-started-frame">
-                <div class="header-menu-get-started-button">Get started</div>
+                <div class="header-menu-get-started-button" data-i18n="header-get-started-label">Get started</div>
               </div>
             </div>
             <div id="header-menu-burger-frame" class="header-menu-burger-frame burger">
@@ -273,12 +318,12 @@
       </div>
       <aside id="burger-menu-frame" class="burger-menu-frame burger">
         <div class="burger-menu-wrapper burger">
-          <div id="burger-menu-products" class="header-menu-simple-button header-menu-products burger">Products</div>
-          <div id="burger-menu-pricing" class="header-menu-simple-button header-menu-pricing burger">Pricing</div>
-          <div id="burger-menu-solutions" class="header-menu-simple-button header-menu-solutions burger">Solutions</div>
-          <div id="burger-menu-demo" class="header-menu-simple-button header-menu-demo burger">Demo</div>
-          <div id="burger-menu-services" class="header-menu-simple-button header-menu-services burger">Services</div>
-          <div id="burger-menu-resources" class="header-menu-simple-button header-menu-resources burger">Resources</div>
+          <div id="burger-menu-products" class="header-menu-simple-button header-menu-products burger" data-i18n="header-products-label">Products</div>
+          <div id="burger-menu-pricing" class="header-menu-simple-button header-menu-pricing burger" data-i18n="header-pricing-label">Pricing</div>
+          <div id="burger-menu-solutions" class="header-menu-simple-button header-menu-solutions burger" data-i18n="header-solutions-label">Solutions</div>
+          <div id="burger-menu-demo" class="header-menu-simple-button header-menu-demo burger" data-i18n="header-demo-label">Demo</div>
+          <div id="burger-menu-services" class="header-menu-simple-button header-menu-services burger" data-i18n="header-services-label">Services</div>
+          <div id="burger-menu-resources" class="header-menu-simple-button header-menu-resources burger" data-i18n="header-resources-label">Resources</div>
         </div>
       </aside>
       <div id="page-content-frame" class="page-content-frame">
@@ -286,30 +331,30 @@
           <audio id="page-content-background-sound-audio">
             <source src="./assets/audio/ambient.mp3" type="audio/mpeg">
           </audio>
-          <div id="page-content-background-sound-control-button" class="page-content-background-sound-control-button">Play/Pause</div>
+          <div id="page-content-background-sound-control-button" class="page-content-background-sound-control-button" data-i18n="page-content-play-pause-label">Play/Pause</div>
         </div>
         <div class="page-content-customer-service-frame js-scroll">
           <div class="page-content-customer-service-inner-frame">
             <div class="page-content-customer-service-text-frame">
-              <div class="page-content-customer-service-text-champions">Champions</div>
+              <div class="page-content-customer-service-text-champions" data-i18n="page-content-champions-text">Champions</div>
               <div class="page-content-customer-service-text-of-customer-frame">
-                <div class="page-content-customer-service-text-of">of</div>
+                <div class="page-content-customer-service-text-of" data-i18n="page-content-customer-service-preposition">of</div>
                 <div class="page-content-customer-service-text-customer-frame">
-                  <div class="page-content-customer-service-text-customer">customer</div>
+                  <div class="page-content-customer-service-text-customer" data-i18n="page-content-customer-text">customer</div>
                 </div>
               </div>
               <div class="page-content-customer-service-text-service-frame">
-                <div class="page-content-customer-service-text-service">service</div>
+                <div class="page-content-customer-service-text-service" data-i18n="page-content-service-text">service</div>
               </div>
             </div>
             <div class="page-content-customer-service-trial-frame">
-              <div class="page-content-customer-service-trial-text">Zendesk makes customer service better. We build software to meet customer needs, set your team up for success, and keep your business in sync.</div>
+              <div class="page-content-customer-service-trial-text" data-i18n="page-content-customer-service-trial-text">Zendesk makes customer service better. We build software to meet customer needs, set your team up for success, and keep your business in sync.</div>
               <div class="page-content-customer-service-trial-buttons-frame">
                 <div class="page-content-customer-service-trial-free-trial-frame">
-                  <div class="page-content-customer-service-trial-free-trial-button">Free trial</div>
+                  <div class="page-content-customer-service-trial-free-trial-button" data-i18n="page-content-free-trial-label">Free trial</div>
                 </div>
                 <div id="page-content-customer-service-trial-demo-frame" class="page-content-customer-service-trial-demo-frame">
-                  <div class="page-content-customer-service-trial-demo-button">View demo</div>
+                  <div class="page-content-customer-service-trial-demo-button" data-i18n="page-content-view-demo-label">View demo</div>
                 </div>
               </div>
             </div>
@@ -322,14 +367,14 @@
             <div class="page-content-messaging-description-frame">
               <img class="page-content-messaging-description-image" alt="messaging description" src="./assets/messaging-description.svg">
               <div class="page-content-messaging-description-text-frame">
-                <div class="page-content-messaging-description-header-text">Go all in on messaging</div>
-                <div class="page-content-messaging-description-main-text">Cue the confetti—Zendesk messaging is here to help deliver rich conversational experiences that are connected across your web, mobile and social apps. It’s easy to automate and fast to scale for every customer need—and it’s all part of our new Zendesk Suite.</div>
+                <div class="page-content-messaging-description-header-text" data-i18n="page-content-messaging-description-header-text">Go all in on messaging</div>
+                <div class="page-content-messaging-description-main-text" data-i18n="page-content-messaging-description-main-text">Cue the confetti—Zendesk messaging is here to help deliver rich conversational experiences that are connected across your web, mobile and social apps. It’s easy to automate and fast to scale for every customer need—and it’s all part of our new Zendesk Suite.</div>
                 <div class="page-content-messaging-description-buttons-frame">
                   <div class="page-content-messaging-description-watch-video-frame">
-                    <div class="page-content-messaging-description-watch-video-button">Watch video</div>
+                    <div class="page-content-messaging-description-watch-video-button" data-i18n="page-content-watch-video-label">Watch video</div>
                   </div>
                   <div class="page-content-messaging-description-get-details-frame">
-                    <div class="page-content-messaging-description-get-details-button">Get the details</div>
+                    <div class="page-content-messaging-description-get-details-button" data-i18n="page-content-get-details-label">Get the details</div>
                   </div>
                 </div>
               </div>
@@ -339,33 +384,33 @@
         <div id="page-content-customer-support-frame" class="page-content-customer-support-frame js-scroll">
           <div class="page-content-customer-support-wrapper">
             <div class="page-content-customer-support-header-text-frame">
-              <div class="page-content-customer-support-header-text">Where good conversations become great experiences</div>
-              <div class="page-content-customer-support-header-additional-text">To make customers happy, you need conversational experiences—connected communication across any channel.</div>
+              <div class="page-content-customer-support-header-text" data-i18n="page-content-customer-support-header-text">Where good conversations become great experiences</div>
+              <div class="page-content-customer-support-header-additional-text" data-i18n="page-content-customer-support-header-additional-text">To make customers happy, you need conversational experiences—connected communication across any channel.</div>
             </div>
             <div class="page-content-customer-support-card-content-frame">
               <div class="page-content-customer-support-card-content-buttons-frame">
-                <div class="page-content-customer-support-card-content-service-button">Service</div>
-                <div class="page-content-customer-support-card-content-sales-button">Sales</div>
+                <div class="page-content-customer-support-card-content-service-button" data-i18n="page-content-service-label">Service</div>
+                <div class="page-content-customer-support-card-content-sales-button" data-i18n="page-content-sales-label">Sales</div>
               </div>
               <div class="page-content-customer-support-card-content-description-frame">
                 <div class="page-content-customer-support-card-content-description-text-frame">
-                  <div class="page-content-customer-support-card-content-description-text-header-text">Give customers the best support</div>
-                  <div class="page-content-customer-support-card-content-description-text-additional-text">Customers want to connect any time, any place. Meet them where they are with the Zendesk Suite, which provides sophisticated, seamless support that flows across channels.</div>
+                  <div class="page-content-customer-support-card-content-description-text-header-text" data-i18n="page-content-customer-support-header-text">Give customers the best support</div>
+                  <div class="page-content-customer-support-card-content-description-text-additional-text" data-i18n="page-content-customer-support-additional-text">Customers want to connect any time, any place. Meet them where they are with the Zendesk Suite, which provides sophisticated, seamless support that flows across channels.</div>
                   <div class="page-content-customer-support-card-content-description-text-learn-more-frame">
-                    <div class="page-content-customer-support-card-content-description-text-learn-more-button">Learn more</div>
+                    <div class="page-content-customer-support-card-content-description-text-learn-more-button" data-i18n="page-content-learn-more-label">Learn more</div>
                   </div>
                   <div class="page-content-customer-support-card-content-description-text-squarespace-frame">
                     <img class="page-content-customer-support-card-content-description-text-squarespace-logo" src="./assets/squarespace-logo.svg" alt="squarespace logo">
-                    <div class="page-content-customer-support-card-content-description-text-squarespace-quote-text">&ldquo;We’re here to help our customers succeed online, and that’s something we hear back from our customers. They just love our support channels.&rdquo;</div>
+                    <div id="page-content-customer-support-card-content-description-text-squarespace-quote-text" class="page-content-customer-support-card-content-description-text-squarespace-quote-text">We’re here to help our customers succeed online, and that’s something we hear back from our customers. They just love our support channels.</div>
                     <div class="page-content-customer-support-card-content-description-text-squarespace-quote-author-frame">
-                      <div class="page-content-customer-support-card-content-description-text-squarespace-quote-author-name-text">Raphael Fontes</div>
-                      <div class="page-content-customer-support-card-content-description-text-squarespace-quote-author-title-text">Vice President of Customer Operations at Squarespace</div>
+                      <div class="page-content-customer-support-card-content-description-text-squarespace-quote-author-name-text" data-i18n="page-content-squarespace-quote-author-text">Raphael Fontes</div>
+                      <div class="page-content-customer-support-card-content-description-text-squarespace-quote-author-title-text" data-i18n="page-content-squarespace-quote-author-title-text">Vice President of Customer Operations at Squarespace</div>
                     </div>
                   </div>
                 </div>
                 <div class="page-content-customer-support-card-content-description-images-frame">
-                  <img class="page-content-customer-support-card-content-description-images-support-chat-image" alt="support chat image" src="./assets/support-chat-image.svg">
-                  <img class="page-content-customer-support-card-content-description-images-support-person-image" alt="support person image" src="./assets/support-person-image.svg">
+                  <img id="page-content-customer-support-card-content-description-images-support-chat-image" class="page-content-customer-support-card-content-description-images-support-chat-image" alt="support chat image" src="./assets/support-chat-image.svg">
+                  <img id="page-content-customer-support-card-content-description-images-support-person-image" class="page-content-customer-support-card-content-description-images-support-person-image" alt="support person image" src="./assets/support-person-image.svg">
                 </div>
               </div>
             </div>
@@ -373,14 +418,14 @@
         </div>
         <div id="page-content-customer-experience-frame" class="page-content-customer-experience-frame js-scroll">
           <div class="page-content-customer-experience-card-content-frame">
-            <div class="page-content-customer-experience-card-content-header-text">Customize your customer experience</div>
-            <div class="page-content-customer-experience-card-content-additional-text">Glowing just under the surface of Zendesk is a powerful force that lets you connect and understand all of your customer data. Plus, it’s flexible and customizable, so you can adapt to anything thrown your way. Zendesk Sunshine isn’t faster than a speeding bullet, but it’s close.</div>
+            <div class="page-content-customer-experience-card-content-header-text" data-i18n="page-content-cx-header-text">Customize your customer experience</div>
+            <div class="page-content-customer-experience-card-content-additional-text" data-i18n="page-content-cx-additional-text">Glowing just under the surface of Zendesk is a powerful force that lets you connect and understand all of your customer data. Plus, it’s flexible and customizable, so you can adapt to anything thrown your way. Zendesk Sunshine isn’t faster than a speeding bullet, but it’s close.</div>
             <div class="page-content-customer-experience-card-content-buttons-frame">
               <div class="page-content-customer-experience-card-content-buttons-learn-more-frame">
-                <div class="page-content-customer-experience-card-content-buttons-learn-more-button">Learn more</div>
+                <div class="page-content-customer-experience-card-content-buttons-learn-more-button" data-i18n="page-content-learn-more-label">Learn more</div>
               </div>
               <div class="page-content-customer-experience-card-content-buttons-watch-video-frame">
-                <div class="page-content-customer-experience-card-content-buttons-watch-video-button">Watch video</div>
+                <div class="page-content-customer-experience-card-content-buttons-watch-video-button" data-i18n="page-content-watch-video-label">Watch video</div>
               </div>
             </div>
           </div>
@@ -397,34 +442,34 @@
           </audio>
           <div class="page-content-customer-experience-trends-wrapper">
             <div id="page-content-customer-experience-trends-new-customer-experience-frame" class="page-content-customer-experience-trends-new-customer-experience-frame page-content-customer-experience-trends-card-frame">
-              <div class="page-content-customer-experience-trends-new-customer-experience-card-name page-content-customer-experience-trends-card-name">CX Trends 2021</div>
-              <div class="page-content-customer-experience-trends-new-customer-experience-card-header page-content-customer-experience-trends-card-header">New world, new CX</div>
-              <div class="page-content-customer-experience-trends-new-customer-experience-card-description page-content-customer-experience-trends-card-description">Last year, customer needs changed in a blink. Learn how your team can keep up.</div>
+              <div class="page-content-customer-experience-trends-new-customer-experience-card-name page-content-customer-experience-trends-card-name" data-i18n="page-content-cx-trends-card-header">CX Trends 2021</div>
+              <div class="page-content-customer-experience-trends-new-customer-experience-card-header page-content-customer-experience-trends-card-header" data-i18n="page-content-new-cx-header">New world, new CX</div>
+              <div class="page-content-customer-experience-trends-new-customer-experience-card-description page-content-customer-experience-trends-card-description" data-i18n="page-content-cx-trends-description-text">Last year, customer needs changed in a blink. Learn how your team can keep up.</div>
               <div class="page-content-customer-experience-trends-new-customer-experience-read-report-frame page-content-customer-experience-trends-action-button-frame">
-                <div class="page-content-customer-experience-trends-new-customer-experience-read-report-button page-content-customer-experience-trends-action-button">Read report</div>
+                <div class="page-content-customer-experience-trends-new-customer-experience-read-report-button page-content-customer-experience-trends-action-button" data-i18n="page-content-read-report-label">Read report</div>
               </div>
             </div>
             <div id="page-content-customer-experience-trends-customer-experience-champions-frame" class="page-content-customer-experience-trends-card-frame page-content-customer-experience-trends-customer-experience-champions-frame">
-              <div class="page-content-customer-experience-trends-customer-experience-champions-card-name page-content-customer-experience-trends-card-name">CX Champions</div>
-              <div class="page-content-customer-experience-trends-customer-experience-champions-card-header page-content-customer-experience-trends-card-header">Speed + quality = agility</div>
-              <div class="page-content-customer-experience-trends-customer-experience-champions-card-description page-content-customer-experience-trends-card-description">How leading CX orgs support customer-centric processes and drive business agility.</div>
+              <div class="page-content-customer-experience-trends-customer-experience-champions-card-name page-content-customer-experience-trends-card-name" data-i18n="page-content-cx-champions-card-header">CX Champions</div>
+              <div class="page-content-customer-experience-trends-customer-experience-champions-card-header page-content-customer-experience-trends-card-header" data-i18n="page-content-cx-champions-header-text">Speed + quality = agility</div>
+              <div class="page-content-customer-experience-trends-customer-experience-champions-card-description page-content-customer-experience-trends-card-description" data-i18n="page-content-cx-champions-description">How leading CX orgs support customer-centric processes and drive business agility.</div>
               <div class="page-content-customer-experience-trends-customer-experience-champions-read-more-frame page-content-customer-experience-trends-action-button-frame">
-                <div class="page-content-customer-experience-trends-customer-experience-champions-read-more-button page-content-customer-experience-trends-action-button">Read more</div>
+                <div class="page-content-customer-experience-trends-customer-experience-champions-read-more-button page-content-customer-experience-trends-action-button" data-i18n="page-content-read-more-label">Read more</div>
               </div>
             </div>
             <div id="page-content-customer-experience-trends-new-product-frame" class="page-content-customer-experience-trends-card-frame page-content-customer-experience-trends-new-product-frame">
-              <div class="page-content-customer-experience-trends-card-name page-content-customer-experience-trends-new-product-card-name">New product offering</div>
-              <div class="page-content-customer-experience-trends-card-header page-content-customer-experience-trends-new-product-card-header">Introducing the Zendesk Suite</div>
-              <div class="page-content-customer-experience-trends-new-product-card-description page-content-customer-experience-trends-card-description">Our new all-in-one customer service solution is easy to use, convenient for customers, and scales with your business.</div>
+              <div class="page-content-customer-experience-trends-card-name page-content-customer-experience-trends-new-product-card-name" data-i18n="page-content-new-product-card-header">New product offering</div>
+              <div class="page-content-customer-experience-trends-card-header page-content-customer-experience-trends-new-product-card-header" data-i18n="page-content-new-product-header-text">Introducing the Zendesk Suite</div>
+              <div class="page-content-customer-experience-trends-new-product-card-description page-content-customer-experience-trends-card-description" data-i18n="page-content-new-product-description">Our new all-in-one customer service solution is easy to use, convenient for customers, and scales with your business.</div>
               <div class="page-content-customer-experience-trends-new-product-learn-more-frame page-content-customer-experience-trends-action-button-frame">
-                <div class="page-content-customer-experience-trends-new-product-learn-more-button page-content-customer-experience-trends-action-button">Learn more</div>
+                <div class="page-content-customer-experience-trends-new-product-learn-more-button page-content-customer-experience-trends-action-button" data-i18n="page-content-learn-more-label">Learn more</div>
               </div>
             </div>
           </div>
         </div>
         <div id="page-content-digital-customer-service-frame" class="page-content-digital-customer-service-frame js-scroll">
           <div class="page-content-digital-customer-service-card-content-frame">
-            <div class="page-content-digital-customer-service-card-content-text">#1 in Digital Customer Service use case by</div>
+            <div class="page-content-digital-customer-service-card-content-text" data-i18n="page-content-digital-customer-service-text">#1 in Digital Customer Service use case by</div>
             <div class="page-content-digital-customer-service-card-content-logo-frame">
               <img class="page-content-digital-customer-service-card-content-logo" alt="gartner logo" src="./assets/gartner-logo.svg">
             </div>
@@ -434,8 +479,8 @@
           <div class="page-content-customer-stories-background-frame">
             <div class="page-content-customer-stories-card-content-frame">
               <div class="page-content-customer-stories-card-content-companies-frame">
-                <div class="page-content-customer-stories-card-content-companies-header-text">The best customer experiences are built with Zendesk</div>
-                <div class="page-content-customer-stories-card-content-companies-additional-text">The companies you use, use Zendesk</div>
+                <div class="page-content-customer-stories-card-content-companies-header-text" data-i18n="page-content-customer-stories-header">The best customer experiences are built with Zendesk</div>
+                <div class="page-content-customer-stories-card-content-companies-additional-text" data-i18n="page-content-customer-stories-additional-text">The companies you use, use Zendesk</div>
                 <div class="page-content-customer-stories-card-content-companies-logo-grid-frame">
                   <div class="page-content-customer-stories-card-content-companies-logo-grid-mailchimp">
                     <img alt="mailchimp logo" src="./assets/mailchimp-logo.svg">
@@ -457,7 +502,7 @@
                   </div>
                 </div>
                 <div class="page-content-customer-stories-card-content-companies-action-button-frame">
-                  <div class="page-content-customer-stories-card-content-companies-action-button">See all customer stories</div>
+                  <div class="page-content-customer-stories-card-content-companies-action-button" data-i18n="page-content-see-all-label">See all customer stories</div>
                 </div>
               </div>
               <div class="page-content-customer-stories-card-content-images-frame">
@@ -471,31 +516,31 @@
         <div id="page-content-customer-experience-links-frame" class="page-content-customer-experience-links-frame js-scroll">
           <div class="page-content-customer-experience-links-wrapper">
             <div class="page-content-customer-experience-links-card-content-frame">
-              <div class="page-content-customer-experience-links-card-content-header-text">There’s more where that came from</div>
+              <div class="page-content-customer-experience-links-card-content-header-text" data-i18n="page-content-cx-links-header">There’s more where that came from</div>
               <div class="page-content-customer-experience-links-card-content-links-grid-frame">
                 <div class="page-content-customer-experience-links-card-content-links-grid-link-frame page-content-customer-experience-links-card-content-links-grid-complete-guide-frame">
-                  <div class="page-content-customer-experience-links-card-content-links-grid-link-button page-content-customer-experience-links-card-content-links-grid-complete-guide-button">The complete guide to understanding customer service</div>
+                  <div class="page-content-customer-experience-links-card-content-links-grid-link-button page-content-customer-experience-links-card-content-links-grid-complete-guide-button" data-i18n="page-content-cx-links-guide-text">The complete guide to understanding customer service</div>
                 </div>
                 <div class="page-content-customer-experience-links-card-content-links-grid-link-frame page-content-customer-experience-links-card-content-links-grid-zendesk-update-frame">
-                  <div class="page-content-customer-experience-links-card-content-links-grid-link-button page-content-customer-experience-links-card-content-links-grid-zendesk-update-button">Zendesk update: staying safe and working for you</div>
+                  <div class="page-content-customer-experience-links-card-content-links-grid-link-button page-content-customer-experience-links-card-content-links-grid-zendesk-update-button" data-i18n="page-content-cx-links-update-text">Zendesk update: staying safe and working for you</div>
                 </div>
                 <div class="page-content-customer-experience-links-card-content-links-grid-link-frame page-content-customer-experience-links-card-content-links-grid-customer-service-metrics-frame">
-                  <div class="page-content-customer-experience-links-card-content-links-grid-link-button page-content-customer-experience-links-card-content-links-grid-customer-service-metrics-button">3 customer service metrics that matter</div>
+                  <div class="page-content-customer-experience-links-card-content-links-grid-link-button page-content-customer-experience-links-card-content-links-grid-customer-service-metrics-button" data-i18n="page-content-cx-links-metrics-text">3 customer service metrics that matter</div>
                 </div>
                 <div class="page-content-customer-experience-links-card-content-links-grid-link-frame page-content-customer-experience-links-card-content-links-grid-customer-service-objectives-frame">
-                  <div class="page-content-customer-experience-links-card-content-links-grid-link-button page-content-customer-experience-links-card-content-links-grid-customer-service-objectives-button">Most important customer service objectives</div>
+                  <div class="page-content-customer-experience-links-card-content-links-grid-link-button page-content-customer-experience-links-card-content-links-grid-customer-service-objectives-button" data-i18n="page-content-cx-links-objectives-text">Most important customer service objectives</div>
                 </div>
                 <div class="page-content-customer-experience-links-card-content-links-grid-link-frame page-content-customer-experience-links-card-content-links-grid-machine-learning-frame">
-                  <div class="page-content-customer-experience-links-card-content-links-grid-link-button page-content-customer-experience-links-card-content-links-grid-machine-learning-button">Understanding machine learning vs deep learning</div>
+                  <div class="page-content-customer-experience-links-card-content-links-grid-link-button page-content-customer-experience-links-card-content-links-grid-machine-learning-button" data-i18n="page-content-cx-links-ml-text">Understanding machine learning vs deep learning</div>
                 </div>
                 <div class="page-content-customer-experience-links-card-content-links-grid-link-frame page-content-customer-experience-links-card-content-links-grid-remote-workforce-frame">
-                  <div class="page-content-customer-experience-links-card-content-links-grid-link-button page-content-customer-experience-links-card-content-links-grid-remote-workforce-button">Transitioning to a remote workforce</div>
+                  <div class="page-content-customer-experience-links-card-content-links-grid-link-button page-content-customer-experience-links-card-content-links-grid-remote-workforce-button" data-i18n="page-content-cx-links-remote-text">Transitioning to a remote workforce</div>
                 </div>
                 <div class="page-content-customer-experience-links-card-content-links-grid-link-frame page-content-customer-experience-links-card-content-links-grid-covid-impact-frame">
-                  <div class="page-content-customer-experience-links-card-content-links-grid-link-button page-content-customer-experience-links-card-content-links-grid-covid-impact-button">The impact of COVID-19 on CX</div>
+                  <div class="page-content-customer-experience-links-card-content-links-grid-link-button page-content-customer-experience-links-card-content-links-grid-covid-impact-button" data-i18n="page-content-cx-links-covid-text">The impact of COVID-19 on CX</div>
                 </div>
                 <div class="page-content-customer-experience-links-card-content-links-grid-link-frame page-content-customer-experience-links-card-content-links-grid-knowledge-management-frame">
-                  <div class="page-content-customer-experience-links-card-content-links-grid-link-button page-content-customer-experience-links-card-content-links-grid-knowledge-management-button">5 of the best knowledge management examples</div>
+                  <div class="page-content-customer-experience-links-card-content-links-grid-link-button page-content-customer-experience-links-card-content-links-grid-knowledge-management-button" data-i18n="page-content-cx-links-examples-text">5 of the best knowledge management examples</div>
                 </div>
               </div>
             </div>
@@ -503,13 +548,13 @@
         </div>
         <div id="page-content-free-trials-frame" class="page-content-free-trials-frame js-scroll">
           <div class="page-content-free-trials-card-content-frame">
-            <div class="page-content-free-trials-card-content-header-text">Champions of awesome free trials</div>
+            <div class="page-content-free-trials-card-content-header-text" data-i18n="page-content-trials-header-text">Champions of awesome free trials</div>
             <div class="page-content-free-trials-card-content-buttons-frame">
               <div class="page-content-free-trials-card-content-buttons-action-button-frame page-content-free-trials-card-content-buttons-start-trial-frame">
-                <div class="page-content-free-trials-card-content-buttons-action-button page-content-free-trials-card-content-buttons-start-trial-button">Start a free trial</div>
+                <div class="page-content-free-trials-card-content-buttons-action-button page-content-free-trials-card-content-buttons-start-trial-button" data-i18n="page-content-start-trial-label">Start a free trial</div>
               </div>
               <div id="page-content-free-trials-card-content-buttons-view-demo-frame" class="page-content-free-trials-card-content-buttons-action-button-frame page-content-free-trials-card-content-buttons-view-demo-frame">
-                <div class="page-content-free-trials-card-content-buttons-action-button page-content-free-trials-card-content-buttons-view-demo-button">View demo</div>
+                <div class="page-content-free-trials-card-content-buttons-action-button page-content-free-trials-card-content-buttons-view-demo-button" data-i18n="page-content-view-demo-label">View demo</div>
               </div>
             </div>
           </div>
@@ -540,7 +585,7 @@
           </div>
         </div>
         <div class="page-content-map-frame js-scroll">
-          <div class="page-content-map-header">Find Us On The Map</div>
+          <div class="page-content-map-header" data-i18n="page-content-map-header-text">Find Us On The Map</div>
           <div id="page-content-map" class="page-content-map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4565.15080674015!2d19.929182137569207!3d50.04687845900588!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b1dc8efe8d5%3A0xc9ca2132fbec0dba!2sZendesk!5e0!3m2!1sen!2sby!4v1717702350385!5m2!1sen!2sby" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
@@ -555,75 +600,75 @@
               </div>
             </div>
             <div class="footer-content-navigation-links-columns-frame">
-              <div class="footer-content-navigation-links-columns-header-text">Champions of customer service</div>
+              <div class="footer-content-navigation-links-columns-header-text" data-i18n="footer-header-text">Champions of customer service</div>
               <div class="footer-content-navigation-links-columns-category-frame footer-content-navigation-links-columns-products-frame" >
-                <div class="footer-content-navigation-links-columns-category-column-name footer-content-navigation-links-columns-products-column-name">Our Products</div>
+                <div class="footer-content-navigation-links-columns-category-column-name footer-content-navigation-links-columns-products-column-name" data-i18n="footer-products-text">Our Products</div>
                 <div class="footer-content-navigation-links-columns-category-column-content-frame footer-content-navigation-links-columns-products-column-content-frame">
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-products-column-content-service">Zendesk for service</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-products-column-content-sales">Zendesk for sales</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-products-column-content-platform">Platform and APIs</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-products-column-content-marketplace">Marketplace</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-products-column-content-updates">Product updates</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-products-column-content-service" data-i18n="footer-zendesk-service-text">Zendesk for service</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-products-column-content-sales" data-i18n="footer-zendesk-sales-text">Zendesk for sales</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-products-column-content-platform" data-i18n="footer-api-text">Platform and APIs</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-products-column-content-marketplace" data-i18n="footer-marketplace-text">Marketplace</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-products-column-content-updates" data-i18n="footer-updates-text">Product updates</div>
                 </div>
               </div>
               <div class="footer-content-navigation-links-columns-category-frame footer-content-navigation-links-columns-features-frame">
-                <div class="footer-content-navigation-links-columns-category-column-name footer-content-navigation-links-columns-features-column-name">Top Features</div>
+                <div class="footer-content-navigation-links-columns-category-column-name footer-content-navigation-links-columns-features-column-name" data-i18n="footer-top-features-text">Top Features</div>
                 <div class="footer-content-navigation-links-columns-category-column-content-frame footer-content-navigation-links-columns-features-column-content-frame">
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-ticketing">Ticketing system</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-messaging">Messaging & live chat</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-help-center">Help center</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-voice">Voice</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-forums">Community forums</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-reporting">Reporting & analytics</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-answer-bot">Answer Bot</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-customer-service-software">Customer service software</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-ticketing-system-software">Ticketing system software</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-live-chat-software">Live chat software</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-knowledge-base">Knowledge base</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-forum-software">Forum software</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-help-desk-software">Help desk software</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-security">Security</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-ticketing" data-i18n="header-ticketing-system-label">Ticketing system</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-messaging" data-i18n="header-messaging-live-chat-label">Messaging & live chat</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-help-center" data-i18n="header-help-center-label">Help center</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-voice" data-i18n="footer-voice-text">Voice</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-forums" data-i18n="footer-community-forums-text">Community forums</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-reporting" data-i18n="footer-reporting-text">Reporting & analytics</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-answer-bot" data-i18n="footer-answer-bot-text">Answer Bot</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-customer-service-software" data-i18n=footer-customer-service-text">Customer service software</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-ticketing-system-software" data-i18n="footer-ticketing-system-text">Ticketing system software</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-live-chat-software" data-i18n="footer-live-chat-text">Live chat software</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-knowledge-base" data-i18n="footer-kb-text">Knowledge base</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-forum-software" data-i18n="footer-forum-text">Forum software</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-help-desk-software" data-i18n="footer-help-desk-text">Help desk software</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-features-column-content-security" data-i18n="footer-security-text">Security</div>
                 </div>
               </div>
               <div class="footer-content-navigation-links-columns-category-frame footer-content-navigation-links-columns-resources-frame">
-                <div class="footer-content-navigation-links-columns-category-column-name footer-content-navigation-links-columns-resources-column-name">Resources</div>
+                <div class="footer-content-navigation-links-columns-category-column-name footer-content-navigation-links-columns-resources-column-name" data-i18n="header-resources-label">Resources</div>
                 <div class="footer-content-navigation-links-columns-category-column-content-frame footer-content-navigation-links-columns-resources-column-content-frame">
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-product-support">Product support</div>
-                  <div id="footer-content-navigation-links-columns-resources-column-content-request-demo" class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-request-demo">Request a demo</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-library">The Library</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-training">Training</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-partners">Partners</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-webinars">Webinars</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-customer-stories">Customer Stories</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-services">Services</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-product-support" data-i18n="header-product-support-label">Product support</div>
+                  <div id="footer-content-navigation-links-columns-resources-column-content-request-demo" class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-request-demo" data-i18n="footer-request-demo-text">Request a demo</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-library" data-i18n="footer-library-text">The Library</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-training" data-i18n="footer-training-text">Training</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-partners" data-i18n="footer-partners-text">Partners</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-webinars" data-i18n="footer-webinars-text">Webinars</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-customer-stories" data-i18n="footer-customer-stories-text">Customer Stories</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-resources-column-content-services" data-i18n="header-services-label">Services</div>
                 </div>
               </div>
               <div class="footer-content-navigation-links-columns-category-frame footer-content-navigation-links-columns-company-frame">
-                <div class="footer-content-navigation-links-columns-category-column-name footer-content-navigation-links-columns-company-column-name">Company</div>
+                <div class="footer-content-navigation-links-columns-category-column-name footer-content-navigation-links-columns-company-column-name" data-i18n="header-company-label">Company</div>
                 <div class="footer-content-navigation-links-columns-category-column-content-frame footer-content-navigation-links-columns-company-column-content-frame">
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-about">About us</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-press">Press</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-investors">Investors</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-events">Events</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-careers">Careers</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-diversity">Diversity & Inclusion</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-social-impact">Social Impact</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-contact-us">Contact us</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-sitemap">Sitemap</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-system-status">System status</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-product-help">Product help</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-legal">Legal</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-about" data-i18n="footer-about-us-text">About us</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-press" data-i18n="footer-press-text">Press</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-investors" data-i18n="footer-investors-text">Investors</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-events" data-i18n="footer-events-text">Events</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-careers" data-i18n="footer-careers-text">Careers</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-diversity" data-i18n="footer-diversity-text">Diversity & Inclusion</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-social-impact" data-i18n="footer-social-impact-text">Social Impact</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-contact-us" data-i18n="header-contact-us-label">Contact us</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-sitemap" data-i18n="footer-sitemap-text">Sitemap</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-system-status" data-i18n="footer-system-status-text">System status</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-product-help" data-i18n="footer-product-help-text">Product help</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-company-column-content-legal" data-i18n="footer-legal-text">Legal</div>
                 </div>
               </div>
               <div class="footer-content-navigation-links-columns-category-frame footer-content-navigation-links-columns-favorite-things-frame">
-                <div class="footer-content-navigation-links-columns-category-column-name footer-content-navigation-links-columns-favorite-things-column-name">Favorite Things</div>
+                <div class="footer-content-navigation-links-columns-category-column-name footer-content-navigation-links-columns-favorite-things-column-name" data-i18n="footer-favorite-things-text">Favorite Things</div>
                 <div class="footer-content-navigation-links-columns-category-column-content-frame footer-content-navigation-links-columns-favorite-things-column-content-frame">
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-favorite-things-column-content-enterprise">Zendesk for Enterprise</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-favorite-things-column-content-small-business">Zendesk for Small Business</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-favorite-things-column-content-startups">Zendesk for Startups</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-favorite-things-column-content-benchmark">Zendesk Benchmark</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-favorite-things-column-content-crm">Gartner CRM Magic Quadrant</div>
-                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-favorite-things-column-content-cx-trends">Customer Experience Trends</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-favorite-things-column-content-enterprise" data-i18n="footer-zendesk-enterprise-text">Zendesk for Enterprise</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-favorite-things-column-content-small-business" data-i18n="footer-zendesk-small-business-text">Zendesk for Small Business</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-favorite-things-column-content-startups" data-i18n="footer-zendesk-startups-text">Zendesk for Startups</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-favorite-things-column-content-benchmark" data-i18n="footer-zendesk-benchmark-text">Zendesk Benchmark</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-favorite-things-column-content-crm" data-i18n="footer-crm-text">Gartner CRM Magic Quadrant</div>
+                  <div class="footer-content-navigation-links-columns-category-column-content-link footer-content-navigation-links-columns-favorite-things-column-content-cx-trends" data-i18n="header-cx-trends-label">Customer Experience Trends</div>
                 </div>
               </div>
             </div>
@@ -631,31 +676,31 @@
           <div class="footer-content-subscribe-frame">
             <div class="footer-content-subscribe-content-frame">
               <div class="footer-content-subscribe-content-text-frame">
-                <div class="footer-content-subscribe-content-text-header-text">Enter the fold</div>
-                <div class="footer-content-subscribe-content-text-additional-text">Subscribe to our newsletter.</div>
+                <div class="footer-content-subscribe-content-text-header-text" data-i18n="footer-subscribe-header-text">Enter the fold</div>
+                <div class="footer-content-subscribe-content-text-additional-text" data-i18n="footer-subscribe-additional-text">Subscribe to our newsletter.</div>
               </div>
               <div class="footer-content-subscribe-content-email-box-frame">
                 <div class="footer-content-subscribe-content-email-box-input-frame" >
-                  <input class="footer-content-subscribe-content-email-box-input" type="email" name="footer-content-subscribe-content-email-box-input" placeholder="Whats youre email?" disabled>
+                  <input id="footer-content-subscribe-content-email-box-input" class="footer-content-subscribe-content-email-box-input" type="email" name="footer-content-subscribe-content-email-box-input" placeholder="Whats youre email?" disabled>
                 </div>  
                 <div class="footer-content-subscribe-content-email-box-button-frame">
-                  <div class="footer-content-subscribe-content-email-box-button">Subscribe</div>
+                  <div class="footer-content-subscribe-content-email-box-button" data-i18n="footer-subscribe-label">Subscribe</div>
                 </div>
               </div>
             </div>
           </div>
           <div id="footer-content-policies-navigation-frame" class="footer-content-policies-navigation-frame">
-            <div class="footer-content-policies-navigation-button footer-content-policies-navigation-terms-button">Terms of Use</div>
-            <div class="footer-content-policies-navigation-button footer-content-policies-navigation-privacy-button">Privacy Policy</div>
-            <div class="footer-content-policies-navigation-button footer-content-policies-navigation-cookie-button">Cookie Policy</div>
+            <div class="footer-content-policies-navigation-button footer-content-policies-navigation-terms-button" data-i18n="footer-tou-text">Terms of Use</div>
+            <div class="footer-content-policies-navigation-button footer-content-policies-navigation-privacy-button" data-i18n="footer-privacy-text">Privacy Policy</div>
+            <div class="footer-content-policies-navigation-button footer-content-policies-navigation-cookie-button" data-i18n="footer-cookie-text">Cookie Policy</div>
             <div class="footer-content-policies-navigation-copyright-text">&copy;Zendesk 2021</div>
           </div>
         </div>
       </div>
       <div id="copyright-frame" class="copyright-frame">
         <div class="copyright-content-frame">
-          <div class="copyright-content-company-info-text">Gartner, Critical Capabilities for the CRM Customer Engagement Center, 8 June 2020, Nadine LeBlanc, Brian Manusama</div>
-          <div class="copyright-content-description-text">Gartner does not endorse any vendor, product or service depicted in its research publications and does not advise technology users to select only those vendors with the highest ratings or other designations. Gartner research publications consist of the opinions of Gartner's Research & Advisory organization and should not be construed as statements of fact. Gartner disclaims all warranties, expressed or implied, with respect to this research, including any warranties of merchantability or fitness for particular purpose. GARTNER is a registered trademark and service mark of Gartner, Inc. and/or its affiliates in the U.S. and internationally and is used herein with permissions. All rights reserved.</div>
+          <div class="copyright-content-company-info-text" data-i18n="copyright-info-text">Gartner, Critical Capabilities for the CRM Customer Engagement Center, 8 June 2020, Nadine LeBlanc, Brian Manusama</div>
+          <div class="copyright-content-description-text" data-i18n="copyright-description-text">Gartner does not endorse any vendor, product or service depicted in its research publications and does not advise technology users to select only those vendors with the highest ratings or other designations. Gartner research publications consist of the opinions of Gartner's Research & Advisory organization and should not be construed as statements of fact. Gartner disclaims all warranties, expressed or implied, with respect to this research, including any warranties of merchantability or fitness for particular purpose. GARTNER is a registered trademark and service mark of Gartner, Inc. and/or its affiliates in the U.S. and internationally and is used herein with permissions. All rights reserved.</div>
         </div>
       </div>
     </div>
@@ -666,6 +711,8 @@
     <script type="text/javascript" src="./js/slider.js"></script>
     <script type="text/javascript" src="./js/audio.js"></script>
     <script type="text/javascript" src="./js/scroll.js"></script>
+    <script type="text/javascript" src="./js/customization.js"></script>
+    <script type="text/javascript" src="./js/translate.js"></script>
     <script defer type="text/javascript" src="./js/forms.js"></script>
     <script defer type="text/javascript" src="./js/demo.js"></script>
     <script defer type="text/javascript" src="./js/admin.js"></script>

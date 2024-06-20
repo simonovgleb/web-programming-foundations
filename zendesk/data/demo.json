@@ -2,8 +2,8 @@
 	"requests": [
 		{
 			"products": [
-				"Ticketing system",
-				"Ticketing system software"
+				"1",
+				"9"
 			],
 			"contact": {
 				"email": "carole.fuller@example.com",
@@ -16,9 +16,9 @@
 		},
 		{
 			"products": [
-				"Answer Bot",
-				"Help desk software",
-				"Voice"
+				"7",
+				"13",
+				"4"
 			],
 			"contact": {
 				"email": "ieva.nosenko@example.com",
@@ -31,7 +31,7 @@
 		},
 		{
 			"products": [
-				"Community forums"
+				"5"
 			],
 			"contact": {
 				"email": "iker.delgado@example.com",
