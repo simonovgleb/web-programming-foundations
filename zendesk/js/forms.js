@@ -149,7 +149,7 @@ function handleSignInForm() {
 				hideAdminLinks();
 			}
 		} else {
-			signInFormError.textContent = "Invalid username or password";
+			signInFormError.textContent = translate(locale, "sign-in-credentials-error");
 		}
 	}
 }
@@ -184,7 +184,7 @@ passwordInput.addEventListener("input", () => {
 	if (passwordInput.validity.valid) {
 		passwordError.textContent = "";
 		if (compromisedPasswords.includes(passwordInput.value)) {
-			passwordInput.setCustomValidity("Password is compromised");
+			passwordInput.setCustomValidity(translate(locale, "sign-up-password-compromised-error"));
 			passwordErrorFun();
 		}
 	} else {
@@ -194,8 +194,8 @@ passwordInput.addEventListener("input", () => {
 
 passwordConfirmationInput.addEventListener("input", () => {
 	if (passwordInput.value !== passwordConfirmationInput.value) {
-		passwordConfirmationInput.setCustomValidity("Passwords should match");
-		passwordError.textContent = "Passwords should match";
+		passwordConfirmationInput.setCustomValidity(translate(locale, "sign-up-password-confirmation-error"));
+		passwordError.textContent = passwordConfirmationInput.validationMessage;
 	} else {
 		passwordConfirmationInput.setCustomValidity("");
 		passwordError.textContent = "";
@@ -222,11 +222,11 @@ showPasswordButton.addEventListener("click", () => {
 	if (passwordInput.type === "password") {
 		passwordInput.type = "text";
 		passwordConfirmationInput.type = "text";
-		showPasswordButton.textContent = "Hide";
+		showPasswordButton.textContent = translate(locale, "sign-up-form-hide-password-label");
 	} else {
 		passwordInput.type = "password";
 		passwordConfirmationInput.type = "password";
-		showPasswordButton.textContent = "Show";
+		showPasswordButton.textContent = translate(locale, "sign-up-form-show-password-label");;
 	}
 });
 
@@ -246,7 +246,7 @@ nicknameInput.addEventListener("input", () => {
 		nicknameError.textContent = "";
 		let exist = checkNickname(nicknameInput.value);
 		if (exist) {
-			nicknameInput.setCustomValidity("This nickname is already taken");
+			nicknameInput.setCustomValidity(translate(locale, "sign-up-nickname-taken-error"));
 			nicknameErrorFun();
 		}
 	} else {
@@ -354,67 +354,67 @@ function addLeadingZero(num) {
 
 function phoneErrorFun() {
 	if (phoneInput.validity.valueMissing) {
-		phoneError.textContent = "Phone number is required";
+		phoneError.textContent = translate(locale, "sign-up-phone-empty-error");
 	} else if (phoneInput.validity.patternMismatch) {
-		phoneError.textContent = "Entered value should be numeric";
+		phoneError.textContent = translate(locale, "sign-up-phone-invalid-error");
 	} else if (phoneInput.validity.tooShort) {
-		phoneError.textContent = `Phone number should be exactly ${phoneInput.minLength} characters long; you entered ${phoneInput.value.length}`;
+		phoneError.textContent = `${translate(locale, "sign-up-phone-too-short-error")} ${phoneInput.minLength} ${translate(locale, "sign-up-phone-too-short-error-suffix")} ${phoneInput.value.length}`;
 	}
 }
 
 function emailErrorFun() {
 	if (emailInput.validity.valueMissing) {
-		emailError.textContent = "Email is required";
+		emailError.textContent = translate(locale, "sign-up-email-empty-error");
 	} else if (emailInput.validity.patternMismatch) {
-		emailError.textContent = "Entered value should be a valid email address";
+		emailError.textContent = translate(locale, "request-demo-email-invalid");
 	}
 }
 
 function dobErrorFun() {
 	if (dobInput.validity.valueMissing) {
-		dobError.textContent = "Date of Birth is required";
+		dobError.textContent = translate(locale, "sign-up-dob-empty-error");
 	} else if (dobInput.validity.rangeOverflow) {
-		dobError.textContent = `User must be at the age of ${MIN_USER_AGE} or older`;
+		dobError.textContent = `${translate(locale, "sign-up-dob-range-overflow-error")} ${MIN_USER_AGE} ${translate(locale, "sign-up-dob-range-overflow-error-suffix")}`;
 	}
 }
 
 function firstNameErrorFun() {
 	if (firstNameInput.validity.valueMissing) {
-		firstNameError.textContent = "First Name is required";
+		firstNameError.textContent = translate(locale, "sign-up-first-name-empty-error");
 	} else if (firstNameInput.validity.tooShort) {
-		firstNameError.textContent = `First Name should be at least ${firstNameInput.minLength} characters`;
+		firstNameError.textContent = `${translate(locale, "sign-up-first-name-too-short-error")} ${firstNameInput.minLength} ${translate(locale, "error-characters")}`;
 	} else if (firstNameInput.validity.patternMismatch) {
-		firstNameError.textContent = "First Name should be a valid name starting with capital letter";
+		firstNameError.textContent = translate(locale, "sign-up-first-name-invalid-error");
 	}
 }
 
 function lastNameErrorFun() {
 	if (lastNameInput.validity.valueMissing) {
-		lastNameError.textContent = "Last Name is required";
+		lastNameError.textContent = translate(locale, "sign-up-last-name-empty-error");
 	} else if (lastNameInput.validity.tooShort) {
-		lastNameError.textContent = `Last Name should be at least ${lastNameInput.minLength} characters`;
+		lastNameError.textContent = `${translate(locale, "sign-up-last-name-too-short-error")} ${lastNameInput.minLength} ${translate(locale, "error-characters")}`;
 	} else if (lastNameInput.validity.patternMismatch) {
-		lastNameError.textContent = "Last Name should be a valid surname starting with capital letter";
+		lastNameError.textContent = translate(locale, "sign-up-last-name-invalid-error");
 	}
 }
 
 function patronymicErrorFun() {
 	if (patronymicInput.validity.tooShort) {
-		patronymicError.textContent = `Patronymic should be at least ${patronymicInput.minLength} characters`;
+		patronymicError.textContent = `${translate(locale, "sign-up-patronymic-too-short-error")} ${patronymicInput.minLength} ${translate(locale, "error-characters")}`;
 	} else if (patronymicInput.validity.patternMismatch) {
-		patronymicError.textContent = "Patronymic shoulf be a valid father's name starting with capital letter";
+		patronymicError.textContent = translate(locale, "sign-up-patronymic-invalid-error");
 	}
 }
 
 function passwordErrorFun() {
 	if (passwordInput.validity.valueMissing) {
-		passwordError.textContent = "Password is required";
+		passwordError.textContent = translate(locale, "sign-up-password-empty-error");
 	} else if (passwordInput.validity.tooShort) {
-		passwordError.textContent = `Password should be at least ${passwordInput.minLength} characters long`;
+		passwordError.textContent = `${translate(locale, "sign-up-password-too-short-error")} ${passwordInput.minLength} ${translate(locale, "error-characters")}`;
 	} else if (passwordInput.validity.tooLong) {
-		passwordError.textContent = `Password should be at most ${passwordInput.maxLength} characters long`;
+		passwordError.textContent = `${translate(locale, "sign-up-password-too-long-error")} ${passwordInput.maxLength} ${translate(locale, "error-characters")}`;
 	} if (passwordInput.validity.patternMismatch) {
-		passwordError.textContent = "Password should contain at least one upper case letter, one lower case letter, special symbol and a digit";
+		passwordError.textContent = translate(locale, "sign-up-password-weak-error");
 	} else if (passwordInput.validity.customError) {
 		passwordError.textContent = passwordInput.validationMessage;
 	}
@@ -422,28 +422,28 @@ function passwordErrorFun() {
 
 function nicknameErrorFun() {
 	if (nicknameInput.validity.valueMissing) {
-		nicknameError.textContent = "Nickname is required";
+		nicknameError.textContent = translate(locale, "sign-up-nickname-empty-error");
 	} else if (nicknameInput.validity.customError) {
 		nicknameError.textContent = nicknameInput.validationMessage;
 	} else if (nicknameInput.validity.tooShort) {
-		nicknameError.textContent = `Nickname should be at least ${nicknameInput.minLength} characters long`;
+		nicknameError.textContent = `${translate(locale, "sign-up-nickname-too-short-error")} ${nicknameInput.minLength} ${translate(locale, "error-characters")}`;
 	}
 }
 
 function tosErrorFun() {
 	if (tosCheckbox.validity.valueMissing) {
-		tosError.textContent = "You must agree with the Terms of Service to proceed";
+		tosError.textContent = translate(locale, "sign-up-tos-missing-error");
 	}
 }
 
 function signInLoginErrorFun() {
 	if (signInLoginInput.validity.valueMissing) {
-		signInLoginError.textContent = "Email or Nickname is required";
+		signInLoginError.textContent = translate(locale, "sign-in-username-empty-error");
 	}
 }
 
 function signInPasswordErrorFun() {
 	if (signInPasswordInput.validity.valueMissing) {
-		signInPasswordError.textContent = "Password is required";
+		signInPasswordError.textContent = translate(locale, "sign-up-password-empty-error");
 	}
 }

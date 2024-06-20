@@ -871,6 +871,46 @@ body {
 	transition: background 2s;
 }
 
+.header-toplinks-available-languages-frame {
+	position: absolute;
+	top: 2rem;
+	background: white;
+	box-shadow: 0 0.5rem 1rem 0 var(--header-shadow-color);
+	z-index: 5;
+	display: none;
+}
+
+.header-toplinks-available-languages-frame.dark-theme {
+	box-shadow: 0 0.5rem 1rem 0 darkslategrey;
+}
+
+.header-toplinks-available-languages-frame-visible {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+}
+
+.header-toplinks-available-languages-frame > div {
+	text-align: left;
+	color: var(--header-toplinks-button-color);
+	font-size: 0.75rem;
+	font-family: Roboto;
+	font-style: normal;
+	letter-spacing: 0;
+	font-weight: 400;
+	line-height: 1.125rem;
+	word-wrap: break-word;
+}
+
+.header-toplinks-available-languages-frame.dark-theme > div {
+	color: var(--dark-theme-text-color);
+}
+
+.header-toplinks-available-languages-frame > div:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
 .page-content-frame {
 	width: 100%;
 	height: 390rem;
@@ -974,6 +1014,10 @@ body {
 	grid-template-rows: auto;
 }
 
+.page-content-customer-service-frame.locale-ru {
+	grid-template-columns: 5% 90% 5%;
+}
+
 .page-content-customer-service-inner-frame {
 	min-height: 31.25rem;
 	display: flex;
@@ -991,6 +1035,10 @@ body {
 	height: 19.8125rem;
 	display: flex;
 	flex-direction: column;
+}
+
+.page-content-customer-service-text-frame.locale-ru {
+	width: 27rem;
 }
 
 .page-content-customer-service-text-champions {
@@ -1379,6 +1427,10 @@ body {
     animation-iteration-count: infinite;
 }
 
+.page-content-customer-support-header-text.locale-ru {
+	width: 40rem;
+}
+
 @keyframes customer-support-header-movement {
 	from { transform: translateX(-10rem); }
 	to { transform: translateX(10rem); }
@@ -1539,6 +1591,8 @@ body {
 	font-weight: 300;
 	line-height: 1.5rem;
 	word-wrap: break-word;
+	display: flex;
+	flex-direction: column;
 }
 
 .page-content-customer-support-card-content-description-text-squarespace-quote-author-frame {
@@ -1557,6 +1611,10 @@ body {
 	font-weight: 300;
 	line-height: 1.5rem;
 	word-wrap: break-word;
+}
+
+.page-content-customer-support-card-content-description-text-squarespace-quote-author-name-text.locale-ru {
+	width: 8rem;
 }
 
 .page-content-customer-support-card-content-description-text-squarespace-quote-author-title-text {
@@ -1715,6 +1773,10 @@ body {
     grid-template-rows: auto;
 }
 
+.page-content-customer-experience-trends-frame.locale-ru {
+	grid-template-columns: 5% 90% 5%;
+}
+
 .page-content-customer-experience-trends-wrapper {
 	height: 22rem;
 	grid-column: 2 / 2;
@@ -1774,6 +1836,10 @@ body {
 
 .page-content-customer-experience-trends-new-customer-experience-card-name {
 	width: 8.8125rem;
+}
+
+.page-content-customer-experience-trends-new-customer-experience-card-name.locale-ru {
+	width: 13rem;
 }
 
 .page-content-customer-experience-trends-card-header {
@@ -1855,8 +1921,16 @@ body {
 	width: 13.75rem;
 }
 
+.page-content-customer-experience-trends-new-product-card-name.locale-ru {
+	width: 18.5rem;
+}
+
 .page-content-customer-experience-trends-new-product-card-header {
 	width: 15.8125rem;
+}
+
+.page-content-customer-experience-trends-new-product-card-header.locale-ru {
+	width: 20.5rem;
 }
 
 .page-content-customer-experience-trends-new-product-card-description {
@@ -1896,6 +1970,11 @@ body {
 	font-weight: 700;
 	line-height: 2.5rem;
 	word-wrap: break-word;
+}
+
+.page-content-digital-customer-service-card-content-text.locale-ru {
+	width: 40rem;
+	text-align: center;
 }
 
 .page-content-digital-customer-service-card-content-logo-frame {
@@ -1945,6 +2024,10 @@ body {
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-evenly;
+}
+
+.page-content-customer-stories-card-content-companies-frame.locale-ru {
+	height: 36.5rem;
 }
 
 .page-content-customer-stories-card-content-companies-header-text {
@@ -2168,8 +2251,16 @@ body {
 	width: 17.625rem;
 }
 
+.page-content-customer-experience-links-card-content-links-grid-zendesk-update-button.locale-ru {
+	width: 18rem;
+}
+
 .page-content-customer-experience-links-card-content-links-grid-customer-service-metrics-frame {
 	height: 1.3125rem;
+}
+
+.page-content-customer-experience-links-card-content-links-grid-customer-service-metrics-frame.locale-ru {
+	height: 3rem;
 }
 
 .page-content-customer-experience-links-card-content-links-grid-customer-service-metrics-button {
@@ -2363,6 +2454,10 @@ body {
     display: grid;
     grid-template-columns: 11% 78% 11%;
     grid-template-rows: auto;
+}
+
+.footer-frame.locale-ru {
+	grid-template-columns: 7% 86% 7%;
 }
 
 .footer-content-frame {
@@ -2659,6 +2754,10 @@ body {
     align-items: center;
 }
 
+.copyright-frame.locale-ru {
+	grid-template-columns: 7% 86% 7%;
+}
+
 .copyright-content-frame {
 	height: 6.75rem;
 	grid-column: 2 / 2;
@@ -2719,6 +2818,14 @@ body {
 		grid-template-columns: 5% 90% 5%;
 	}
 
+	.page-content-customer-service-frame.locale-ru {
+		grid-template-columns: 1% 98% 1%;
+	}
+
+	.page-content-customer-service-inner-frame.locale-ru {
+	    column-gap: 15rem;
+	}
+
 	.page-content-customer-experience-trends-frame {
 		grid-template-columns: 5% 90% 5%;
 	}
@@ -2752,6 +2859,14 @@ body {
 		padding-inline: 0;
 		padding-block: 0;
 	}
+
+	.footer-frame.locale-ru {
+	    grid-template-columns: 1% 98% 1%;
+	}
+
+	.copyright-frame.locale-ru {
+	    grid-template-columns: 1% 98% 1%;
+	}
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -2778,7 +2893,7 @@ body {
 	}
 
 	.page-content-customer-experience-card-content-header-text {
-		width: 20rem;
+		width: 25rem;
 	}
 
 	.page-content-customer-experience-card-content-additional-text {
@@ -2828,6 +2943,19 @@ body {
 		column-gap: 7rem;
 	}
 
+	.page-content-customer-service-frame.locale-ru {
+		grid-template-columns: 0.5% 99% 0.5%;
+	}
+
+	.page-content-customer-service-inner-frame.locale-ru {
+	    column-gap: 2rem;
+	}
+
+	.page-content-customer-service-text-frame.locale-ru {
+	    width: 24rem;
+	    margin-top: 9rem;
+	}
+
 	.page-content-messaging-description-frame {
 		column-gap: 0;
 	}
@@ -2863,6 +2991,10 @@ body {
 	.page-content-customer-support-card-content-description-images-support-person-image.dark-theme {
 		margin-top: -55rem;
 		margin-left: 20rem;
+	}
+
+	.page-content-customer-experience-frame.locale-ru {
+		grid-template-columns: 33% 60% 7%;
 	}
 
 	.page-content-customer-experience-trends-frame {
@@ -2917,6 +3049,10 @@ body {
 		margin-right: 0;
 	}
 
+	.footer-content-navigation-links-columns-header-text.locale-ru {
+		width: 100%;
+	}
+
 	.copyright-frame {
 		grid-template-columns: 1px calc(100% - 2px) 1px;
 	}
@@ -2928,6 +3064,18 @@ body {
 	.page-content-customer-experience-trends-wrapper {
 		flex-wrap: nowrap;
 	}
+
+	.footer-frame.locale-ru {
+        grid-template-columns: 1px calc(100% - 2px) 1px;
+    }
+
+    .copyright-frame.locale-ru {
+        grid-template-columns: 1px calc(100% - 2px) 1px;
+    }
+
+    .footer-content-navigation-links-columns-favorite-things-frame.locale-ru {
+    	width: 12rem;
+    }
 }
 
 @media (min-width: 1440px) {

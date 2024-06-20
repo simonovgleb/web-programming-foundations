@@ -33,37 +33,52 @@ class DemoRequest {
 }
 
 class AvailableProduct {
-	constructor(category, name) {
+	constructor(id, category, i18nKey) {
+		this.id = id;
 		this.category = category;
-		this.name = name;
+		this.i18nKey = i18nKey;
+	}
+
+	get name() {
+		return translate(locale, this.i18nKey);
 	}
 }
 
-const CATEGORY_SOFTWARE = "Software";
-const CATEGORY_SUPPORT = "Support";
-const CATEGORY_CX = "Customer Experience";
+class AvailableProductCategory {
+	constructor(id, i18nKey) {
+		this.id = id;
+		this.i18nKey = i18nKey;
+	}
+
+	get name() {
+		return translate(locale, this.i18nKey);
+	}
+}
+
+const CATEGORY_SOFTWARE = new AvailableProductCategory("1", "category-software");
+const CATEGORY_SUPPORT = new AvailableProductCategory("2", "category-support");
+const CATEGORY_CX = new AvailableProductCategory("3", "category-cx");
 const CATEGORIES = [CATEGORY_SOFTWARE, CATEGORY_SUPPORT, CATEGORY_CX];
 const ZENDESK_PRODUCTS = [
-	new AvailableProduct(CATEGORY_CX, "Ticketing system"),
-	new AvailableProduct(CATEGORY_SUPPORT, "Messaging & live chat"),
-	new AvailableProduct(CATEGORY_SUPPORT, "Help center"),
-	new AvailableProduct(CATEGORY_SUPPORT, "Voice"),
-	new AvailableProduct(CATEGORY_CX, "Community forums"),
-	new AvailableProduct(CATEGORY_SOFTWARE, "Reporting & analytics"),
-	new AvailableProduct(CATEGORY_SUPPORT, "Answer Bot"),
-	new AvailableProduct(CATEGORY_SOFTWARE, "Customer service software"),
-	new AvailableProduct(CATEGORY_SOFTWARE, "Ticketing system software"),
-	new AvailableProduct(CATEGORY_SOFTWARE, "Live chat software"),
-	new AvailableProduct(CATEGORY_CX, "Knowledge base"),
-	new AvailableProduct(CATEGORY_SOFTWARE, "Forum software"),
-	new AvailableProduct(CATEGORY_SOFTWARE, "Help desk software"),
-	new AvailableProduct(CATEGORY_CX, "Security"),
-	new AvailableProduct(CATEGORY_SOFTWARE, "Platform and APIs"),
-	new AvailableProduct(CATEGORY_CX, "Marketplace")
+	new AvailableProduct("1", CATEGORY_CX.id, "header-ticketing-system-label"),
+	new AvailableProduct("2", CATEGORY_SUPPORT.id, "header-messaging-live-chat-label"),
+	new AvailableProduct("3", CATEGORY_SUPPORT.id, "header-help-center-label"),
+	new AvailableProduct("4", CATEGORY_SUPPORT.id, "footer-voice-text"),
+	new AvailableProduct("5", CATEGORY_CX.id, "footer-community-forums-text"),
+	new AvailableProduct("6", CATEGORY_SOFTWARE.id, "footer-reporting-text"),
+	new AvailableProduct("7", CATEGORY_SUPPORT.id, "footer-answer-bot-text"),
+	new AvailableProduct("8", CATEGORY_SOFTWARE.id, "footer-customer-service-text"),
+	new AvailableProduct("9", CATEGORY_SOFTWARE.id, "footer-ticketing-system-text"),
+	new AvailableProduct("10", CATEGORY_SOFTWARE.id, "footer-live-chat-text"),
+	new AvailableProduct("11", CATEGORY_CX.id, "footer-kb-text"),
+	new AvailableProduct("12", CATEGORY_SOFTWARE.id, "footer-forum-text"),
+	new AvailableProduct("13", CATEGORY_SOFTWARE.id, "footer-help-desk-text"),
+	new AvailableProduct("14", CATEGORY_CX.id, "footer-security-text"),
+	new AvailableProduct("15", CATEGORY_SOFTWARE.id, "footer-api-text"),
+	new AvailableProduct("16", CATEGORY_CX.id, "footer-marketplace-text")
 ];
 const DATE_FORMAT_OPTIONS = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const TIME_FORMAT_OPTIONS = { hour: "2-digit", minute: "2-digit" };
-const DEFAULT_LOCALE = "en";
 
 let demoRequests = [];
 let filter = "";
@@ -121,13 +136,14 @@ function initFilter() {
 		let button = document.createElement("input");
 		button.type = "radio";
 		button.name = "request-demo-filter-option"; 
-		button.id = button.name + "-" + category.toLowerCase().replace(/\W/, "-");;
-		button.value = category;
+		button.id = button.name + "-" + translate(DEFAULT_LOCALE, category.i18nKey).toLowerCase().replace(/\W/, "-");;
+		button.value = category.name;
 		button.addEventListener("input", () => filterProducts(category));
 
 		let label = document.createElement("label");
 		label.setAttribute("for", button.id);
-		label.textContent = category;
+		label.setAttribute(I18N_ATTRIBUTE, category.i18nKey);
+		label.textContent = category.name;
 
 		filterOptionsFrame.insertBefore(button, resetFilterButton);
 		filterOptionsFrame.insertBefore(label, resetFilterButton);
@@ -149,7 +165,7 @@ function resetFilter() {
 }
 
 function filterProducts(category) {
-	filter = category;
+	filter = category?.id;
 	cleanListOptions();
 	initListOptions(applyFilterAndSearch());
 }
@@ -164,10 +180,10 @@ function initListOptions(products) {
 	products.forEach(product => {
 		let checkbox = document.createElement("input");
 		checkbox.type = "checkbox";
-		checkbox.name = "request-demo-product-option-" + product.name.toLowerCase().replace(/\W/, "-");
+		checkbox.name = "request-demo-product-option-" + translate(DEFAULT_LOCALE, product.i18nKey).toLowerCase().replace(/\W/, "-");
 		checkbox.id = checkbox.name;
-		checkbox.value = product.name;
-		if (checked.has(product.name)) {
+		checkbox.value = product.id;
+		if (checked.has(product.id)) {
 			checkbox.setAttribute("checked", "");
 		}
 
@@ -175,6 +191,7 @@ function initListOptions(products) {
 
 		let label = document.createElement("label");
 		label.setAttribute("for", checkbox.id);
+		label.setAttribute(I18N_ATTRIBUTE, product.i18nKey);
 		label.textContent = product.name;
 
 		productsListOptionsFrame.insertBefore(checkbox, productsListError);
@@ -188,25 +205,25 @@ function applyFilterAndSearch() {
 	return ZENDESK_PRODUCTS.filter(product => {
 		let name = product.name.toLowerCase();
 		let category = product.category;
-		return (filter === "" || category === filter) && (search === "" || name.includes(search.toLowerCase()));
+		return (!filter || category === filter) && (search === "" || name.includes(search.toLowerCase()));
 	});
 }
 
 function selectProduct(checkbox) {
 	productsListError.textContent = "";
 	productsListHiddenInput.setCustomValidity("");
-	let name = checkbox.value;
+	let productId = checkbox.value;
 	if (checkbox.checked) {
-		checked.add(name);
+		checked.add(productId);
 	} else {
-		checked.delete(name);
+		checked.delete(productId);
 		markProductSelectionEmpty();
 	}
 }
 
 function markProductSelectionEmpty() {
 	if (checked.size === 0) {
-		productsListHiddenInput.setCustomValidity("Select at least one product");
+		productsListHiddenInput.setCustomValidity(translate(locale, "request-demo-select-product-error"));
 		productsListError.textContent = productsListHiddenInput.validationMessage;
 	}
 }
@@ -245,35 +262,35 @@ addInputEventListener(requestDemoTimeInput, requestDemoTimeError, requestDemoTim
 
 function requestDemoNameErrorFun() {
 	if (requestDemoNameInput.validity.valueMissing) {
-		requestDemoNameError.textContent = "Provide contact name";
+		requestDemoNameError.textContent = translate(locale, "request-demo-name-empty-error");
 	} else if (requestDemoNameInput.validity.tooShort) {
-		requestDemoNameError.textContent = `Name should be at least ${requestDemoNameInput.minLength} characters`;
+		requestDemoNameError.textContent = `${translate(locale, "request-demo-name-too-short-error")} ${requestDemoNameInput.minLength} ${translate(locale, "error-characters")}`;
 	} else if (requestDemoNameInput.validity.patternMismatch) {
-		requestDemoNameError.textContent = "Name should be a valid name starting with capital letter";
+		requestDemoNameError.textContent = translate(locale, "request-demo-name-invalid-error");
 	}
 }
 
 function requestDemoEmailErrorFun() {
 	if (requestDemoEmailInput.validity.valueMissing) {
-		requestDemoEmailError.textContent = "Provide contact email";
+		requestDemoEmailError.textContent = translate(locale, "request-demo-email-empty-error");
 	} else if (requestDemoEmailInput.validity.patternMismatch) {
-		requestDemoEmailError.textContent = "Entered value should be a valid email address";
+		requestDemoEmailError.textContent = translate(locale, "request-demo-email-innvalid");
 	}
 }
 
 function requestDemoDateErrorFun() {
 	if (requestDemoDateInput.validity.valueMissing) {
-		requestDemoDateError.textContent = "Select suitable date for demo";
+		requestDemoDateError.textContent = translate(locale, "request-demo-date-empty-error");
 	} else if (requestDemoDateInput.validity.rangeOverflow || requestDemoDateInput.validity.rangeUnderflow) {
-		requestDemoDateError.textContent = "Select any suitable date from tomorrow till the end of the year";
+		requestDemoDateError.textContent = translate(locale, "request-demo-date-out-of-range-error");
 	}
 }
 
 function requestDemoTimeErrorFun() {
 	if (requestDemoTimeInput.validity.valueMissing) {
-		requestDemoTimeError.textContent = "Select suitable time for demo";
+		requestDemoTimeError.textContent = translate(locale, "request-demo-time-empty-error");
 	} else if (requestDemoTimeInput.validity.rangeOverflow || requestDemoTimeInput.validity.rangeUnderflow) {
-		requestDemoTimeError.textContent = `Select any suitable time from ${requestDemoTimeInput.min} till ${requestDemoTimeInput.max}`;
+		requestDemoTimeError.textContent = `${translate(locale, "request-demo-time-out-of-range-error")} ${requestDemoTimeInput.min} ${translate(locale, "request-demo-time-error-preposition")} ${requestDemoTimeInput.max}`;
 	}
 }
 
@@ -300,8 +317,8 @@ function showSummaryForm() {
 	requestDemoSummaryEmail.textContent = requestDemoEmailInput.value;
 
 	let demoDateTime = getRequestedDemoDateTime(new DemoTimestamp(requestDemoDateInput.value, requestDemoTimeInput.value));
-	requestDemoSummaryDate.textContent = demoDateTime.toLocaleDateString(DEFAULT_LOCALE, DATE_FORMAT_OPTIONS);
-	requestDemoSummaryTime.textContent = demoDateTime.toLocaleTimeString(DEFAULT_LOCALE, TIME_FORMAT_OPTIONS);
+	requestDemoSummaryDate.textContent = demoDateTime.toLocaleDateString(locale, DATE_FORMAT_OPTIONS);
+	requestDemoSummaryTime.textContent = demoDateTime.toLocaleTimeString(locale, TIME_FORMAT_OPTIONS);
 
 	demoSummaryContainer.classList.add(SIGN_UP_FORM_VISIBLE_CLASS);
 }
@@ -309,14 +326,18 @@ function showSummaryForm() {
 function buildProductsSummary() {
 	let listElement = document.createElement("ul");
 
-	checked.forEach(product => {
+	checked.forEach(productId => {
 		let listItem = document.createElement("li");
-		listItem.textContent = product;
+		listItem.textContent = getProductName(productId);
 
 		listElement.appendChild(listItem);
 	})
 
 	productsListSummary.appendChild(listElement);
+}
+
+function getProductName(productId) {
+	return ZENDESK_PRODUCTS.find(product => product.id === productId).name;
 }
 
 function getRequestedDemoDateTime(timestamp) {

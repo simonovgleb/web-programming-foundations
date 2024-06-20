@@ -27,6 +27,7 @@ const CLASSES_TO_RECOLOR = [
 	"header-menu-items-frame",
 	"header-menu-item",
 	"burger-menu-frame",
+	"header-toplinks-available-languages-frame",
 	"page-content-customer-support-frame",
 	"page-content-customer-support-card-content-description-text-additional-text",
 	"page-content-customer-support-card-content-description-text-squarespace-quote-text",
@@ -66,12 +67,49 @@ const SUPPORT_PERSON_IMAGE_PATH = "./assets/support-person-image.svg";
 const SUPPORT_PERSON_IMAGE_DARK_PATH = "./assets/support-person-image-dark.jpg";
 const SUPPORT_CHAT_IMAGE_PATH = "./assets/support-chat-image.svg";
 const SUPPORT_CHAT_IMAGE_DARK_PATH = "./assets/support-chat-image-dark.jpg";
+const DEFAULT_LOCALE = "en";
+const LOCALE_RU = "ru";
+const LOCALES = [DEFAULT_LOCALE, LOCALE_RU];
+const I18N_ATTRIBUTE = "data-i18n";
+const LOCALE_RU_CLASS = "locale-ru";
+const CLASSES_TO_UPDATE_AFTER_TRANSLATE = [
+	"page-content-customer-service-frame",
+	"page-content-customer-service-inner-frame",
+	"page-content-customer-service-text-frame",
+	"page-content-customer-support-header-text",
+	"page-content-customer-support-card-content-description-text-squarespace-quote-author-name-text",
+	"page-content-customer-experience-frame",
+	"page-content-customer-experience-trends-frame",
+	"page-content-customer-experience-trends-new-customer-experience-card-name",
+	"page-content-customer-experience-trends-new-product-card-name",
+	"page-content-customer-experience-trends-new-product-card-header",
+	"page-content-digital-customer-service-card-content-text",
+	"page-content-customer-stories-card-content-companies-frame",
+	"page-content-customer-experience-links-card-content-links-grid-zendesk-update-button",
+	"page-content-customer-experience-links-card-content-links-grid-customer-service-metrics-frame",
+	"footer-frame",
+	"footer-content-navigation-links-columns-favorite-things-frame",
+	"footer-content-navigation-links-columns-header-text",
+	"copyright-frame"
+];
+const EMAIL_PLACEHOLDER_KEY = "footer-subscribe-email-placeholder";
+const SQUARESPACE_QUOTE_KEY = "page-content-squarespace-quote-text";
+const LANGUAGE_KEY = "header-language-label";
+const AVAILABLE_LANGUAGES_VISIBLE_CLASS = "header-toplinks-available-languages-frame-visible";
+const TOS_PREFIX_KEY = "sign-up-form-agree-with-label";
+const TOS_POSFIX_KEY = "sign-up-form-tos-label";
 
 let themeSwitcherButton = document.getElementById("header-toplinks-theme-switcher");
 let supportChatImage = document.getElementById("page-content-customer-support-card-content-description-images-support-chat-image");
 let supportPersonImage = document.getElementById("page-content-customer-support-card-content-description-images-support-person-image");
+let subscribeEmailBox = document.getElementById("footer-content-subscribe-content-email-box-input");
+let customerSupportQuote = document.getElementById("page-content-customer-support-card-content-description-text-squarespace-quote-text");
+let activeLanguageButton = document.getElementById("header-toplinks-active-language");
+let availableLanguagesContainer = document.getElementById("header-toplinks-available-languages-frame");
+let signUpTosLabel = document.getElementById("sign-up-form-inputs-tos-label");
 
 let theme = THEME_LIGHT;
+let locale = DEFAULT_LOCALE;
 
 themeSwitcherButton.addEventListener("click", () => {
 	if (theme === THEME_LIGHT) {
@@ -79,6 +117,10 @@ themeSwitcherButton.addEventListener("click", () => {
 	} else {
 		applyLightTheme();
 	}
+});
+
+activeLanguageButton.addEventListener("click", () => {
+	buildAvailableLanguagesList();
 });
 
 function applyLightTheme() {
@@ -121,4 +163,40 @@ function switchImages() {
 		supportPersonImage.src = SUPPORT_PERSON_IMAGE_DARK_PATH;
 		supportChatImage.src = SUPPORT_CHAT_IMAGE_DARK_PATH;
 	}
+}
+
+function translatePage() {
+	Array.from(document.querySelectorAll(`[${I18N_ATTRIBUTE}]`))
+		.forEach(element => element.textContent = translate(locale, element.getAttribute(I18N_ATTRIBUTE)));
+	subscribeEmailBox.setAttribute("placeholder", translate(locale, EMAIL_PLACEHOLDER_KEY));
+	customerSupportQuote.textContent = "";
+	customerSupportQuote.insertAdjacentHTML("afterbegin", `&ldquo;${translate(locale, SQUARESPACE_QUOTE_KEY)}&rdquo;`);
+	signUpTosLabel.textContent = "";
+	signUpTosLabel.insertAdjacentHTML("afterbegin", `${translate(locale, TOS_PREFIX_KEY)} <a href="#" target="_blank">${translate(locale, TOS_POSFIX_KEY)}</a>`);
+	toggleThemeStyles(CLASSES_TO_UPDATE_AFTER_TRANSLATE, LOCALE_RU_CLASS);
+}
+
+function buildAvailableLanguagesList() {
+	closeAvailableLanguages();
+	LOCALES.filter(loc => loc !== locale)
+		.forEach(loc => {
+			let lang = translate(loc, LANGUAGE_KEY);
+			let langElement = document.createElement("div");
+			langElement.textContent = lang;
+			langElement.addEventListener("click", () => applyLanguage(loc));
+
+			availableLanguagesContainer.appendChild(langElement);
+		});
+}
+
+function applyLanguage(loc) {
+	locale = loc;
+	closeAvailableLanguages();
+	translatePage();
+}
+
+function closeAvailableLanguages() {
+	availableLanguagesContainer.classList.toggle(AVAILABLE_LANGUAGES_VISIBLE_CLASS);
+	Array.from(availableLanguagesContainer.childNodes)
+		.forEach(child => child.remove());
 }
