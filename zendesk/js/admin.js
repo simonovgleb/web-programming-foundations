@@ -61,7 +61,7 @@ function addDemoRequestCard(demoRequest) {
 
 	productsList.textContent = demoRequest.products.map(getProductName).join(", ");
 	contactInfo.insertAdjacentHTML("afterbegin", `${demoRequest.contact.name} <a href="mailto:${demoRequest.contact.email}">${demoRequest.contact.email}</a>`);
-	timestamp.textContent = demoRequest.timestamp.toLocaleString(locale, { ...DATE_FORMAT_OPTIONS, ...TIME_FORMAT_OPTIONS });
+	timestamp.textContent = demoRequest.timestamp.toLocaleString(locale(), { ...DATE_FORMAT_OPTIONS, ...TIME_FORMAT_OPTIONS });
 
 	cardContentFrame.appendChild(productsList);
 	cardContentFrame.appendChild(contactInfo);

@@ -40,7 +40,7 @@ class AvailableProduct {
 	}
 
 	get name() {
-		return translate(locale, this.i18nKey);
+		return translate(locale(), this.i18nKey);
 	}
 }
 
@@ -51,7 +51,7 @@ class AvailableProductCategory {
 	}
 
 	get name() {
-		return translate(locale, this.i18nKey);
+		return translate(locale(), this.i18nKey);
 	}
 }
 
@@ -223,7 +223,7 @@ function selectProduct(checkbox) {
 
 function markProductSelectionEmpty() {
 	if (checked.size === 0) {
-		productsListHiddenInput.setCustomValidity(translate(locale, "request-demo-select-product-error"));
+		productsListHiddenInput.setCustomValidity(translate(locale(), "request-demo-select-product-error"));
 		productsListError.textContent = productsListHiddenInput.validationMessage;
 	}
 }
@@ -262,35 +262,35 @@ addInputEventListener(requestDemoTimeInput, requestDemoTimeError, requestDemoTim
 
 function requestDemoNameErrorFun() {
 	if (requestDemoNameInput.validity.valueMissing) {
-		requestDemoNameError.textContent = translate(locale, "request-demo-name-empty-error");
+		requestDemoNameError.textContent = translate(locale(), "request-demo-name-empty-error");
 	} else if (requestDemoNameInput.validity.tooShort) {
-		requestDemoNameError.textContent = `${translate(locale, "request-demo-name-too-short-error")} ${requestDemoNameInput.minLength} ${translate(locale, "error-characters")}`;
+		requestDemoNameError.textContent = `${translate(locale(), "request-demo-name-too-short-error")} ${requestDemoNameInput.minLength} ${translate(locale(), "error-characters")}`;
 	} else if (requestDemoNameInput.validity.patternMismatch) {
-		requestDemoNameError.textContent = translate(locale, "request-demo-name-invalid-error");
+		requestDemoNameError.textContent = translate(locale(), "request-demo-name-invalid-error");
 	}
 }
 
 function requestDemoEmailErrorFun() {
 	if (requestDemoEmailInput.validity.valueMissing) {
-		requestDemoEmailError.textContent = translate(locale, "request-demo-email-empty-error");
+		requestDemoEmailError.textContent = translate(locale(), "request-demo-email-empty-error");
 	} else if (requestDemoEmailInput.validity.patternMismatch) {
-		requestDemoEmailError.textContent = translate(locale, "request-demo-email-innvalid");
+		requestDemoEmailError.textContent = translate(locale(), "request-demo-email-innvalid");
 	}
 }
 
 function requestDemoDateErrorFun() {
 	if (requestDemoDateInput.validity.valueMissing) {
-		requestDemoDateError.textContent = translate(locale, "request-demo-date-empty-error");
+		requestDemoDateError.textContent = translate(locale(), "request-demo-date-empty-error");
 	} else if (requestDemoDateInput.validity.rangeOverflow || requestDemoDateInput.validity.rangeUnderflow) {
-		requestDemoDateError.textContent = translate(locale, "request-demo-date-out-of-range-error");
+		requestDemoDateError.textContent = translate(locale(), "request-demo-date-out-of-range-error");
 	}
 }
 
 function requestDemoTimeErrorFun() {
 	if (requestDemoTimeInput.validity.valueMissing) {
-		requestDemoTimeError.textContent = translate(locale, "request-demo-time-empty-error");
+		requestDemoTimeError.textContent = translate(locale(), "request-demo-time-empty-error");
 	} else if (requestDemoTimeInput.validity.rangeOverflow || requestDemoTimeInput.validity.rangeUnderflow) {
-		requestDemoTimeError.textContent = `${translate(locale, "request-demo-time-out-of-range-error")} ${requestDemoTimeInput.min} ${translate(locale, "request-demo-time-error-preposition")} ${requestDemoTimeInput.max}`;
+		requestDemoTimeError.textContent = `${translate(locale(), "request-demo-time-out-of-range-error")} ${requestDemoTimeInput.min} ${translate(locale(), "request-demo-time-error-preposition")} ${requestDemoTimeInput.max}`;
 	}
 }
 
@@ -317,8 +317,8 @@ function showSummaryForm() {
 	requestDemoSummaryEmail.textContent = requestDemoEmailInput.value;
 
 	let demoDateTime = getRequestedDemoDateTime(new DemoTimestamp(requestDemoDateInput.value, requestDemoTimeInput.value));
-	requestDemoSummaryDate.textContent = demoDateTime.toLocaleDateString(locale, DATE_FORMAT_OPTIONS);
-	requestDemoSummaryTime.textContent = demoDateTime.toLocaleTimeString(locale, TIME_FORMAT_OPTIONS);
+	requestDemoSummaryDate.textContent = demoDateTime.toLocaleDateString(locale(), DATE_FORMAT_OPTIONS);
+	requestDemoSummaryTime.textContent = demoDateTime.toLocaleTimeString(locale(), TIME_FORMAT_OPTIONS);
 
 	demoSummaryContainer.classList.add(SIGN_UP_FORM_VISIBLE_CLASS);
 }

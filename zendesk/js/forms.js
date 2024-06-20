@@ -41,11 +41,16 @@ const NICKNAME_SEPARATOR = ".";
 
 const SIGN_UP_FORM_VISIBLE_CLASS = "sign-up-form-frame-visible";
 const NO_SCROLL_CLASS = "no-scroll";
+const AUTH_BUTTON_VISIBLE_CLASS = "header-toplinks-auth-visible";
+const USER_DATA_CONTAINER_VISIBLE_CLASS = "header-toplinks-user-data-frame-visible";
+const USER_DATA_ATTRIBUTE = "user-data-key";
+
+const AUTH_USER_STORAGE_KEY = "authUser";
 
 const ROLE_ADMIN = "ADMIN";
 const ROLE_USER = "USER";
 
-let authUser;
+let authUser = JSON.parse(localStorage.getItem(AUTH_USER_STORAGE_KEY));
 
 let users = [];
 let compromisedPasswords = [];
@@ -87,6 +92,13 @@ let signInPasswordError = document.getElementById("sign-in-form-password-validat
 let signInFormError = document.getElementById("sign-in-form-validation");
 let closeSignInButton = document.getElementById("sign-in-form-close-button");
 let signUpRedirectButton = document.getElementById("sign-in-form-sign-up-button");
+let signOutButton = document.getElementById("header-toplinks-sign-out-button");
+let userButtonFrame = document.getElementById("header-toplinks-user-icon-frame");
+let userButton = document.getElementById("header-toplinks-user-icon");
+let userDataContainer = document.getElementById("header-toplinks-user-data-frame");
+let userDataResetButton = document.getElementById("header-toplinks-user-data-reset-button");
+let userDataShowPasswordButton = document.getElementById("header-toplinks-user-data-show-password-button");
+let userDataPasswordInput = document.getElementById("user-data-password-input");
 
 let suggestedNicknames = 0;
 let date = new Date();
@@ -114,6 +126,10 @@ async function loadPasswords() {
 }
 
 addEventListener("load", () => {
+	if (authUser) {
+		toggleAuthButtons();
+		toggleAdminButtons();
+	}
 	loadUsers();
 	loadPasswords();
 });
@@ -142,16 +158,28 @@ function handleSignInForm() {
 		let user = users.find(usr => (usr.email === login || usr.username === login) && usr.password === password);
 		if (user) {
 			authUser = user;
+			localStorage.setItem(AUTH_USER_STORAGE_KEY, JSON.stringify(user));
 			closeSignInForm();
-			if (user.roles.includes(ROLE_ADMIN)) {
-				showAdminLinks();
-			} else {
-				hideAdminLinks();
-			}
+			toggleAdminButtons();
+			toggleAuthButtons();
 		} else {
-			signInFormError.textContent = translate(locale, "sign-in-credentials-error");
+			signInFormError.textContent = translate(locale(), "sign-in-credentials-error");
 		}
 	}
+}
+
+function toggleAdminButtons() {
+	if (authUser.roles.includes(ROLE_ADMIN)) {
+		showAdminLinks();
+	} else {
+		hideAdminLinks();
+	}
+}
+
+function toggleAuthButtons() {
+	signInButton.classList.toggle(AUTH_BUTTON_VISIBLE_CLASS);
+	signOutButton.classList.toggle(AUTH_BUTTON_VISIBLE_CLASS);
+	userButtonFrame.classList.toggle(AUTH_BUTTON_VISIBLE_CLASS);
 }
 
 function addInputEventListener(input, error, errorFun) {
@@ -184,7 +212,7 @@ passwordInput.addEventListener("input", () => {
 	if (passwordInput.validity.valid) {
 		passwordError.textContent = "";
 		if (compromisedPasswords.includes(passwordInput.value)) {
-			passwordInput.setCustomValidity(translate(locale, "sign-up-password-compromised-error"));
+			passwordInput.setCustomValidity(translate(locale(), "sign-up-password-compromised-error"));
 			passwordErrorFun();
 		}
 	} else {
@@ -194,7 +222,7 @@ passwordInput.addEventListener("input", () => {
 
 passwordConfirmationInput.addEventListener("input", () => {
 	if (passwordInput.value !== passwordConfirmationInput.value) {
-		passwordConfirmationInput.setCustomValidity(translate(locale, "sign-up-password-confirmation-error"));
+		passwordConfirmationInput.setCustomValidity(translate(locale(), "sign-up-password-confirmation-error"));
 		passwordError.textContent = passwordConfirmationInput.validationMessage;
 	} else {
 		passwordConfirmationInput.setCustomValidity("");
@@ -219,15 +247,7 @@ suggestPasswordButton.addEventListener("click", () => {
 });
 
 showPasswordButton.addEventListener("click", () => {
-	if (passwordInput.type === "password") {
-		passwordInput.type = "text";
-		passwordConfirmationInput.type = "text";
-		showPasswordButton.textContent = translate(locale, "sign-up-form-hide-password-label");
-	} else {
-		passwordInput.type = "password";
-		passwordConfirmationInput.type = "password";
-		showPasswordButton.textContent = translate(locale, "sign-up-form-show-password-label");;
-	}
+	togglePasswordInput(showPasswordButton, passwordInput, passwordConfirmationInput);
 });
 
 newNicknameButton.addEventListener("click", (event) => {
@@ -246,7 +266,7 @@ nicknameInput.addEventListener("input", () => {
 		nicknameError.textContent = "";
 		let exist = checkNickname(nicknameInput.value);
 		if (exist) {
-			nicknameInput.setCustomValidity(translate(locale, "sign-up-nickname-taken-error"));
+			nicknameInput.setCustomValidity(translate(locale(), "sign-up-nickname-taken-error"));
 			nicknameErrorFun();
 		}
 	} else {
@@ -270,6 +290,50 @@ closeSignInButton.addEventListener("click", () => {
 signUpRedirectButton.addEventListener("click", () => {
 	redirectToSignUp();
 });
+
+signOutButton.addEventListener("click", () => {
+	toggleAuthButtons();
+	localStorage.removeItem(AUTH_USER_STORAGE_KEY);
+	resetPage();
+});
+
+userButton.addEventListener("click", () => {
+	describeUserData();
+	userDataContainer.classList.toggle(USER_DATA_CONTAINER_VISIBLE_CLASS);
+});
+
+userDataResetButton.addEventListener("click", () => {
+	resetPage();
+});
+
+userDataShowPasswordButton.addEventListener("click", () => {
+	togglePasswordInput(userDataShowPasswordButton, userDataPasswordInput, {});
+});
+
+function describeUserData() {
+	Array.from(userDataContainer.querySelectorAll(`[${USER_DATA_ATTRIBUTE}]`))
+		.forEach(element => {
+			element.value = authUser[element.getAttribute(USER_DATA_ATTRIBUTE)];
+		}
+	);
+}
+
+function togglePasswordInput(button, pwdInput, confirmInput) {
+	if (pwdInput.type === "password") {
+		pwdInput.type = "text";
+		confirmInput.type = "text";
+		button.textContent = translate(locale(), "sign-up-form-hide-password-label");
+	} else {
+		pwdInput.type = "password";
+		confirmInput.type = "password";
+		button.textContent = translate(locale(), "sign-up-form-show-password-label");;
+	}
+}
+
+function resetPage() {
+	resetPageSettings();
+	location.reload();
+}
 
 function closeSignUpForm() {
 	signUpForm.reset();
@@ -354,67 +418,67 @@ function addLeadingZero(num) {
 
 function phoneErrorFun() {
 	if (phoneInput.validity.valueMissing) {
-		phoneError.textContent = translate(locale, "sign-up-phone-empty-error");
+		phoneError.textContent = translate(locale(), "sign-up-phone-empty-error");
 	} else if (phoneInput.validity.patternMismatch) {
-		phoneError.textContent = translate(locale, "sign-up-phone-invalid-error");
+		phoneError.textContent = translate(locale(), "sign-up-phone-invalid-error");
 	} else if (phoneInput.validity.tooShort) {
-		phoneError.textContent = `${translate(locale, "sign-up-phone-too-short-error")} ${phoneInput.minLength} ${translate(locale, "sign-up-phone-too-short-error-suffix")} ${phoneInput.value.length}`;
+		phoneError.textContent = `${translate(locale(), "sign-up-phone-too-short-error")} ${phoneInput.minLength} ${translate(locale(), "sign-up-phone-too-short-error-suffix")} ${phoneInput.value.length}`;
 	}
 }
 
 function emailErrorFun() {
 	if (emailInput.validity.valueMissing) {
-		emailError.textContent = translate(locale, "sign-up-email-empty-error");
+		emailError.textContent = translate(locale(), "sign-up-email-empty-error");
 	} else if (emailInput.validity.patternMismatch) {
-		emailError.textContent = translate(locale, "request-demo-email-invalid");
+		emailError.textContent = translate(locale(), "request-demo-email-invalid");
 	}
 }
 
 function dobErrorFun() {
 	if (dobInput.validity.valueMissing) {
-		dobError.textContent = translate(locale, "sign-up-dob-empty-error");
+		dobError.textContent = translate(locale(), "sign-up-dob-empty-error");
 	} else if (dobInput.validity.rangeOverflow) {
-		dobError.textContent = `${translate(locale, "sign-up-dob-range-overflow-error")} ${MIN_USER_AGE} ${translate(locale, "sign-up-dob-range-overflow-error-suffix")}`;
+		dobError.textContent = `${translate(locale(), "sign-up-dob-range-overflow-error")} ${MIN_USER_AGE} ${translate(locale(), "sign-up-dob-range-overflow-error-suffix")}`;
 	}
 }
 
 function firstNameErrorFun() {
 	if (firstNameInput.validity.valueMissing) {
-		firstNameError.textContent = translate(locale, "sign-up-first-name-empty-error");
+		firstNameError.textContent = translate(locale(), "sign-up-first-name-empty-error");
 	} else if (firstNameInput.validity.tooShort) {
-		firstNameError.textContent = `${translate(locale, "sign-up-first-name-too-short-error")} ${firstNameInput.minLength} ${translate(locale, "error-characters")}`;
+		firstNameError.textContent = `${translate(locale(), "sign-up-first-name-too-short-error")} ${firstNameInput.minLength} ${translate(locale(), "error-characters")}`;
 	} else if (firstNameInput.validity.patternMismatch) {
-		firstNameError.textContent = translate(locale, "sign-up-first-name-invalid-error");
+		firstNameError.textContent = translate(locale(), "sign-up-first-name-invalid-error");
 	}
 }
 
 function lastNameErrorFun() {
 	if (lastNameInput.validity.valueMissing) {
-		lastNameError.textContent = translate(locale, "sign-up-last-name-empty-error");
+		lastNameError.textContent = translate(locale(), "sign-up-last-name-empty-error");
 	} else if (lastNameInput.validity.tooShort) {
-		lastNameError.textContent = `${translate(locale, "sign-up-last-name-too-short-error")} ${lastNameInput.minLength} ${translate(locale, "error-characters")}`;
+		lastNameError.textContent = `${translate(locale(), "sign-up-last-name-too-short-error")} ${lastNameInput.minLength} ${translate(locale(), "error-characters")}`;
 	} else if (lastNameInput.validity.patternMismatch) {
-		lastNameError.textContent = translate(locale, "sign-up-last-name-invalid-error");
+		lastNameError.textContent = translate(locale(), "sign-up-last-name-invalid-error");
 	}
 }
 
 function patronymicErrorFun() {
 	if (patronymicInput.validity.tooShort) {
-		patronymicError.textContent = `${translate(locale, "sign-up-patronymic-too-short-error")} ${patronymicInput.minLength} ${translate(locale, "error-characters")}`;
+		patronymicError.textContent = `${translate(locale(), "sign-up-patronymic-too-short-error")} ${patronymicInput.minLength} ${translate(locale(), "error-characters")}`;
 	} else if (patronymicInput.validity.patternMismatch) {
-		patronymicError.textContent = translate(locale, "sign-up-patronymic-invalid-error");
+		patronymicError.textContent = translate(locale(), "sign-up-patronymic-invalid-error");
 	}
 }
 
 function passwordErrorFun() {
 	if (passwordInput.validity.valueMissing) {
-		passwordError.textContent = translate(locale, "sign-up-password-empty-error");
+		passwordError.textContent = translate(locale(), "sign-up-password-empty-error");
 	} else if (passwordInput.validity.tooShort) {
-		passwordError.textContent = `${translate(locale, "sign-up-password-too-short-error")} ${passwordInput.minLength} ${translate(locale, "error-characters")}`;
+		passwordError.textContent = `${translate(locale(), "sign-up-password-too-short-error")} ${passwordInput.minLength} ${translate(locale(), "error-characters")}`;
 	} else if (passwordInput.validity.tooLong) {
-		passwordError.textContent = `${translate(locale, "sign-up-password-too-long-error")} ${passwordInput.maxLength} ${translate(locale, "error-characters")}`;
+		passwordError.textContent = `${translate(locale(), "sign-up-password-too-long-error")} ${passwordInput.maxLength} ${translate(locale(), "error-characters")}`;
 	} if (passwordInput.validity.patternMismatch) {
-		passwordError.textContent = translate(locale, "sign-up-password-weak-error");
+		passwordError.textContent = translate(locale(), "sign-up-password-weak-error");
 	} else if (passwordInput.validity.customError) {
 		passwordError.textContent = passwordInput.validationMessage;
 	}
@@ -422,28 +486,28 @@ function passwordErrorFun() {
 
 function nicknameErrorFun() {
 	if (nicknameInput.validity.valueMissing) {
-		nicknameError.textContent = translate(locale, "sign-up-nickname-empty-error");
+		nicknameError.textContent = translate(locale(), "sign-up-nickname-empty-error");
 	} else if (nicknameInput.validity.customError) {
 		nicknameError.textContent = nicknameInput.validationMessage;
 	} else if (nicknameInput.validity.tooShort) {
-		nicknameError.textContent = `${translate(locale, "sign-up-nickname-too-short-error")} ${nicknameInput.minLength} ${translate(locale, "error-characters")}`;
+		nicknameError.textContent = `${translate(locale(), "sign-up-nickname-too-short-error")} ${nicknameInput.minLength} ${translate(locale(), "error-characters")}`;
 	}
 }
 
 function tosErrorFun() {
 	if (tosCheckbox.validity.valueMissing) {
-		tosError.textContent = translate(locale, "sign-up-tos-missing-error");
+		tosError.textContent = translate(locale(), "sign-up-tos-missing-error");
 	}
 }
 
 function signInLoginErrorFun() {
 	if (signInLoginInput.validity.valueMissing) {
-		signInLoginError.textContent = translate(locale, "sign-in-username-empty-error");
+		signInLoginError.textContent = translate(locale(), "sign-in-username-empty-error");
 	}
 }
 
 function signInPasswordErrorFun() {
 	if (signInPasswordInput.validity.valueMissing) {
-		signInPasswordError.textContent = translate(locale, "sign-up-password-empty-error");
+		signInPasswordError.textContent = translate(locale(), "sign-up-password-empty-error");
 	}
 }

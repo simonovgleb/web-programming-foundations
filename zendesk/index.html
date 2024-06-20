@@ -206,7 +206,47 @@
           <div id="header-toplinks-frame" class="header-toplinks-frame">
             <div class="header-toplinks-buttons">
               <div id="header-toplinks-admin-panel-button" class="header-toplinks-simple-button header-toplinks-admin-panel" data-i18n="admin-panel-header">Admin Panel</div>
-              <div id="header-toplinks-sign-in-button" class="header-toplinks-simple-button header-toplinks-sign-in" data-i18n="sign-in-form-header">Sign in</div>
+              <div id="header-toplinks-sign-in-button" class="header-toplinks-simple-button header-toplinks-auth header-toplinks-auth-visible" data-i18n="sign-in-form-header">Sign In</div>
+              <div id="header-toplinks-user-icon-frame" class="header-toplinks-simple-button header-toplinks-auth">
+                <img id="header-toplinks-user-icon" src="./assets/user-icon.svg" alt="user icon">
+                <div id="header-toplinks-user-data-frame" class="header-toplinks-user-data-frame">
+                  <div class="sign-up-form-inputs-frame">
+                     <label for="user-data-phone-number-input" class="sign-up-form-inputs-label" data-i18n="admin-panel-phone-number-label">Phone Number</label>
+                     <input type="tel" name="user-data-phone-number-input" class="sign-up-form-input" id="user-data-phone-number-input" user-data-key="phoneNumber" disabled></input>
+                  </div>
+                  <div class="sign-up-form-inputs-frame">
+                     <label for="user-data-email-input" class="sign-up-form-inputs-label" data-i18n="admin-panel-email-label">Email</label>
+                     <input type="text" name="user-data-email-input" id="user-data-email-input" class="sign-up-form-input" user-data-key="email" disabled></input>
+                  </div>
+                  <div class="sign-up-form-inputs-frame">
+                     <label for="user-data-dob-input" class="sign-up-form-inputs-label" data-i18n="admin-panel-dob-label">Date of Birth</label>
+                     <input type="date" name="user-data-dob-input" id="user-data-dob-input"class="sign-up-form-input" user-data-key="birthDate" disabled></input>
+                  </div>
+                  <div class="sign-up-form-inputs-frame">
+                     <label for="user-data-password-input" class="sign-up-form-inputs-label" data-i18n="sign-in-form-password-label">Password</label>
+                     <div id="header-toplinks-user-data-show-password-button" class="sign-up-form-inputs-utility-button" data-i18n="sign-up-form-show-password-label">Show</div>
+                     <input type="password" name="user-data-password-input" id="user-data-password-input" class="sign-up-form-input" user-data-key="password" disabled></input>
+                  </div>
+                  <div class="sign-up-form-inputs-frame">
+                     <label for="user-data-first-name-input" class="sign-up-form-inputs-label" data-i18n="admin-panel-first-name-label">First Name</label>
+                     <input type="text" name="user-data-first-name-input" id="user-data-first-name-input" class="sign-up-form-input" user-data-key="firstName" disabled></input>
+                  </div>
+                  <div class="sign-up-form-inputs-frame">
+                     <label for="user-data-last-name-input" class="sign-up-form-inputs-label" data-i18n="admin-panel-last-name-label">Last Name</label>
+                     <input type="text" name="user-data-last-name-input" id="user-data-last-name-input" class="sign-up-form-input" user-data-key="lastName" disabled></input>
+                  </div>
+                  <div class="sign-up-form-inputs-frame">
+                     <label for="user-data-patronymic-input" class="sign-up-form-inputs-label" data-i18n="admin-panel-patronymic-label">Patronymic</label>
+                     <input type="text" name="user-data-patronymic-input" id="user-data-patronymic-input" class="sign-up-form-input" user-data-key="patronymic" disabled></input>
+                  </div>
+                  <div class="sign-up-form-inputs-frame">
+                     <label for="user-data-nickname-input" class="sign-up-form-inputs-label" data-i18n="admin-panel-nickname-label">Nickname</label>
+                     <input type="text" name="user-data-nickname-input" id="user-data-nickname-input" class="sign-up-form-input" user-data-key="username" disabled></input>
+                  </div>
+                  <div id="header-toplinks-user-data-reset-button" class="sign-up-form-inputs-utility-button" data-i18n="user-data-reset-label">Reset Settings</div>
+                </div>
+              </div>
+              <div id="header-toplinks-sign-out-button" class="header-toplinks-simple-button header-toplinks-auth" data-i18n="sign-out-form-header">Sign Out</div>
               <div class="header-toplinks-simple-button header-toplinks-product-support" data-i18n="header-product-support-label">Product Support</div>
               <div class="header-toplinks-simple-button header-toplinks-company" data-i18n="header-company-label">Company</div>
               <div class="header-toplinks-simple-button header-toplinks-contact-us" data-i18n="header-contact-us-label">Contact us</div>

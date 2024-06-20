@@ -1,6 +1,8 @@
 const i18nMapping = {
 	[DEFAULT_LOCALE]: {
 		"sign-in-form-header": "Sign In",
+		"sign-out-form-header": "Sign Out",
+		"user-data-reset-label": "Reset Settings",
 		"sign-in-form-email-nickname-label": "Email or Nickname",
 		"sign-in-form-password-label": "Password",
 		"sign-up-form-header": "Sign Up",
@@ -220,6 +222,8 @@ const i18nMapping = {
 	},
 	[LOCALE_RU]: {
 		"sign-in-form-header": "Войти",
+		"sign-out-form-header": "Выйти",
+		"user-data-reset-label": "Сбросить настройки",
 		"sign-in-form-email-nickname-label": "Email или Никнейм",
 		"sign-in-form-password-label": "Пароль",
 		"sign-up-form-header": "Зарегистрироваться",

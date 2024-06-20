@@ -1,9 +1,16 @@
+class PageSettings {
+	constructor(locale, theme) {
+		this.locale = locale;
+		this.theme = theme;
+	}
+}
+
 const THEME_SWITCHER_LIGHT_CLASS = "header-toplinks-theme-light";
 const THEME_SWITCHER_DARK_CLASS = "header-toplinks-theme-dark";
 const THEME_LIGHT = "light";
 const THEME_DARK = "dark";
 const DARK_THEME_COMMON_CLASS = "dark-theme";
-DARK_THEME_BRIGHTNESS_CLASS = "dark-theme-brightness";
+const DARK_THEME_BRIGHTNESS_CLASS = "dark-theme-brightness";
 const CLASSES_TO_RECOLOR = [
 	"desktop-body",
 	"sign-up-form-frame",
@@ -28,6 +35,7 @@ const CLASSES_TO_RECOLOR = [
 	"header-menu-item",
 	"burger-menu-frame",
 	"header-toplinks-available-languages-frame",
+	"header-toplinks-user-data-frame",
 	"page-content-customer-support-frame",
 	"page-content-customer-support-card-content-description-text-additional-text",
 	"page-content-customer-support-card-content-description-text-squarespace-quote-text",
@@ -67,6 +75,8 @@ const SUPPORT_PERSON_IMAGE_PATH = "./assets/support-person-image.svg";
 const SUPPORT_PERSON_IMAGE_DARK_PATH = "./assets/support-person-image-dark.jpg";
 const SUPPORT_CHAT_IMAGE_PATH = "./assets/support-chat-image.svg";
 const SUPPORT_CHAT_IMAGE_DARK_PATH = "./assets/support-chat-image-dark.jpg";
+const USER_ICON_PATH = "./assets/user-icon.svg";
+const USER_ICON_DARK_PATH = "./assets/user-icon-dark.svg";
 const DEFAULT_LOCALE = "en";
 const LOCALE_RU = "ru";
 const LOCALES = [DEFAULT_LOCALE, LOCALE_RU];
@@ -98,6 +108,7 @@ const LANGUAGE_KEY = "header-language-label";
 const AVAILABLE_LANGUAGES_VISIBLE_CLASS = "header-toplinks-available-languages-frame-visible";
 const TOS_PREFIX_KEY = "sign-up-form-agree-with-label";
 const TOS_POSFIX_KEY = "sign-up-form-tos-label";
+const PAGE_SETTINGS_STORAGE_KEY = "pageSettings";
 
 let themeSwitcherButton = document.getElementById("header-toplinks-theme-switcher");
 let supportChatImage = document.getElementById("page-content-customer-support-card-content-description-images-support-chat-image");
@@ -107,32 +118,55 @@ let customerSupportQuote = document.getElementById("page-content-customer-suppor
 let activeLanguageButton = document.getElementById("header-toplinks-active-language");
 let availableLanguagesContainer = document.getElementById("header-toplinks-available-languages-frame");
 let signUpTosLabel = document.getElementById("sign-up-form-inputs-tos-label");
+let userIcon = document.getElementById("header-toplinks-user-icon");
 
-let theme = THEME_LIGHT;
-let locale = DEFAULT_LOCALE;
+let pageSettings;
+
+addEventListener("load", () => {
+	pageSettings = loadPageSettings();
+	if (theme() !== THEME_LIGHT) {
+		applyTheme(theme());
+	}
+	if (locale() !== DEFAULT_LOCALE) {
+		translatePage();
+	}
+});
+addEventListener('beforeunload', savePageSettings);
 
 themeSwitcherButton.addEventListener("click", () => {
-	if (theme === THEME_LIGHT) {
-		applyDarkTheme();
-	} else {
-		applyLightTheme();
-	}
+	alterTheme(theme());
 });
 
 activeLanguageButton.addEventListener("click", () => {
 	buildAvailableLanguagesList();
 });
 
+function applyTheme(theme) {
+	if (theme === THEME_LIGHT) {
+		applyLightTheme();
+	} else {
+		applyDarkTheme();
+	}
+}
+
+function alterTheme(theme) {
+	if (theme === THEME_LIGHT) {
+		applyDarkTheme();
+	} else {
+		applyLightTheme();
+	}
+}
+
 function applyLightTheme() {
 	updateThemeSwitcher(THEME_SWITCHER_LIGHT_CLASS, THEME_SWITCHER_DARK_CLASS);
-	theme = THEME_LIGHT;
+	pageSettings.theme = THEME_LIGHT;
 	recolorElements();
 	switchImages();
 }
 
 function applyDarkTheme() {
 	updateThemeSwitcher(THEME_SWITCHER_DARK_CLASS, THEME_SWITCHER_LIGHT_CLASS);
-	theme = THEME_DARK;
+	pageSettings.theme = THEME_DARK;
 	recolorElements();
 	switchImages();
 }
@@ -156,29 +190,31 @@ function toggleThemeStyles(classes, themeClass) {
 }
 
 function switchImages() {
-	if (theme === THEME_LIGHT) {
+	if (theme() === THEME_LIGHT) {
 		supportPersonImage.src = SUPPORT_PERSON_IMAGE_PATH;
 		supportChatImage.src = SUPPORT_CHAT_IMAGE_PATH;
+		userIcon.src = USER_ICON_PATH;
 	} else {
 		supportPersonImage.src = SUPPORT_PERSON_IMAGE_DARK_PATH;
 		supportChatImage.src = SUPPORT_CHAT_IMAGE_DARK_PATH;
+		userIcon.src = USER_ICON_DARK_PATH;
 	}
 }
 
 function translatePage() {
 	Array.from(document.querySelectorAll(`[${I18N_ATTRIBUTE}]`))
-		.forEach(element => element.textContent = translate(locale, element.getAttribute(I18N_ATTRIBUTE)));
-	subscribeEmailBox.setAttribute("placeholder", translate(locale, EMAIL_PLACEHOLDER_KEY));
+		.forEach(element => element.textContent = translate(locale(), element.getAttribute(I18N_ATTRIBUTE)));
+	subscribeEmailBox.setAttribute("placeholder", translate(locale(), EMAIL_PLACEHOLDER_KEY));
 	customerSupportQuote.textContent = "";
-	customerSupportQuote.insertAdjacentHTML("afterbegin", `&ldquo;${translate(locale, SQUARESPACE_QUOTE_KEY)}&rdquo;`);
+	customerSupportQuote.insertAdjacentHTML("afterbegin", `&ldquo;${translate(locale(), SQUARESPACE_QUOTE_KEY)}&rdquo;`);
 	signUpTosLabel.textContent = "";
-	signUpTosLabel.insertAdjacentHTML("afterbegin", `${translate(locale, TOS_PREFIX_KEY)} <a href="#" target="_blank">${translate(locale, TOS_POSFIX_KEY)}</a>`);
+	signUpTosLabel.insertAdjacentHTML("afterbegin", `${translate(locale(), TOS_PREFIX_KEY)} <a href="#" target="_blank">${translate(locale(), TOS_POSFIX_KEY)}</a>`);
 	toggleThemeStyles(CLASSES_TO_UPDATE_AFTER_TRANSLATE, LOCALE_RU_CLASS);
 }
 
 function buildAvailableLanguagesList() {
 	closeAvailableLanguages();
-	LOCALES.filter(loc => loc !== locale)
+	LOCALES.filter(loc => loc !== locale())
 		.forEach(loc => {
 			let lang = translate(loc, LANGUAGE_KEY);
 			let langElement = document.createElement("div");
@@ -190,7 +226,7 @@ function buildAvailableLanguagesList() {
 }
 
 function applyLanguage(loc) {
-	locale = loc;
+	pageSettings.locale = loc;
 	closeAvailableLanguages();
 	translatePage();
 }
@@ -199,4 +235,30 @@ function closeAvailableLanguages() {
 	availableLanguagesContainer.classList.toggle(AVAILABLE_LANGUAGES_VISIBLE_CLASS);
 	Array.from(availableLanguagesContainer.childNodes)
 		.forEach(child => child.remove());
+}
+
+function resetPageSettings() {
+	localStorage.removeItem(PAGE_SETTINGS_STORAGE_KEY);
+	pageSettings = loadPageSettings();
+}
+
+function loadPageSettings() {
+	let stored = localStorage.getItem(PAGE_SETTINGS_STORAGE_KEY);
+	return stored && stored !== "undefined"
+	? JSON.parse(stored)
+	: new PageSettings(DEFAULT_LOCALE, THEME_LIGHT);
+}
+
+function locale() {
+	return pageSettings.locale;
+}
+
+function theme() {
+	return pageSettings.theme;
+}
+
+function savePageSettings() {
+	if (authUser) {
+		localStorage.setItem(PAGE_SETTINGS_STORAGE_KEY, JSON.stringify(pageSettings));
+	}
 }
